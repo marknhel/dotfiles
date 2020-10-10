@@ -1,0 +1,7 @@
+#!/bin/sh
+
+vidloc="$HOME/videos/copied"
+[ ! -d "$vidloc" ] && mkdir -p "$vidloc"
+
+[ -f "$1" ] && ( ( notify-send "Copying $1 🤭 " && cp "$1" "$vidloc" && notify-send "$1 copied successfuly 😁 " && exit 0 )  || (notify-send "Failed to copy $1 😥 " && exit 1 ))
+[ -d "$1" ] && ( ( notify-send "Copying $1 🤭 " && cp -r "$1" "$vidloc" && notify-send " $1 copied successfully 😁  " && exit 0) || ( notify-send "Failed to copy $1 😥 " && exit 1 ) )

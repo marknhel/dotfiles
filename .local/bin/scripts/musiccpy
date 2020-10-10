@@ -1,0 +1,9 @@
+#!/bin/sh
+
+musicloc="$HOME/music/copied/"
+
+[ ! -d "$musicloc" ] && mkdir -p "$musicloc"
+
+[ -f "$1" ] && ( ( notify-send "Copying $1 🤭" && cp "$1" "$musicloc" && notify-send "$1 copied successfully 😁" && exit 0 ) || (notify-send "Failed to copy $1 😥" && exit 1 ) )
+
+[ -d "$1" ] && ( ( notify-send "Copying $1 🤭" && cp -r "$1" "$musicloc" && notify-send "$1 copied successfully 😁" && exit 0 ) || (notify-send "Failed to copy $1 😥" && exit 1 ) )

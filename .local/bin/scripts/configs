@@ -1,0 +1,3 @@
+#!/bin/sh
+
+find $XDG_CONFIG_HOME/ ~/git/ | fzf | xargs -r $EDITOR

@@ -1,0 +1,8 @@
+#!/bin/sh
+
+picloc="$HOME/pictures/copied"
+[ ! -d "$picloc" ] && mkdir -p "$picloc"
+
+ [ -f "$1" ] &&  ( ( notify-send "Copying $1 🤭" && cp "$1" "$picloc"  && notify-send " File $1 copied successfuly 😁 " && exit 0)  || ( notify-send "File Failed to copy $1 😥 " && exit 1 ) )
+
+[ -d "$1" ] && ( ( notify-send "Copying $1 🤭 " && cp -r "$1" "$picloc" && notify-send " Folder $1 copied successfuly 😁 " ) || ( notify-send "Folder Failed to copy $1 😥 " && exit 1 ))

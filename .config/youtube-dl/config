@@ -1,0 +1,5 @@
+
+
+
+# download path
+ -o ~/videos/youtube-dl/%(title)s.%(ext)s

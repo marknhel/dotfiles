@@ -1,0 +1,26 @@
+#!/bin/sh
+alias clone='git clone'
+alias gg='ping google.com'
+alias xprofile='nvim ~/.xprofile'
+#pacman aliases
+alias pac='sudo pacman'
+alias pacmanc='sudo vim /etc/pacman.conf'
+alias tobeinstall='>> ~/Desktop/apps-to-be-installed'
+alias getinstall='cat ~/Desktop/apps-to-be-installed'
+alias todo='vim ~/Desktop/todo'
+alias nmac='sudo python ~/documents/macchanger.py'
+
+
+alias \
+	ec='configs' \
+	grep='grep --color=auto' \
+	diff='diff --color=auto' \
+	ls='ls --color=auto --group-directories-first' \
+	f='$FILE' \
+	e='$EDITOR' \
+	v='$EDITOR' \
+	eb='bins' \
+	se='search' \
+	l1='sudo xbacklight -set 1' \
+	l100='sudo xbacklight -set 100' \
+	cl='git clone'

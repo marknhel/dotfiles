@@ -1,0 +1,27 @@
+#!/bin/sh
+
+anime(){ \
+	path=$( find /home/malware/videos/anime -type d | dmenu -i -l 30 ) || exit
+	setsid vlc --video-on-top "$path" 2>/dev/null
+}
+
+series(){
+	path=$( find /home/malware/videos/series -type d | dmenu -i -l 30 ) || exit 1
+	setsid vlc --video-on-top "$path" 2>/dev/null
+}
+
+
+movie(){
+	files=$(find /home/malware/videos/movies -type f |dmenu -i -l 50 ) || exit 1
+	setsid vlc --video-on-top "$path" 2>/dev/null
+}
+
+
+choice=$(printf "Anime\\nSeries\\nMovie" | dmenu -i -l 3 )
+
+case "$choice" in
+	Anime) anime;;
+	Series) series;;
+	Movie) movie;;
+	*) exit 1
+esac

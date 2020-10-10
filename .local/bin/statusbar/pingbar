@@ -1,0 +1,4 @@
+#!/bin/sh
+
+ms=$(ping google.com -c 1 | grep time= || echo "No connection" )
+echo "${ms#*time=}"
