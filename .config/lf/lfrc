@@ -74,6 +74,7 @@ map D delete
 map C copyto
 map M moveto
 map <c-n> push :mkdir<space>
+map <c-t> push $touch<space>
 map <c-r> reload
 map <enter> shell
 map x $$f
@@ -99,3 +100,4 @@ map <c-o> $othcpy $f &
 map <c-p> $piccpy $f &
 map <c-v> $vidcpy $f &
 map <c-d> $doccpy $f &
+map e $nvim $f

@@ -138,6 +138,10 @@ set clipboard+=unnamedplus
 "Run build LaTex doc when edited
 	autocmd BufWritePost ~/documents/latex-docs/kapitan-bato.tex ! pdflatex ~/documents/latex-docs/kapitan-bato.tex
 
+"Kill and start dunstrc is edited.
+	autocmd BufWritePost ~/.config/dunst/dunstrc ! killall -q dunst && dunst &; notify-send --urgency=low "Sample 😝" "This has low level urgency." && notify-send "Second 🤪" "This has normal level urgency." && notify-send --urgency=critical "Notification 👿" "This has critical level urgency."
+
+
 " Turns off highlighting on the bits of code that are changed, so the line that is changed is highlighted but the actual text that has changed stands out on the line and is readable.
 if &diff
     highlight! link DiffText MatchParen
