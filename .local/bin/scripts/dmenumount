@@ -8,7 +8,7 @@
 getmount() { \
 	[ -z "$chosen" ] && exit 1
         # shellcheck disable=SC2086
-	mp="$(find /home/malware/mnt 2>/dev/null | dmenu -i -p "Type in mount point.")" || exit 1
+	mp="$(find /home/malware/mnt 2>/dev/null | dmenu -i -p "Mountpoint?")" || exit 1
 	[ "$mp" = "" ] && exit 1
 	if [ ! -d "$mp" ]; then
 		mkdiryn=$(printf "No\\nYes" | dmenu -i -p "$mp does not exist. Create it?") || exit 1
