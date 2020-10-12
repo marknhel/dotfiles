@@ -20,6 +20,8 @@ cp -Ruv "$loc/X11" "$des"
 cp -Ruv "$loc/youtube-dl" "$des"
 cp -Ruv "$loc/youtube-viewer" "$des"
 cp -Ruv "$loc/zsh" "$des"
+cp -Ruv "$loc/pulse" "$des"
+cp -Ruv "$loc/vlc" "$des"
 
 rm -rfv "$des/nvim/autoload"
 rm -rfv "$des/nvim/plugged"

@@ -48,7 +48,7 @@ export LESSKEY=$XDG_CONFIG_HOME/less/lesskey
 export LESSHISTFILE=$XDG_CACHE_HOME/less/history
 
 #WGET
-export WGETRC=$XDG_CONFIG_HOME/wgetrc
+#export WGETRC=$XDG_CONFIG_HOME/wgetrc
 
 #XAUTHORITY
 export XAUTHORITY=$XDG_RUNTIME_DIR/Xauthority
