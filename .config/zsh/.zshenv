@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/sh
 
 export BROWSER=brave-nightly
 export TERMINAL=st
