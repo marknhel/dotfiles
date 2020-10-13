@@ -1,4 +1,10 @@
 #!/bin/sh
 
-ms=$(ping google.com -c 1 | grep time= || echo "No connection" )
-echo "${ms#*time=}"
+#case $BLOCK_BUTTON in
+#	1)
+
+ms=$(ping google.com -c 1 | grep time= ) 2>/dev/null
+
+[ -z "$ms" ] && ms="❌" || ms="📶${ms#*time=}"
+ms="${ms%ms}"
+echo $ms

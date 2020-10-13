@@ -1,5 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =3
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/proc'
+let g:netrw_dirhist_5='/proc/30848'
+let g:netrw_dirhist_4='/proc/30848/net'
 let g:netrw_dirhist_3='/home/malware/.config/pulse'
 let g:netrw_dirhist_2='/home/malware/git/forks/dwmblocks'
 let g:netrw_dirhist_1='/home/malware/.password-store'
@@ -7,6 +10,3 @@ let g:netrw_dirhist_0='/home/malware/git/surf/.git'
 let g:netrw_dirhist_9='/home/malware/.config/dunst'
 let g:netrw_dirhist_8='/home/malware/.config/ncmpcpp'
 let g:netrw_dirhist_7='/home/malware/.pki'
-let g:netrw_dirhist_6='/home/malware/.config/dunst'
-let g:netrw_dirhist_5='/home/malware/.config/lf'
-let g:netrw_dirhist_4='/home/malware/.config'
