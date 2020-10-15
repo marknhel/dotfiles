@@ -1,6 +1,6 @@
 #!/bin/sh
 
-export BROWSER=brave-nightly
+export BROWSER=qutebrowser
 export TERMINAL=st
 export EDITOR=nvim
 
@@ -16,6 +16,16 @@ export PATH=${PATH}:$HOME/.local/bin/scripts
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
 export XDG_DATA_HOME=$HOME/.local/share
+
+# home folders
+export XDG_VIDEOS_DIR=$HOME/vids
+export XDG_MUSIC_DIR=$HOME/music
+export XDG_PICTURES_DIR=$HOME/pics
+export XDG_DOCUMENTS_DIR=$HOME/docs
+export XDG_GIT_DIR=$HOME/git
+export XDG_TRASH_DIR=$HOME/trash
+export XDG_MOUNTPOINT_DIR=$HOME/mnt
+export XDG_OTHERS_DIR=$HOME/others
 
 #ADB
 export ANDROID_SDK_HOME=$XDG_CONFIG_HOME/android
@@ -56,3 +66,8 @@ export XAUTHORITY=$XDG_RUNTIME_DIR/Xauthority
 #XSERVER
 export XINITRC=$XDG_CONFIG_HOME/X11/xinitrc
 export XSERVERRC=$XDG_CONFIG_HOME/X11/xserverrc
+
+#GPG
+
+#Less
+export LESSHISTFILE=$XDG_CACHE_HOME/less/.lesshst

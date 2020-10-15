@@ -2,7 +2,7 @@
 
 filename=$( echo "Ok" | dmenu -i -p "Write the filename:" ) || exit 1
 
-new_script=$HOME/.local/bin/scripts/$filename
-touch $new_script && chmod +x $new_script
-echo "#!/bin/sh" >> $new_script && $EDITOR $new_script
+new_script="$HOME/.local/bin/scripts/$filename"
+touch "$new_script" && chmod +x "$new_script"
+echo "#!/bin/sh" >> "$new_script" && $EDITOR "$new_script"
 exit 0

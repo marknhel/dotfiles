@@ -6,7 +6,7 @@ cp -Ruv "$HOME/.xprofile" "$HOME/git/dotfiles"
 
 #.config
 
-des="$HOME/git/dotfiles/.config"
+des="$HOME/git/repos/dotfiles/.config"
 loc="$HOME/.config"
 
 cp -Ruv "$loc/dunst" "$des"
@@ -28,7 +28,7 @@ rm -rfv "$des/nvim/plugged"
 
 #.local cp
 bsrc="$HOME/.local/bin"
-bdes="$HOME/git/dotfiles/.local/bin"
+bdes="$HOME/git/repos/dotfiles/.local/bin"
 
 cp -Ruv "$bsrc/scripts" "$bdes"
 cp -Ruv "$bsrc/statusbar" "$bdes"

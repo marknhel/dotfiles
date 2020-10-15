@@ -1,27 +1,34 @@
 #!/bin/sh
 
 anime(){ \
-	path=$( find /home/malware/videos/anime -type d | dmenu -i -l 30 ) || exit
+	path=$( find "$XDG_VIDEOS_DIR/anime" -type d | dmenu -i -l 30 ) || exit
 	setsid vlc --video-on-top "$path" 2>/dev/null
 }
 
 series(){
-	path=$( find /home/malware/videos/series -type d | dmenu -i -l 30 ) || exit 1
+	path=$( find "$XDG_VIDEOS_DIR/series" -type d | dmenu -i -l 30 ) || exit 1
 	setsid vlc --video-on-top "$path" 2>/dev/null
 }
 
 
 movie(){
-	files=$(find /home/malware/videos/movies -type f |dmenu -i -l 50 ) || exit 1
-	setsid vlc --video-on-top "$path" 2>/dev/null
+	file=$(find "$XDG_VIDEOS_DIR/movies" -type f |dmenu -i -l 50 ) || exit 1
+	setsid vlc --video-on-top "$file" 2>/dev/null
+}
+
+copied(){
+	item=$( find "$XDG_VIDEOS_DIR/copied" | dmenu -i -l 30 ) || exit 1
+	setsid vlc --video-on-top "$item" 2>/dev/null
+
 }
 
 
-choice=$(printf "Anime\\nSeries\\nMovie" | dmenu -i -l 3 )
+choice=$(printf "Anime\\nSeries\\nMovie\\nCopied" | dmenu -i -l 4 )
 
 case "$choice" in
 	Anime) anime;;
 	Series) series;;
 	Movie) movie;;
+	Copied) copied;;
 	*) exit 1
 esac

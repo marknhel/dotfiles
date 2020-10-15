@@ -16,7 +16,6 @@ alias \
 	v='$EDITOR' \
 	eb='bins' \
 	se='search' \
-	l1='sudo xbacklight -set 1' \
-	l100='sudo xbacklight -set 100' \
+	l='sudo xbacklight -set' \
 	cl='git clone' \
 	mkdir='mkdir -pv'

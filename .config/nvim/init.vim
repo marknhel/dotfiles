@@ -125,16 +125,16 @@ set clipboard+=unnamedplus
 " Update binds when sxhkdrc is updated.
 	autocmd BufWritePost *sxhkdrc !pkill -USR1 sxhkd
 " Run build dwmblocks when edited.
-	autocmd BufWritePost ~/git/forks/dwmblocks/config.h !cd ~/git/forks/dwmblocks/; sudo make install && { killall -q dwmblocks; setsid dwmblocks &}
+	autocmd BufWritePost ~/git/repos/dwmblocks/config.h !cd ~/git/repos/dwmblocks/; sudo make install && notify-send --urgency=low "Build" "Built dwmblocks Successfully" && { killall -q dwmblocks; setsid dwmblocks &}
 
 " Run buid dwm when config is edited.
-	autocmd BufWritePost ~/git/forks/dwm/config.h !cd ~/git/forks/dwm/; sudo make install && notify-send "Build Successful"
+	autocmd BufWritePost ~/git/repos/dwm/config.h !cd ~/git/repos/dwm/; sudo make install && notify-send --urgency=low "Build" "Built dwm Successfully"
 
 " Run build when st config is edited.
-	autocmd BufWritePost ~/git/forks/st/config.h !cd ~/git/forks/st/; sudo make install
+	autocmd BufWritePost ~/git/repos/st/config.h !cd ~/git/repos/st/; sudo make install && notify-send --urgency=low "Build" "Built st Successfully"
 
 " Run build dmenu when config is edited.
-	autocmd BufWritePost ~/git/forks/dmenu/config.h !cd ~/git/forks/dmenu/; sudo make install && notify-send "dmenu : Build Successfully!"
+	autocmd BufWritePost ~/git/repos/dmenu/config.h !cd ~/git/repos/dmenu/; sudo make install && notify-send --urgency=low "Build" "Built dmenu Successfully!"
 "Run build LaTex doc when edited
 	autocmd BufWritePost ~/documents/latex-docs/kapitan-bato.tex ! pdflatex ~/documents/latex-docs/kapitan-bato.tex
 

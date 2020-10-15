@@ -1,6 +1,6 @@
 #!/bin/sh
 
-loc="$( lsblk | grep /home/malware/mnt | awk '{ print $7 }' | fzf )"
+loc="$( lsblk | grep "$XDG_MOUNTPOINT_DIR" | awk '{ print $7 }' | fzf )"
 [ -z "$loc" ] && exit 1
 cploc="$loc/copied"
 
