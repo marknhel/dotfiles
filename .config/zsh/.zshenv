@@ -1,4 +1,10 @@
 #!/bin/sh
+#  			          _
+#                         _______| |__   ___ _ ____   __                  
+#                        |_  / __| '_ \ / _ \ '_ \ \ / /
+#                         / /\__ \ | | |  __/ | | \ V / 
+#                        /___|___/_| |_|\___|_| |_|\_/  
+
 
 export BROWSER=qutebrowser
 export TERMINAL=st
@@ -71,3 +77,8 @@ export XSERVERRC=$XDG_CONFIG_HOME/X11/xserverrc
 
 #Less
 export LESSHISTFILE=$XDG_CACHE_HOME/less/.lesshst
+
+
+
+
+                                                       

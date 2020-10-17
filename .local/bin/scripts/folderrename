@@ -1,0 +1,14 @@
+#!/bin/sh
+
+figlet "Rename"
+
+for x in *;
+do
+	#Format
+	#	Artist - Title [ something ] (wefw).ext
+	rpmnt=$( echo $x | sed "s|.*-\s|| ; s|\s(.*)||; s|\s\[.*\]||; s|\sLyrics||; s|\slyrics||; s|\sw_||" )
+#	rpmnt=$( echo $x | sed " s|~.*-||; s|-|\s|g " )
+	printf 'Renaming:\n\nFrom: %s\nTo  : %s \n\n' "$x" "$rpmnt"
+	rename "$x" "$rpmnt" "$x"
+done
+figlet "Please check the files!"

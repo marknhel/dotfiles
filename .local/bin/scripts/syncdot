@@ -2,7 +2,7 @@
 #copy for dotfiles
 
 #HOME dot
-cp -Ruv "$HOME/.xprofile" "$HOME/git/dotfiles"
+cp -Ruv "$HOME/.xprofile" "$HOME/git/repos/dotfiles"
 
 #.config
 

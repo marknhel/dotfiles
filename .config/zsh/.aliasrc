@@ -1,4 +1,12 @@
 #!/bin/sh
+
+#                                _ _
+#                           __ _| (_) __ _ ___ _ __ ___
+#                          / _` | | |/ _` / __| '__/ __|
+#                         | (_| | | | (_| \__ \ | | (__
+#                          \__,_|_|_|\__,_|___/_|  \___|
+#
+
 alias gg='ping google.com'
 alias xprofile='nvim ~/.xprofile'
 #pacman aliases
@@ -18,4 +26,5 @@ alias \
 	se='search' \
 	l='sudo xbacklight -set' \
 	cl='git clone' \
-	mkdir='mkdir -pv'
+	mkdir='mkdir -pv' \
+	yta='youtube-dl -x -f bestaudio/best'

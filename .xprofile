@@ -1,9 +1,16 @@
+#!/bin/sh
+#   		      __  __                 __ _ _
+#                     \ \/ /_ __  _ __ ___  / _(_) | ___
+#                      \  /| '_ \| '__/ _ \| |_| | |/ _ \
+#                      /  \| |_) | | | (_) |  _| | |  __/
+#                     /_/\_\ .__/|_|  \___/|_| |_|_|\___|
+#                          |_|
+
 dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY
 
 xinput set-prop "SYN1B81:01 06CB:73FE Touchpad" "libinput Tapping Enabled" 1 &
 picom -e 0.5 &
-nitrogen --restore &
 mpd ~/.config/mpd/mpd.conf &
 setbg &
 xset r rate 300 50 &	# Speed xrate up
-sudo ip link set wlan0 up &
+redshift -l 55.7:12.6 -t 5700:3600 -g 0.8 -m randr -v &

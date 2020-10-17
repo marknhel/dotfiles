@@ -3,4 +3,6 @@
 vidloc="$XDG_VIDEOS_DIR/copied"
 [ ! -d "$vidloc" ] && mkdir -p "$vidloc"
 
-[ -z "$1" ] && ( ( notify-send --urgency=normal "Copying" "Copying $1 🤭 " && cp -r "$1" "$vidloc" && notify-send --urgency=low "Successful" " $1 copied successfully 😁  " && exit 0) || ( notify-send --urgency=critical "Failed" "Failed to copy $1 😥 " && exit 1 ) )
+[ -f "$1" ] && ( ( notify-send --urgency=normal "Copying" "Copying $1 🤭 " && cp "$1" "$vidloc" && notify-send --urgency=low "Successful" " $1 copied successfully 😁  " && exit 0) || ( notify-send --urgency=critical "Failed" "Failed to copy $1 😥 " && exit 1 ) )
+
+[ -d "$1" ] && ( ( notify-send --urgency=normal "Copying" "Copying $1 🤭 " && cp -r "$1" "$vidloc" && notify-send --urgency=low "Successful" " $1 copied successfully 😁  " && exit 0) || ( notify-send --urgency=critical "Failed" "Failed to copy $1 😥 " && exit 1 ) )

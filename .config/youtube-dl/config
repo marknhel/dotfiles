@@ -2,4 +2,4 @@
 
 
 # download path
- -o ~/videos/youtube-dl/%(title)s.%(ext)s
+ -o ~/vids/youtube-dl/%(title)s.%(ext)s

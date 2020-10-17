@@ -1,0 +1,26 @@
+#!/bin/sh
+
+figlet "Tags "
+echo "\n\n\n"
+
+echo "Enter the name of the album:"; read -r album
+echo "Enter the name of the artist:"; read -r artist
+echo "Enter the year this album released:"; read -r year
+
+total=$(find . -type f | wc -l)
+track="$((1))"
+printf '\nTagging %s files.\n\n\n' "$total"
+
+echo "\n===========================================================================\n\n"
+
+for x in *;
+do
+	title=$( echo "$x" | sed "s/.opus//; s/.m4a//; s/.mp3//; s/.ogg//" )
+	tag -a "$artist" -A "$album" -t "$title" -n "$track" -N "$total" -d "$year" "$x" && \
+		printf 'File: %s \nTrack No.: %s of %s \nTitle: %s \nAlbum: %s \nArtist: %s \nYear Released: %s ' "$x" "$track" "$total" "$title" "$album" "$artist" "$year"
+	echo "\n===========================================================================\n"
+	track="$(( track+1 ))"
+
+
+done
+figlet "Done"
