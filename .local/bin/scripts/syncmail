@@ -1,7 +1,9 @@
 #!/bin/sh
 
+ping google.com -c 1 || exit 1
+
+email="$(find "${XDG_DATA_HOME:-$HOME/.local/share}"/mail/*/[Ii][Nn][Bb][Oo][Xx]/new/* -type f | wc -l 2>/dev/null)"
 mbsync -a
+newmail="$(find "${XDG_DATA_HOME:-$HOME/.local/share}"/mail/*/[Ii][Nn][Bb][Oo][Xx]/new/* -type f | wc -l 2>/dev/null)"
 
-unread="$(find "${XDG_DATA_HOME:-$HOME/.local/share}"/mail/*/[Ii][Nn][Bb][Oo][Xx]/new/* -type f | wc -l 2>/dev/null)"
-
-[ ! "$unread" = "0" ] && notify-send notify-send "New Mail" "You got $unread mail/s."
+[ ! "$((newmail-email))" = "$((0))" ] && notify-send -t 999999999 "New Mail" "You got $((newmail-email)) new mail/s."

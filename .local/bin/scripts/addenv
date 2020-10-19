@@ -1,0 +1,15 @@
+#!/bin/sh
+
+
+to="$ZDOTDIR/.zshenv"
+
+echo "What is this about?"; read -r comment
+echo "Enter the variable :"; read -r var
+[ -z "$var" ] && echo "addenv: variable must not be empty." && exit 1
+exist=$(grep "$var=" "$to" | awk '{ print $2 }')
+[ ! -z $exist ] && echo "Variable already exist" && exit 1
+
+echo "Enter the path :"; read -r loc
+[ -z "$loc" ] && echo "addenv: path must not be empty." && exit 1
+printf "\n#%s" "$comment" >> "$to"
+printf "\nexport %s=%s\n" "$var" "$loc" >> "$to"

@@ -1,0 +1,9 @@
+#!/bin/sh
+
+devlist="$HOME/.local/share/.btscanneddevs"
+choice=$( < "$devlist" fzf )
+name=$(echo "$choice" | awk '{ print $3 }' )
+device=$(echo "$choice" | awk '{print $1 }' )
+bluetoothctl connect "$device" && \
+	notify-send --urgency=low "Bluetooth" "Connected Successfully to $name" || \
+	notify-send --urgency=critical "Bluetooth" "Connection to device $name failed."

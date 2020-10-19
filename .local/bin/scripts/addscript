@@ -1,8 +1,8 @@
 #!/bin/sh
 
-filename=$( echo "Ok" | dmenu -i -p "Write the filename:" ) || exit 1
-
-new_script="$HOME/.local/bin/scripts/$filename"
+#filename=$( echo "Ok" | dmenu -i -p "Write the filename:" ) || exit 1
+#echo "Please enter the filename :"; read -r filename
+new_script="$HOME/.local/bin/scripts/$1"
 touch "$new_script" && chmod +x "$new_script"
 echo "#!/bin/sh" >> "$new_script" && $EDITOR "$new_script"
 exit 0

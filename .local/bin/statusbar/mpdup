@@ -6,3 +6,4 @@
 while : ; do
 	mpc idle >/dev/null && kill -45 "$(pidof "${STATUSBAR:-dwmblocks}")" || break
 done
+dwmblocksup&

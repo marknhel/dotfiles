@@ -1,0 +1,18 @@
+#!/bin/sh
+
+devlist="$HOME/.local/share/.btscanneddevs"
+
+bdev=$(bluetoothctl --timeout 10 scan on | grep Device | awk '{ print $3 }' )
+scanned=$( echo "$bdev" | wc -l)
+
+for x in $bdev ;do
+	exist=$( grep "$x" "$devlist")
+	if [ -z "$exist" ]
+	then
+		inf=$(bluetoothctl info "$x" | grep Name: | awk '{ print $2}' )
+		printf "%s - %s\n" "$x" "$inf" >> "$devlist"
+	fi
+done
+
+notify-send --urgency=low "Bluetooth" "Bluetooth scanning done. $scanned devices found."
+btcon

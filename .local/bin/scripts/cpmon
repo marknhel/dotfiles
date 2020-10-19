@@ -1,0 +1,5 @@
+#!/bin/sh
+
+pidof cp >> /dev/null || exit 1
+
+progress -wc cp | grep % | awk '{ print $1 }'

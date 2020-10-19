@@ -1,0 +1,6 @@
+#!/bin/sh
+
+while : ; do
+	dwmblocksup&
+	sleep 5
+done

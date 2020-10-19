@@ -103,3 +103,5 @@ case "$1" in
 	kill) killrecording;;
 	*) ([ -f /tmp/recordingpid ] && asktoend && exit) || askrecording;;
 esac
+
+dwmblocksup &
