@@ -1,0 +1,11 @@
+#!/bin/sh
+
+
+# Configurations
+rsync -av --delete ~/.config ~/git/repos/dotfiles/
+
+# Binaries
+rsync -av --delete ~/.local/bin ~/git/repos/dotfiles/.local/
+
+# Xprofile
+cp -uv ~/.xprofile ~/git/repos/dotfiles/
