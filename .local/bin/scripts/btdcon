@@ -1,0 +1,7 @@
+#!/bin/sh
+
+dev=$(cat "$XDG_CACHE_HOME/btdev")
+[ -f "$XDG_CACHE_HOME/btdev" ] && bluetoothctl disconnect "$dev" && \
+	notify-send -u low "Bluetooth" "Successfully disconnected to $dev" && \
+	rm "$XDG_CACHE_HOME/btdev" ||
+	notify-send -u critical "Bluetooth" "You are already disconnected"
