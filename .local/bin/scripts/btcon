@@ -1,9 +1,13 @@
 #!/bin/sh
-
+btdevscan
 devlist="$HOME/.local/share/.btscanneddevs"
-choice=$( < "$devlist" fzf )
+dev="$XDG_CACHE_HOME/btdev"
+[ -f "$dev" ] && notify-send "Bluetooth" "You are currently connected. Please disconnect first." && exit 1
+choice=$( < "$devlist" dmenu -l 10 )
+[ -z "$choice" ] && exit 1
 name=$(echo "$choice" | awk '{ print $3 }' )
 device=$(echo "$choice" | awk '{print $1 }' )
 bluetoothctl connect "$device" && \
-	notify-send --urgency=low "Bluetooth" "Connected Successfully to $name" || \
-	notify-send --urgency=critical "Bluetooth" "Connection to device $name failed."
+	notify-send --urgency=low "Bluetooth" "Connected Successfully to $name" && \
+	echo "$device" >> "$dev" || \
+	notify-send -u critical "Bluetooth" "Connection to device $name failed."
