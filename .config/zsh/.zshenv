@@ -32,6 +32,8 @@ export XDG_GIT_DIR="$HOME"/git
 export XDG_TRASH_DIR="$HOME"/trash
 export XDG_MOUNTPOINT_DIR="$HOME"/mnt
 export XDG_OTHERS_DIR="$HOME"/others
+export XDG_DOWNLOADS_DIR="$HOME"/downloads
+
 
 #ADB
 export ANDROID_SDK_HOME="$XDG_CONFIG_HOME"/android

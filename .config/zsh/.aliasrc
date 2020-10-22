@@ -10,7 +10,7 @@
 
 
 alias \
-	gg='ping google.com' \
+	G='ping google.com' \
 	xprofile='nvim ~/.xprofile' \
 	pac='sudo pacman' \
 	pacc='sudo nvim /etc/pacman.conf' \
@@ -31,4 +31,15 @@ alias \
 	rm='rm -v' \
 	vol='pamixer --set-volume' \
 	SS='sudo systemctl ' \
-	btctl='bluetoothctl'
+	btctl='bluetoothctl' \
+	S='sudo' \
+	gp='cd $XDG_PICTURES_DIR' \
+	gd='cd $XDG_DOCUMENTS_DIR' \
+	gt='cd $XDG_TRASH_DIR' \
+	gD='cd $XDG_DOWNLOADS_DIR' \
+	gg='cd $XDG_GIT_DIR' \
+	gv='cd $XDG_VIDEOS_DIR' \
+	gm='cd $XDG_MUSIC_DIR' \
+	gM='cd $XDG_MOUNTPOINT_DIR' \
+	go='cd $XDG_OTHERS_DIR' \
+	repo='cd $XDG_GIT_DIR/repos'

@@ -62,6 +62,8 @@ cmd copyto ${{
 
 cmd setbg "$1"
 cmd bulkrename $vidir
+cmd gg
+
 
 
 # Bindings
