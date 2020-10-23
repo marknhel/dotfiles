@@ -5,8 +5,8 @@
 
 ms=$(ping google.com -c 1 | grep time= ) 2>/dev/null
 
-#[ -z "$ms" ] && ms="❌" || ms="📶${ms#*time=}"
-[ -z "$ms" ] && ms="❌" || ms="📶"
+#[ -z "$ms" ] && ms="ﲁ" || ms="說${ms#*time=}"
+[ -z "$ms" ] && ms="ﲁ" || ms="說"
 
 #ms="${ms%ms}"
 

@@ -9,4 +9,4 @@ case $BLOCK_BUTTON in
 	6) "$TERMINAL" -e "$EDITOR" "$0" ;;
 esac
 
-free -h | awk  '/^Mem:/  {printf "🧠(" $3 "/"$2")"}'
+free -h | awk  '/^Mem:/  {printf " " $3 "/"$2""}'
