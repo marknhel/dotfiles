@@ -1,0 +1,9 @@
+#!/bin/sh
+
+dev="$XDG_CACHE_HOME/btdev"
+
+case $BLOCK_BUTTON in
+	1) btcon;;
+esac
+
+[ -f "$dev" ] && echo "" || echo ""
