@@ -2722,7 +2722,7 @@ alsa-gain=1.728000
 [qt] # Qt interface
 
 # Start in minimal view (without menus) (boolean)
-#qt-minimal-view=0
+qt-minimal-view=1
 
 # Systray icon (boolean)
 #qt-system-tray=1
@@ -4816,4 +4816,3 @@ key-vol-down=Down
 
 # Playlist bookmark 10 (string)
 #bookmark10=
-

@@ -9,5 +9,6 @@ name=$(echo "$choice" | awk '{ print $3 }' )
 device=$(echo "$choice" | awk '{print $1 }' )
 bluetoothctl connect "$device" && \
 	notify-send --urgency=low "Bluetooth" "Connected Successfully to $name" && \
-	echo "$device" >> "$dev" || \
+	echo "$device" >> "$dev" && \
+	pkill -RTMIN+10 dwmblocks || \
 	notify-send -u critical "Bluetooth" "Connection to device $name failed."

@@ -21,14 +21,18 @@ copied(){
 	setsid vlc --video-on-top "$item" 2>/dev/null
 
 }
+ytdl(){
+	item=$( find "$XDG_VIDEOS_DIR/youtube-dl" -type f | dmenu -i -l 20) || exit 1
+	setsid vlc --video-on-top "$item" 2>/dev/null
 
-
-choice=$(printf "Anime\\nSeries\\nMovie\\nCopied" | dmenu -i -l 4 )
+}
+choice=$(printf "Anime\\nSeries\\nMovie\\nCopied\\nDownloads" | dmenu -i -l 5 )
 
 case "$choice" in
 	Anime) anime;;
 	Series) series;;
 	Movie) movie;;
 	Copied) copied;;
+	Downloads) ytdl;;
 	*) exit 1
 esac

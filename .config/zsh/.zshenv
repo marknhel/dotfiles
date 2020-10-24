@@ -6,7 +6,7 @@
 #                        /___|___/_| |_|\___|_| |_|\_/
 
 
-export BROWSER="qutebrowser"
+export BROWSER="brave"
 export TERMINAL="st"
 export EDITOR="nvim"
 
@@ -42,7 +42,7 @@ export ANDROID_EMULATOR_HOME="$XDG_DATA_HOME"/android
 export ADB_VENDOR_KEY="$XDG_CONFIG_HOME"/android
 
 #BASH
-#export HISTFILE="$XDG_DATA_HOME"/bash/history
+export HISTFILE="$XDG_DATA_HOME"/bash/history
 
 
 #GNUPG
@@ -66,7 +66,7 @@ export LESSKEY="$XDG_CONFIG_HOME"/less/lesskey
 export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
 
 #WGET
-#export WGETRC="$XDG_CONFIG_HOME"/wgetrc
+export WGETRC="$XDG_CONFIG_HOME"/wget/wgetrc
 
 #XAUTHORITY
 export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
@@ -86,3 +86,15 @@ export LESSHISTFILE="$XDG_CACHE_HOME"/less/.lesshst
 
 #Bluetooth Scanned Devices
 export BTSCANNEDDEVS="$XDG_DATA_HOME"/.btscanneddevs
+
+#Password Store
+export PASSWORD_STORE_DIR="$XDG_DATA_HOME"/pass
+
+#Go Path
+export GOPATH="$XDG_DATA_HOME"/go
+
+#Notmuch Config
+export NOTMUCH_CONFIG="$XDG_CONFIG_HOME"/notmuch/notmuchrc
+
+#Not Much Bug
+export NMBGIT="XDG_DATA_HOME"/notmuch/nmbug

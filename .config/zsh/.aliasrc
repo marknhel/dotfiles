@@ -43,4 +43,6 @@ alias \
 	gM='cd $XDG_MOUNTPOINT_DIR' \
 	go='cd $XDG_OTHERS_DIR' \
 	repo='cd $XDG_GIT_DIR/repos' \
-	fonts='fc-match -s monospace:charset=1FA9'
+	fonts='fc-match -s monospace:charset=1FA9' \
+	emojis='cat $XDG_DATA_HOME/emojicodes' \
+	mbsync='mbsync -c $XDG_CONFIG_HOME/isync/mbsyncrc'
