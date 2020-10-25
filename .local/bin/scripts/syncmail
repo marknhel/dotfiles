@@ -7,3 +7,4 @@ mbsync -a
 newmail="$(find "${XDG_DATA_HOME:-$HOME/.local/share}"/mail/*/[Ii][Nn][Bb][Oo][Xx]/new/* -type f | wc -l 2>/dev/null)"
 
 [ ! "$((newmail-email))" = "$((0))" ] && notify-send -t 999999999 "New Mail" "You got $((newmail-email)) new mail/s."
+pkill -RTMIN+6 dwmblocks
