@@ -6,4 +6,4 @@ case $BLOCK_BUTTON in
 	1) btcon;;
 esac
 
-[ -f "$dev" ] && echo "" || echo ""
+[ -f "$dev" ] && echo "" || echo ""

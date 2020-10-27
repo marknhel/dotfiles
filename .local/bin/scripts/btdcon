@@ -1,8 +1,9 @@
 #!/bin/sh
 
 dev=$(cat "$XDG_CACHE_HOME/btdev")
+# shellcheck disable=SC2015
 [ -f "$XDG_CACHE_HOME/btdev" ] && bluetoothctl disconnect "$dev" && \
 	notify-send -u low "Bluetooth" "Successfully disconnected to $dev" && \
 	rm "$XDG_CACHE_HOME/btdev" && \
 	pkill -RTMIN+10 dwmblocks || \
-	notify-send -u critical "Bluetooth" "You are already disconnected"
+	notify-send "Bluetooth" "You are already disconnected"

@@ -103,3 +103,5 @@ map <c-v> $vidcpy $f &
 map <c-d> $doccpy $f &
 map e $nvim $f
 map <c-x> $ext $f
+map <c-g> $mvrom "$f"
+map <c-N> $touch<space>

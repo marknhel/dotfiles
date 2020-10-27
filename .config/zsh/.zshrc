@@ -22,8 +22,8 @@ source ~/.config/zsh/powerlevel10k/powerlevel10k.zsh-theme
 #
 #
 #
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=9000000
+SAVEHIST=9000000
 HISTFILE=~/.cache/zshhistory
 
 # Basic auto/tab complete:

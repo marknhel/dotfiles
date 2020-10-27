@@ -98,3 +98,12 @@ export NOTMUCH_CONFIG="$XDG_CONFIG_HOME"/notmuch/notmuchrc
 
 #Not Much Bug
 export NMBGIT="XDG_DATA_HOME"/notmuch/nmbug
+
+#Wine
+export WINEPREFIX="$XDG_DATA_HOME"/wineprefixes/default
+
+#Nintendo Roms Dir
+export N64_ROMS_DIR="$HOME"/others/n64-roms
+
+#Mplayer
+export MPLAYERHOME="$XDG_CONFIG_HOME"/mplayer
