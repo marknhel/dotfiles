@@ -68,3 +68,4 @@ sxiv
 commit/
 *error.log
 *.netrwhist
+*spell/
