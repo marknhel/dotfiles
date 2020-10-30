@@ -1,4 +1,4 @@
-let mapleader =","
+let mapleader ="\\"
 
 if ! filereadable(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim"'))
 	echo "Downloading junegunn/vim-plug to manage plugins..."
@@ -42,10 +42,17 @@ set clipboard+=unnamedplus
 	syntax on
 	set encoding=utf-8
 	set number relativenumber
+"	inoremap <Space><Space> <Esc>/<++><Enter>"_c4l
 " Enable autocompletion:
 	set wildmode=longest,list,full
+
 " Disables automatic commenting on newline:
 	autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+	autocmd FileType md inoremap ;t ---<Enter>title:<Space><--><Enter>author:<Space>Mark<Space>Nhel<Space>Besonia<Enter>output:<Space>pdf_document<Enter>---<Enter><Enter><++><Esc>/<--><Enter>"_c4l
+
+"autofill header in rmarkdown docs
+
 
 " Goyo plugin makes text more readable when writing prose:
 	map <leader>f :Goyo \| set bg=light \| set linebreak<CR>

@@ -6,8 +6,8 @@ anime(){ \
 #	setsid vlc --video-on-top "$vidpath" 2>/dev/null
 	total=$(  find "$vidpath" -type f | wc -l )
 #	episode=$(  echo "" | dmenu -i -p "From what episode of $total? ") || exit 1
-	echo "From what episode?"; read -r num || exit
-	[ -z "$num" ] && episode=1
+	echo "From what episode to $total?"; read -r num || exit
+	[ -z "$num" ] && num=1
 	printf "Total : %s\nEpisode : %s\nStart : %s\n" "$total" "$num" "$((1+total-num))"
 	episode=$(find "$vidpath" -type f | sort | sed "/$num/ q" | wc -l )
 	start=$((1 + total - episode))
@@ -24,9 +24,9 @@ series(){
 #	setsid vlc --video-on-top "$vidpath" 2>/dev/null
 	total=$( find "$vidpath" -type f | wc -l )
 
-	echo "From what episode?"; read -r num || exit
-	[ -z "$episode" ] && num=1
-	episode=$(find "$vidpath" -type f | sort | sed "/$num/" q | wc -l )
+	echo "From what episode to $total?"; read -r num || exit
+	[ -z "$num" ] && num=1
+	episode=$(find "$vidpath" -type f | sort | sed "/$num/ q" | wc -l )
 	start=$((1 + total - episode))
 	# shellcheck disable=SC2046
 	setsid mplayer -ao pulse,alsa,oss $(find "$vidpath" -type f | sort | tail -n "$start")

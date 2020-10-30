@@ -4,6 +4,5 @@
 #                       / /| | (_) | (_| | (_) | |_| | |_
 #                      /___|_|\___/ \__, |\___/ \__,_|\__|
 #                                   |___/
-
-rm "$XDG_CACHE_DIR/btdev"
+btdcon
 sudo umount -R "$XDG_MOUNTPOINT_DIR"

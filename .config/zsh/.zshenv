@@ -106,4 +106,4 @@ export WINEPREFIX="$XDG_DATA_HOME"/wineprefixes/default
 export N64_ROMS_DIR="$HOME"/others/n64-roms
 
 #Mplayer
-export MPLAYERHOME="$XDG_CONFIG_HOME"/mplayer
+export MPLAYER_HOME="$XDG_CONFIG_HOME"/mplayer

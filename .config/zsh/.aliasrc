@@ -44,10 +44,14 @@ alias \
 	gm='cd $XDG_MUSIC_DIR' \
 	gM='cd $XDG_MOUNTPOINT_DIR' \
 	go='cd $XDG_OTHERS_DIR' \
+	gh='cd $HOME' \
 	repo='cd $XDG_GIT_DIR/repos' \
 	fonts='fc-match -s monospace:charset=1FA9' \
 	emojis='cat $XDG_DATA_HOME/emojicodes' \
 	mbsync='mbsync -c $XDG_CONFIG_HOME/isync/mbsyncrc' \
 	rename='rename -v ' \
 	SE='sudo nvim ' \
-	sc='shellcheck '
+	sc='shellcheck ' \
+	tree='tree -C ' \
+	subs='cd  $XDG_DOCUMENTS_DIR/subjects' \
+	newsboat='newsboat -u $XDG_CONFIG_HOME/newsboat/urls -C $XDG_CONFIG_HOME/newsboat/config'

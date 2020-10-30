@@ -14,8 +14,9 @@ do
 #	rpmnt=$(echo "$x" | sed "s|.100.| 100s |; s|.480.*$|.mkv|")
 #	rpmnt=$(echo "$x" | sed "s|\s.opus|.opus|")
 
+
 	#Insert at the beginning
-	rpmnt=$(echo "$x" | sed "s|^|0|")
+	rpmnt=$(echo "$x" | sed "s|.*S07||; s|\s.*)||")
 
 
 	printf 'Renaming:\n\nFrom: %s\nTo  : %s \n\n' "$x" "$rpmnt"

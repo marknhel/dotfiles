@@ -62,7 +62,6 @@ cmd copyto ${{
 
 cmd setbg "$1"
 cmd bulkrename $vidir
-cmd gg
 
 
 
@@ -105,3 +104,5 @@ map e $nvim $f
 map <c-x> $ext $f
 map <c-g> $mvrom "$f"
 map <c-N> $touch<space>
+map R $rcomp $f
+map Z $zathura $f
