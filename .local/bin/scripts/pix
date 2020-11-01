@@ -1,0 +1,2 @@
+#!/bin/sh
+find "$XDG_PICTURES_DIR" -type f | fzf | xargs -r sxiv "$1"

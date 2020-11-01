@@ -91,6 +91,9 @@ set clipboard+=unnamedplus
 " Check file in shellcheck:
 	map <leader>s :!clear && shellcheck %<CR>
 
+"Compile Rmd
+	map <leader>w :!clear && rcomp %<CR>
+
 " Open my bibliography file in split
 	map <leader>b :vsp<space>$BIB<CR>
 	map <leader>r :vsp<space>$REFER<CR>

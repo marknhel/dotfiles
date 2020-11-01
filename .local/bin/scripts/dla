@@ -1,6 +1,5 @@
 #!/bin/sh
 
 
-youtube-dl -x -f bestaudio/best "$1"
+youtube-dl -x -c -f bestaudio/best "$1"
 notify-send "Done" "Youtube download done."
-#!/bin/sh

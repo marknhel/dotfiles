@@ -1,0 +1,4 @@
+#!/bin/sh
+
+[ -d "$1" ] && notify-send "Move Failed" "Not a file." && exit 1
+mv "$1" "$HOME/others/n64-roms" && notify-send "Successful" "File moved successfully to N64_ROMS_DiR"

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+echo "enter the code:"; read -r code
+printf "%s - " "$code" >> "$XDG_DATA_HOME/emojicodes"
+echo -e "\u$code" >> "$XDG_DATA_HOME/emojicodes"
+echo -e "\u$code"

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+ping google.com -c 1 || exit 1
+dls=\"$( cat "$XDG_DATA_HOME"/dlq/pacdl)\"
+eval echo \"$( cat "$XDG_DATA_HOME/dlq/pacdl")\" | \
+	xargs sudo pacman -S --noconfirm $1 && \
+	notify-send -u low "Pacman" "Done Installing:\n$dls" && \
+	rm "$XDG_DATA_HOME/dlq/pacdl" || \
+	notify-send -u critical "Pacman" "Failed to install:\n$dls" && \
+	exit 1

@@ -1,0 +1,3 @@
+#!/bin/sh
+
+find "$XDG_MUSIC_DIR" -type f | fzf | xargs -r mpv --audio-display=no "$1"

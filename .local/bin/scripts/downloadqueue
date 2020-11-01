@@ -1,0 +1,3 @@
+#!/bin/sh
+
+echo "$1" >> "$XDG_CACHE_HOME/download.queue" && notify-send -u low "Added Successfully" "$1 was successfully added to queue."
