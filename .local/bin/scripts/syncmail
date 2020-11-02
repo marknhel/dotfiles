@@ -1,10 +1,10 @@
 #!/bin/sh
 
-ping google.com -c 1 || exit 1
+ping google.com -c 1 >/dev/null || exit 1
 
 email="$(find "${XDG_DATA_HOME:-$HOME/.local/share}"/mail/*/[Ii][Nn][Bb][Oo][Xx]/new/* -type f | wc -l 2>/dev/null)"
-mbsync -a
+mbsync -c "$XDG_CONFIG_HOME/isync/mbsyncrc" -a
 newmail="$(find "${XDG_DATA_HOME:-$HOME/.local/share}"/mail/*/[Ii][Nn][Bb][Oo][Xx]/new/* -type f | wc -l 2>/dev/null)"
 
 [ ! "$((newmail-email))" = "$((0))" ] && notify-send -t 999999999 "New Mail" "You got $((newmail-email)) new mail/s."
-pkill -RTMIN+6 dwmblocks
+#pkill -RTMIN+6 dwmblocks

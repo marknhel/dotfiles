@@ -5,4 +5,3 @@
 #                      /___|_|\___/ \__, |\___/ \__,_|\__|
 #                                   |___/
 btdcon
-sudo umount -R "$XDG_MOUNTPOINT_DIR"
