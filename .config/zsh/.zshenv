@@ -9,6 +9,7 @@
 export BROWSER="brave"
 export TERMINAL="st"
 export EDITOR="nvim"
+export STATUSBAR="dwmblocks"
 
 
 

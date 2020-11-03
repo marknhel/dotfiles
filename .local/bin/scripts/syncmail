@@ -3,9 +3,7 @@
 ping google.com -c 1 >/dev/null || exit 1
 
 email="$(find "${XDG_DATA_HOME:-$HOME/.local/share}"/mail/*/[Ii][Nn][Bb][Oo][Xx]/new/* -type f | wc -l 2>/dev/null)"
-mbsync -c "$XDG_CONFIG_HOME/isync/mbsyncrc" -a || notify-send "exited" && exit 1
+mbsync -c "$XDG_CONFIG_HOME/isync/mbsyncrc" -a
 newmail="$(find "${XDG_DATA_HOME:-$HOME/.local/share}"/mail/*/[Ii][Nn][Bb][Oo][Xx]/new/* -type f | wc -l 2>/dev/null)"
 
 [ ! "$((newmail-email))" = "$((0))" ] && notify-send -t 999999999 "New Mail" "You got $((newmail-email)) new mail/s."
-notify-send "Done"
-#pkill -RTMIN+6 dwmblocks
