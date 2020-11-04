@@ -70,3 +70,13 @@ commit/
 *.netrwhist
 *spell/
 .config/zsh/.location
+.config/VirtualBox/
+.config/beets/
+.config/conky-manager.json
+.config/desmume/
+.config/isync/
+.config/mpd/playlists/
+.config/mplayer/
+.config/mupen64plus/
+.config/notmuch/
+.config/stardict/
