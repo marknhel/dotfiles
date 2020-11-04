@@ -11,7 +11,7 @@ export TERMINAL="st"
 export EDITOR="nvim"
 export STATUSBAR="dwmblocks"
 
-
+[ -f "$ZDOTDIR/.location" ] &&  source "$ZDOTDIR/.location"
 
 
 export PATH=${PATH}:"$HOME"/.local/bin

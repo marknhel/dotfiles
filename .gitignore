@@ -69,3 +69,4 @@ commit/
 *error.log
 *.netrwhist
 *spell/
+.config/zsh/.location
