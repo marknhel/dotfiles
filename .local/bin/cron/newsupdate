@@ -1,0 +1,4 @@
+#!/bin/sh
+
+ping google.com -c 1 || exit 1
+newsboat -x reload && pkill -RTMIN+12 dwmblocks
