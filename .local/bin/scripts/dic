@@ -1,5 +1,4 @@
 #!/bin/sh
 
-#sdcv "$1" | less
 word=$( echo "" | dmenu -p "Enter a word :" -c ) || exit 1
 sdcv "$word" | dmenu -l 40 -c

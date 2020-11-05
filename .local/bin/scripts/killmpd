@@ -1,4 +1,4 @@
 #!/bin/sh
 
 killall -q mpd
-kill -43 "$(pidof dwmblocks)"
+kill -43 "$(pidof "${STATUSBAR:-dwmblocks}")"

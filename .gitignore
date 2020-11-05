@@ -79,4 +79,9 @@ commit/
 .config/mplayer/
 .config/mupen64plus/
 .config/notmuch/
+.local/bin/__pycache__/
+.local/bin/django-admin
+.local/bin/django-admin.py
+.local/bin/sqlformat
 .config/stardict/
+.config/syncthing/

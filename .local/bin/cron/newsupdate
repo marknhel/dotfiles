@@ -1,4 +1,8 @@
 #!/bin/sh
 
 ping google.com -c 1 || exit 1
-newsboat -x reload && pkill -RTMIN+12 dwmblocks
+old=$(cat "$XDG_CACHE_HOME/unreadnews")
+new="$(newsboat -x reload print-unread | awk '{ print $1 }' )"
+#shellcheck disable=2086
+[ $new -gt $old ] && notify-send "RSS Feed" "You have $((new-old)) new feed."
+pkill -RTMIN+12 dwmblocks

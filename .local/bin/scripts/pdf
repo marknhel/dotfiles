@@ -1,1 +1,3 @@
 #!/bin/sh
+
+find "$XDG_DOCUMENTS_DIR" -name "*.pdf" 2>/dev/null | fzf | sed "s|\s|\\\ |g" | xargs -r zathura
