@@ -1,4 +1,2 @@
 #!/bin/sh
-find "$XDG_PICTURES_DIR" -type f 2>/dev/null | fzf | \
-	\ sed "s|\s|\\\ |g" |
-	xargs -r sxiv "$1"
+find "$XDG_PICTURES_DIR" -type f 2>/dev/null | fzf | sed "s|\s|\\\ |g" | xargs -r sxiv "$1"

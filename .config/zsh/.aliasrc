@@ -54,5 +54,5 @@ alias \
 	sc='shellcheck ' \
 	tree='tree -C ' \
 	subs='cd  $XDG_DOCUMENTS_DIR/subjects' \
-	newsboat='newsboat -u $XDG_CONFIG_HOME/newsboat/urls -C $XDG_CONFIG_HOME/newsboat/config; pkill -RTMIN+12 dwmblocks' \
+	newsboat='newsboat -u $XDG_CONFIG_HOME/newsboat/urls -C $XDG_CONFIG_HOME/newsboat/config' \
 	neomutt='neomutt; pkill -RTMIN+6 dwmblocks'
