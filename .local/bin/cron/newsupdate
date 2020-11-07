@@ -1,9 +1,14 @@
 #!/bin/sh
 
+pidof newsboat && exit 1
+
 ping google.com -c 1 || exit 1
 
-old="$( newsboat -x print-unread)"
+old="$( newsboat -x print-unread | awk '{ print $1 }')"
 new="$(newsboat -x reload print-unread | awk '{ print $1 }' )"
 #shellcheck disable=2086
-[ $new -gt $old ] && notify-send "RSS Feed" "You have $((new-old)) new feed."
+if [ $((new)) -gt $((old)) ]
+	then
+		notify-send "RSS Feed" "You have $((new-old)) new feed."
+fi
 pkill -RTMIN+12 dwmblocks

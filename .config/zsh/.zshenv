@@ -16,6 +16,8 @@ export STATUSBAR="dwmblocks"
 
 export PATH=${PATH}:"$HOME"/.local/bin
 export PATH=${PATH}:"$HOME"/.local/bin/statusbar
+export PATH=${PATH}:"$HOME"/.local/bin/cron
+
 #scripts
 export PATH=${PATH}:"$HOME"/.local/bin/scripts
 

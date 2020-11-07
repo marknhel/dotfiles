@@ -1,5 +1,5 @@
 #!/bin/sh
 
-mpc idle && pkill -RTMIN+6 dwmblocks || exit 1
+mpc idle && pkill -RTMIN+9 dwmblocks || exit 1
 mpdup&
 exit 0
