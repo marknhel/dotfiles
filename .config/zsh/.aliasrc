@@ -8,7 +8,7 @@
 #
 
 flocate(){
-	locate $@ | fzf | xargs -r $EDITOR
+	locate "$@" | fzf | xargs -r "$EDITOR"
 }
 
 alias \
@@ -21,7 +21,6 @@ alias \
 	ls='ls --color=auto --group-directories-first' \
 	f='$FILE' \
 	e='$EDITOR' \
-	#se='search' \
 	l='sudo xbacklight -set' \
 	cl='git clone' \
 	mkdir='mkdir -pv' \
