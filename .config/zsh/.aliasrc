@@ -16,14 +16,12 @@ alias \
 	xprofile='nvim ~/.xprofile' \
 	pac='sudo pacman' \
 	pacc='sudo nvim /etc/pacman.conf' \
-	ec='configs' \
 	grep='grep --color=auto' \
 	diff='diff --color=auto' \
 	ls='ls --color=auto --group-directories-first' \
 	f='$FILE' \
 	e='$EDITOR' \
-	eb='bins' \
-	se='search' \
+	#se='search' \
 	l='sudo xbacklight -set' \
 	cl='git clone' \
 	mkdir='mkdir -pv' \
@@ -54,5 +52,5 @@ alias \
 	sc='shellcheck ' \
 	tree='tree -C ' \
 	subs='cd  $XDG_DOCUMENTS_DIR/subjects' \
-	newsboat='newsboat -u $XDG_CONFIG_HOME/newsboat/urls -C $XDG_CONFIG_HOME/newsboat/config' \
+	newsboat='newsboat -u $XDG_CONFIG_HOME/newsboat/urls -C $XDG_CONFIG_HOME/newsboat/config; pkill -RTMIN+12 dwmblocks' \
 	neomutt='neomutt; pkill -RTMIN+6 dwmblocks'

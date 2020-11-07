@@ -1,3 +1,0 @@
-#!/bin/sh
-
-find "$XDG_CONFIG_HOME" "$HOME/git/" 2>/dev/null | fzf | xargs -r "$EDITOR"
