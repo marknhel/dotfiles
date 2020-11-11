@@ -1,8 +1,10 @@
 #!/bin/sh
 
-devlist="$HOME/.local/share/.btscanneddevs"
 
-bdev=$(bluetoothctl --timeout 5 scan on | grep Device | awk '{ print $3 }' )
+devlist="$HOME/.local/share/.btscanneddevs"
+[ -f "$devlist" ] || touch "$devlist"
+bluetoothctl power on
+bdev=$(bluetoothctl --timeout 10 scan on | grep Device | awk '{ print $3 }' )
 scanned=$( echo "$bdev" | wc -l)
 
 for x in $bdev ;do

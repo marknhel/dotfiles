@@ -32,3 +32,5 @@ esac
 	getforecast
 
 showweather
+
+pkill -RTMIN+13 dwmblocks

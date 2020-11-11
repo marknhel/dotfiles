@@ -2,7 +2,7 @@
 
 pidof newsboat && exit 1
 
-ping google.com -c 1 || exit 1
+ping google.com -c 1 >/dev/null || exit 1
 
 old="$( newsboat -x print-unread | awk '{ print $1 }')"
 new="$(newsboat -x reload print-unread | awk '{ print $1 }' )"

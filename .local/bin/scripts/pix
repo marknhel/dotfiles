@@ -1,2 +1,9 @@
 #!/bin/sh
-find "$XDG_PICTURES_DIR" -type f 2>/dev/null | fzf | sed "s|\s|\\\ |g" | xargs -r sxiv "$1"
+find "$XDG_PICTURES_DIR" \
+	"$XDG_OTHERS_DIR/syncthing/sdcamera/Camera" \
+	"$XDG_OTHERS_DIR/syncthing/sdcamera/Facebook" \
+	"$XDG_OTHERS_DIR/syncthing/sdcamera/Screenshots" \
+	"$XDG_OTHERS_DIR/syncthing/vcamera/Camera" \
+	"$XDG_OTHERS_DIR/syncthing/vcamera/Facebook" \
+	"$XDG_OTHERS_DIR/syncthing/vcamera/Screenshots" \
+	-type f | sxiv -tio

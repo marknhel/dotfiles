@@ -85,3 +85,6 @@ commit/
 .local/bin/sqlformat
 .config/stardict/
 .config/syncthing/
+.config/pam-gnupg
+.config/vivaldi/
+.local/bin/scripts/sshot

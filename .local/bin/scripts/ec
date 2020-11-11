@@ -1,11 +1,9 @@
 #!/bin/sh
 
-file="$(find "$HOME/.local/bin/statusbar" \
+find "$HOME/.local/bin/statusbar" \
 	"$HOME/.local/bin/cron" \
 	"$HOME/.local/bin/scripts" \
 	"$HOME/git" \
 	"$XDG_CONFIG_HOME" \
-	-type f 2>/dev/null | fzf )"
-cache="$XDG_CACHE_HOME/edit_hist"
-[ -z "$file" ] || grep "$file" "$cache" || echo "$file" >> "$cache"
-echo "$file" | xargs -r "$EDITOR"
+	"$XDG_DATA_HOME" \
+	-type f 2>/dev/null | fzf |xargs -r "$EDITOR"

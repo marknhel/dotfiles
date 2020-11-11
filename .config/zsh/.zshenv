@@ -6,7 +6,7 @@
 #                        /___|___/_| |_|\___|_| |_|\_/
 
 
-export BROWSER="brave"
+export BROWSER="surf"
 export TERMINAL="st"
 export EDITOR="nvim"
 export STATUSBAR="dwmblocks"
@@ -110,3 +110,6 @@ export N64_ROMS_DIR="$HOME"/others/n64-roms
 
 #Mplayer
 export MPLAYER_HOME="$XDG_CONFIG_HOME"/mplayer
+
+#Stardict Data
+export STARDICT_DATA_DIR="$XDG_DATA_HOME"/stardict

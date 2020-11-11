@@ -1,0 +1,3 @@
+#!/bin/sh
+qrencode -s 20 -o /tmp/qr.png "$1"
+sxiv /tmp/qr.png
