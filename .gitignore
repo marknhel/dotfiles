@@ -87,4 +87,4 @@ commit/
 .config/syncthing/
 .config/pam-gnupg
 .config/vivaldi/
-.local/bin/scripts/sshot
+.config/zsh/.p10k.zsh
