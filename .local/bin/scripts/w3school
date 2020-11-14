@@ -1,0 +1,4 @@
+#!/bin/sh
+
+w3dir="$XDG_DOCUMENTS_DIR/f_classified/w3school"
+[ -d "$w3dir" ] && darkhttpd "$w3dir" --addr 0.0.0.0 --port 8080 &

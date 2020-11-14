@@ -6,4 +6,4 @@ find "$XDG_PICTURES_DIR" \
 	"$XDG_OTHERS_DIR/syncthing/vcamera/Camera" \
 	"$XDG_OTHERS_DIR/syncthing/vcamera/Facebook" \
 	"$XDG_OTHERS_DIR/syncthing/vcamera/Screenshots" \
-	-type f | sxiv -tio
+	-type f | sxiv -tioq 2>/dev/null

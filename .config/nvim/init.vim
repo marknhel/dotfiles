@@ -2,34 +2,35 @@ let mapleader ="\\"
 
 
 if ! filereadable(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim"'))
-       "echo "Downloading junegunn/vim-plug to manage plugins..."
-       "silent !mkdir -p ${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/
-       "silent !curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > ${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim
-       "autocmd VimEnter * PlugInstall
+       echo "Downloading junegunn/vim-plug to manage plugins..."
+       silent !mkdir -p ${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/
+       silent !curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > ${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim
+       autocmd VimEnter * PlugInstall
 endif
 
 call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"'))
 
-"Plug 'tpope/vim-surround'
-"Plug 'preservim/nerdtree'
-"Plug 'junegunn/goyo.vim'
-"Plug 'PotatoesMaster/i3-vim-syntax'
-"Plug 'jreybert/vimagit'
-"Plug 'lukesmithxyz/vimling'
-"Plug 'vimwiki/vimwiki'
-"Plug 'bling/vim-airline'
-"Plug 'tpope/vim-commentary'
-"Plug 'kovetskiy/sxhkd-vim'
-"Plug 'ap/vim-css-color'
-"Plug 'dense-analysis/ale'
-"Plug 'https://github.com/junegunn/vim-github-dashboard.git'
+Plug 'tpope/vim-surround'
+Plug 'preservim/nerdtree'
+Plug 'junegunn/goyo.vim'
+Plug 'PotatoesMaster/i3-vim-syntax'
+Plug 'jreybert/vimagit'
+Plug 'lukesmithxyz/vimling'
+Plug 'vimwiki/vimwiki'
+Plug 'bling/vim-airline'
+Plug 'tpope/vim-commentary'
+Plug 'kovetskiy/sxhkd-vim'
+Plug 'ap/vim-css-color'
+Plug 'dense-analysis/ale'
+Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 "For html
-"Plug 'mattn/emmet-vim'
-"Plug 'ctrlpvim/ctrlp.vim'
+Plug 'mattn/emmet-vim'
+Plug 'ctrlpvim/ctrlp.vim'
 
 
 
 call plug#end()
+autocmd FileType html source $XDG_CONFIG_HOME/nvim/html.vim
 
 set bg=light
 set go=a
@@ -44,13 +45,13 @@ set clipboard+=unnamedplus
 	syntax on
 	set encoding=utf-8
 	set number relativenumber
-"	inoremap <Space><Space> <Esc>/<++><Enter>"_c4l
 " Enable autocompletion:
 	set wildmode=longest,list,full
 
 " Disables automatic commenting on newline:
 	autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-
+	autocmd FileType html,css,js inoremap <Space>- <Esc>/<--><Enter>"_c4l
+	autocmd FileType html,css,js inoremap <Space><Space> <Esc>/<++><Enter>"_c4l
 	autocmd FileType md inoremap ;t ---<Enter>title:<Space><--><Enter>author:<Space>Mark<Space>Nhel<Space>Besonia<Enter>output:<Space>pdf_document<Enter>---<Enter><Enter><++><Esc>/<--><Enter>"_c4l
 
 "autofill header in rmarkdown docs
@@ -61,6 +62,8 @@ set clipboard+=unnamedplus
 
 " Spell-check set to <leader>o, 'o' for 'orthography':
 	map <leader>o :setlocal spell! spelllang=en_us<CR>
+
+	map <leader>w :!compiler %<CR><CR>
 
 " Splits open at the bottom and right, which is non-retarded, unlike vim defaults.
 	set splitbelow splitright
@@ -93,8 +96,6 @@ set clipboard+=unnamedplus
 " Check file in shellcheck:
 	map <leader>s :!clear && shellcheck %<CR>
 
-"Compile Rmd
-	map <leader>w :!clear && rcomp %<CR>
 
 " Open my bibliography file in split
 	map <leader>b :vsp<space>$BIB<CR>

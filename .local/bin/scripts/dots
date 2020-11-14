@@ -8,4 +8,5 @@ rsync -av --delete ~/.config ~/git/repos/dotfiles/
 rsync -av --delete ~/.local/bin ~/git/repos/dotfiles/.local/
 
 # Xprofile
+cp -uv ~/.zprofile ~/git/repos/dotfiles/
 cp -uv ~/.xprofile ~/git/repos/dotfiles/
