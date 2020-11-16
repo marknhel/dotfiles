@@ -11,6 +11,7 @@ dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XA
 xinput set-prop "SYN1B81:01 06CB:73FE Touchpad" "libinput Tapping Enabled" 1 &
 dunst &
 xcompmgr &
+flameshot&
 remaps &
 mpd ~/.config/mpd/mpd.conf &
 setbg &

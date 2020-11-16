@@ -1,5 +1,2 @@
-
-%(playlist)s/%(playlist_index)s -
-
 # download path
  -o ~/vids/youtube-dl/%(title)s.%(ext)s

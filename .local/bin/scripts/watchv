@@ -21,9 +21,7 @@ anime(){ \
 
 series(){
 	vidpath=$( find "$XDG_VIDEOS_DIR/series" -type d | dmenu -l 10 -c ) || exit 1
-#	setsid vlc --video-on-top "$vidpath" 2>/dev/null
 	total=$( find "$vidpath" -type f | wc -l )
-
 	num=$(echo "" | dmenu -p "From what episode to $total?" -c ) || exit 1
 	[ -z "$num" ] && num=1
 	episode=$(find "$vidpath" -type f | sort | sed "/$num/ q" | wc -l )

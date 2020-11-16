@@ -1,4 +1,4 @@
 #!/bin/sh
 
 # shellcheck disable=SC2015
-youtube-dl -f 243/244 --add-metadata -ic "$1" && notify-send -u low "Download Successful" "$1 downloaded successfully." || notify-send -u critical "Download Failed" "Failed to download $1."
+youtube-dl -f bestvideo/best --add-metadata -ic "$1" && notify-send -u low "Download Successful" "$1 downloaded successfully." || notify-send -u critical "Download Failed" "Failed to download $1."

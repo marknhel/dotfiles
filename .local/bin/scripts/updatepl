@@ -1,5 +1,5 @@
 #!/bin/sh
 
 playlist="$XDG_CONFIG_HOME/mpd/playlists/update.m3u"
-find "$XDG_MUSIC_DIR" -type f | sed "s|/home/malware/music/||" | sort | tee "$playlist" && \
-	figlet "Done!"
+find "$XDG_MUSIC_DIR" -type f | sed "s|$XDG_MUSIC_DIR/||" | sort | tee "$playlist" \
+	&& figlet "Done!"

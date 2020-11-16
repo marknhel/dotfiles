@@ -88,3 +88,4 @@ commit/
 .config/pam-gnupg
 .config/vivaldi/
 .config/zsh/.p10k.zsh
+.config/ncmpcpp/config.bak

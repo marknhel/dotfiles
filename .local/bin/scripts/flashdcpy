@@ -1,6 +1,6 @@
 #!/bin/sh
 
-loc="$( lsblk | grep "$XDG_MOUNTPOINT_DIR" | awk '{ print $7 }' | fzf )"
+loc="$( lsblk | awk '{ print $7 }' | sed "/^$/ d" | fzf )"
 [ -z "$loc" ] && exit 1
 cploc="$loc/copied"
 [ -d "$loc" ] || mkdir -p "$loc"

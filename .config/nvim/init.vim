@@ -31,6 +31,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 
 call plug#end()
 autocmd FileType html source $XDG_CONFIG_HOME/nvim/html.vim
+autocmd FileType css source $XDG_CONFIG_HOME/nvim/css.vim
 
 set bg=light
 set go=a
@@ -50,7 +51,6 @@ set clipboard+=unnamedplus
 
 " Disables automatic commenting on newline:
 	autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-	autocmd FileType html,css,js inoremap <Space>- <Esc>/<--><Enter>"_c4l
 	autocmd FileType html,css,js inoremap <Space><Space> <Esc>/<++><Enter>"_c4l
 	autocmd FileType md inoremap ;t ---<Enter>title:<Space><--><Enter>author:<Space>Mark<Space>Nhel<Space>Besonia<Enter>output:<Space>pdf_document<Enter>---<Enter><Enter><++><Esc>/<--><Enter>"_c4l
 
@@ -63,7 +63,7 @@ set clipboard+=unnamedplus
 " Spell-check set to <leader>o, 'o' for 'orthography':
 	map <leader>o :setlocal spell! spelllang=en_us<CR>
 
-	map <leader>w :!compiler %<CR><CR>
+	map <leader>w :w <CR>:!compiler %<CR><CR>
 
 " Splits open at the bottom and right, which is non-retarded, unlike vim defaults.
 	set splitbelow splitright
