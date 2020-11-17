@@ -27,11 +27,22 @@ Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 Plug 'mattn/emmet-vim'
 Plug 'ctrlpvim/ctrlp.vim'
 
-
-
 call plug#end()
+
+" Ensure files are read as what I want:
+	let g:vimwiki_ext2syntax = {'.Rmd': 'markdown', '.rmd': 'markdown','.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
+	map <leader>v :VimwikiIndex
+	let g:vimwiki_list = [{'path': '~/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
+	autocmd BufRead,BufNewFile /tmp/calcurse*,~/.calcurse/notes/* set filetype=markdown
+	autocmd BufRead,BufNewFile *.ms,*.me,*.mom,*.man set filetype=groff
+	autocmd BufRead,BufNewFile *.tex set filetype=tex
+
+
+
+
 autocmd FileType html source $XDG_CONFIG_HOME/nvim/html.vim
 autocmd FileType css source $XDG_CONFIG_HOME/nvim/css.vim
+autocmd FileType ms source $XDG_CONFIG_HOME/nvim/ms.vim
 
 set bg=light
 set go=a
@@ -52,7 +63,6 @@ set clipboard+=unnamedplus
 " Disables automatic commenting on newline:
 	autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 	autocmd FileType html,css,js inoremap <Space><Space> <Esc>/<++><Enter>"_c4l
-	autocmd FileType md inoremap ;t ---<Enter>title:<Space><--><Enter>author:<Space>Mark<Space>Nhel<Space>Besonia<Enter>output:<Space>pdf_document<Enter>---<Enter><Enter><++><Esc>/<--><Enter>"_c4l
 
 "autofill header in rmarkdown docs
 
@@ -113,13 +123,6 @@ set clipboard+=unnamedplus
 " Runs a script that cleans out tex build files whenever I close out of a .tex file.
 	autocmd VimLeave *.tex !texclear %
 
-" Ensure files are read as what I want:
-	let g:vimwiki_ext2syntax = {'.Rmd': 'markdown', '.rmd': 'markdown','.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
-	map <leader>v :VimwikiIndex
-	let g:vimwiki_list = [{'path': '~/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
-	autocmd BufRead,BufNewFile /tmp/calcurse*,~/.calcurse/notes/* set filetype=markdown
-	autocmd BufRead,BufNewFile *.ms,*.me,*.mom,*.man set filetype=groff
-	autocmd BufRead,BufNewFile *.tex set filetype=tex
 
 " Save file as sudo on files that require root permission
 	cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
