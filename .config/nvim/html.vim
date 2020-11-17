@@ -8,10 +8,10 @@ inoremap ;h3 <h3><--></h3><Enter><++><Esc>/<--><Enter>"_c4l
 inoremap ;h4 <h4><--></h4><Enter><++><Esc>/<--><Enter>"_c4l
 inoremap ;h5 <h5><--></h5><Enter><++><Esc>/<--><Enter>"_c4l
 inoremap ;h6 <h6><--></h6><Enter><++><Esc>/<--><Enter>"_c4l
-inoremap ;a <a href="<-->"><++></a><Space><++><Esc>/<--><Enter>"_c4l
+inoremap ;a <a class="<-->" id="<++>" href="<++>"><++></a><Space><++><Esc>/<--><Enter>"_c4l
 inoremap ;p <p id="<-->" class="<++>"><Enter><++><Enter></p><Space><Space><++><Esc>/<--><Enter>"_c4l
-inoremap ;br <br><Space>
-inoremap ;hr <hr><Space>
+inoremap ;br <br><Enter>
+inoremap ;hr <hr><Enter>
 inoremap ;title <title><--></title>><Space><Space><++><Esc>/<--><Enter>"_c4l
 inoremap ;b <b><--></b><Space><++><Esc>/<--><Enter>"_c4l
 inoremap ;i <i><--></i><Space><++><Esc>/<--><Enter>"_c4l

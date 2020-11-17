@@ -27,6 +27,7 @@ Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 Plug 'mattn/emmet-vim'
 Plug 'ctrlpvim/ctrlp.vim'
 
+
 call plug#end()
 
 " Ensure files are read as what I want:
@@ -40,6 +41,7 @@ call plug#end()
 
 
 
+autocmd FileType php source $XDG_CONFIG_HOME/nvim/html.vim
 autocmd FileType html source $XDG_CONFIG_HOME/nvim/html.vim
 autocmd FileType css source $XDG_CONFIG_HOME/nvim/css.vim
 autocmd FileType ms source $XDG_CONFIG_HOME/nvim/ms.vim
@@ -62,7 +64,7 @@ set clipboard+=unnamedplus
 
 " Disables automatic commenting on newline:
 	autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-	autocmd FileType html,css,js inoremap <Space><Space> <Esc>/<++><Enter>"_c4l
+	autocmd FileType php,html,css,js inoremap <Space><Space> <Esc>/<++><Enter>"_c4l
 
 "autofill header in rmarkdown docs
 

@@ -89,3 +89,4 @@ commit/
 .config/vivaldi/
 .config/zsh/.p10k.zsh
 .config/ncmpcpp/config.bak
+.config/mpd/database
