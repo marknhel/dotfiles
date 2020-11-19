@@ -2,7 +2,7 @@
 ping google.com -c 1 >/dev/null || exit 1
 
 email="$(find "${XDG_DATA_HOME:-$HOME/.local/share}"/mail/*/[Ii][Nn][Bb][Oo][Xx]/new/* -type f | wc -l 2>/dev/null)"
-mbsync -c "/home/malware/.config/isync/mbsyncrc" -a || notify-send -u critical "Fail" && exit 1
+mbsync -c "/home/malware/.config/isync/mbsyncrc" -a & || notify-send -u critical "Fail" && exit 1
 newmail="$(find "${XDG_DATA_HOME:-$HOME/.local/share}"/mail/*/[Ii][Nn][Bb][Oo][Xx]/new/* -type f | wc -l 2>/dev/null)"
 [ -z "$email" ] && email=0
 [ $newmail -gt $email ] && notify-send "New Mail" "You got $((newmail-email)) new mail/s."
