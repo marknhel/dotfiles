@@ -20,4 +20,4 @@ xautolock -time 10 -locker slock &
 #redshift -l 55.7:12.6 -t 5700:3600 -g 0.6 -m randr -v &
 sudo hwclock --systohc &
 sudo powertop --autot-tune &
-sleep 3 && slock &
+#sleep 3 && slock &

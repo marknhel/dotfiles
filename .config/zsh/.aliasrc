@@ -47,7 +47,7 @@ alias \
 	repo='cd $XDG_GIT_DIR/repos' \
 	fonts='fc-match -s monospace:charset=1FA9' \
 	emojis='cat $XDG_DATA_HOME/emojicodes' \
-#	mbsync='mbsync -c $XDG_CONFIG_HOME/isync/mbsyncrc' \
+ 	mbsync='mbsync -c $XDG_CONFIG_HOME/isync/mbsyncrc' \
 	rename='rename -v ' \
 	SE='sudo nvim ' \
 	sc='shellcheck ' \

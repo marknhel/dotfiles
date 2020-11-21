@@ -38,13 +38,14 @@ call plug#end()
 	autocmd BufRead,BufNewFile *.ms,*.me,*.mom,*.man set filetype=groff
 	autocmd BufRead,BufNewFile *.tex set filetype=tex
 
-
+	inoremap ;ref %X <--><Enter>%A <++><Enter>%T <++><Enter>%D <++><Enter>%I <++><Enter>%B <++><Enter>%E <++><Enter><Esc>/<--><Enter>"_4cl
+	inoremap <S
 
 
 autocmd FileType php source $XDG_CONFIG_HOME/nvim/html.vim
 autocmd FileType html source $XDG_CONFIG_HOME/nvim/html.vim
 autocmd FileType css source $XDG_CONFIG_HOME/nvim/css.vim
-autocmd FileType ms source $XDG_CONFIG_HOME/nvim/ms.vim
+autocmd FileType *.ms source $XDG_CONFIG_HOME/nvim/ms.vim
 
 set bg=light
 set go=a
@@ -64,7 +65,9 @@ set clipboard+=unnamedplus
 
 " Disables automatic commenting on newline:
 	autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-	autocmd FileType php,html,css,js inoremap <Space><Space> <Esc>/<++><Enter>"_c4l
+	"autocmd FileType php,html,css,js inoremap Space><Space> <Esc>/<++><Enter>"_c4l
+
+	inoremap <Space><Space> <Esc>/<++><Enter>"_c4l
 
 "autofill header in rmarkdown docs
 

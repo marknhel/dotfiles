@@ -91,3 +91,5 @@ commit/
 .config/ncmpcpp/config.bak
 .config/mpd/database
 .config/osdlyrics/
+.config/balena-etcher-electron/
+.config/TIPP10/
