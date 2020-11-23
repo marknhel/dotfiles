@@ -46,6 +46,7 @@ autocmd FileType php source $XDG_CONFIG_HOME/nvim/html.vim
 autocmd FileType html source $XDG_CONFIG_HOME/nvim/html.vim
 autocmd FileType css source $XDG_CONFIG_HOME/nvim/css.vim
 autocmd FileType *.ms source $XDG_CONFIG_HOME/nvim/ms.vim
+autocmd FileType html,css,js,php inoremap <Space><Space> <Esc>/<++><Enter>"_4cl
 
 set bg=light
 set go=a
@@ -66,8 +67,6 @@ set clipboard+=unnamedplus
 " Disables automatic commenting on newline:
 	autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 	"autocmd FileType php,html,css,js inoremap Space><Space> <Esc>/<++><Enter>"_c4l
-
-	inoremap <Space><Space> <Esc>/<++><Enter>"_c4l
 
 "autofill header in rmarkdown docs
 
