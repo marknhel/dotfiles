@@ -1,5 +1,7 @@
 #!/bin/sh
 
-playlist="$XDG_CONFIG_HOME/mpd/playlists/update.m3u"
-find "$XDG_MUSIC_DIR" -type f | sed "s|$XDG_MUSIC_DIR/||" | sort | tee "$playlist" \
+update="$XDG_CONFIG_HOME/mpd/playlists/update.m3u"
+old="$XDG_CONFIG_HOME/mpd/playlists/old.m3u"
+cp $update $old
+find "$XDG_MUSIC_DIR" -type f | sed "s|$XDG_MUSIC_DIR/||" | sort | tee "$update" \
 	&& figlet "Done!"

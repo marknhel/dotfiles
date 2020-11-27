@@ -2,7 +2,7 @@
 # Any customization should be done in ~/.gtkrc-2.0.mine instead.
 
 include "/home/malware/.gtkrc-2.0.mine"
-gtk-theme-name="Raleigh"
+gtk-theme-name="Cabinet-Dark-Blue"
 gtk-icon-theme-name="Adwaita"
 gtk-font-name="Source Code Pro 8"
 gtk-cursor-theme-name="Adwaita"
