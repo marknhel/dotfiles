@@ -30,7 +30,7 @@ alias \
 	mv='mv -v' \
 	rm='rm -v' \
 	vol='pamixer --set-volume' \
-	SS='sudo systemctl ' \
+	SS='sudo sv ' \
 	btctl='bluetoothctl' \
 	S='sudo' \
 	SE='sudo $EDITOR' \

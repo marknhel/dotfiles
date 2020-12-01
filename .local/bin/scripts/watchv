@@ -2,12 +2,11 @@
 
 
 anime(){ \
-	vidpath=$( find "$XDG_VIDEOS_DIR/anime" -type d | dmenu -l 10 -c ) || exit 1
-	total=$(  find "$vidpath" -type f | wc -l )
+	vidpath=$( find "$XDG_VIDEOS_DIR/anime" -type d | sort | dmenu -l 10 -c ) || exit 1
+	total=$( find "$vidpath" -type f | wc -l )
 
-	num=$(echo "" | dmenu -p "From what episode to $total?" -c ) || exit 1
-	[ -z "$num" ] && num=1
-	printf "Total : %s\nEpisode : %s\nStart : %s\n" "$total" "$num" "$((1+total-num))"
+	num=$( find "$vidpath -type" f | sed "s|$vidpath\/||" | sort | dmenu -l 10 -c | xargs -r basename)
+
 	episode=$(find "$vidpath" -type f | sort | sed "/$num/ q" | wc -l )
 	start=$((1 + total - episode))
 
@@ -19,10 +18,11 @@ anime(){ \
 
 
 series(){
-	vidpath=$( find "$XDG_VIDEOS_DIR/series" -type d | dmenu -l 10 -c ) || exit 1
+	vidpath=$( find "$XDG_VIDEOS_DIR/series" -type d | sort | dmenu -l 10 -c ) || exit 1
 	total=$( find "$vidpath" -type f | wc -l )
-	num=$(echo "" | dmenu -p "From what episode to $total?" -c ) || exit 1
-	[ -z "$num" ] && num=1
+
+	num=$( find "$vidpath" -type f |sed "s|$vidpath\/||" | sort | dmenu -l 10 -c | xargs -r basename)
+
 	episode=$(find "$vidpath" -type f | sort | sed "/$num/ q" | wc -l )
 	start=$((1 + total - episode))
 	# shellcheck disable=SC2046
@@ -34,7 +34,6 @@ series(){
 
 movie(){
 	file=$(find "$XDG_VIDEOS_DIR/movies" -type f | dmenu -l 10 -c ) || exit 1
-#	setsid vlc mplayer -on-top "$file" 2>/dev/null
 	mplayer -ao pulse,alsa,oss "$file" 2>/dev/null
 }
 

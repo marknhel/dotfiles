@@ -1,6 +1,5 @@
 #!/bin/sh
 
-killall -q mpd
-mpd&
+pidof mpd || mpd&
 mpc random on
 pidof -x mpdup || mpdup &

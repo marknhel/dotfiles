@@ -5,14 +5,11 @@
 #  / /\__ \ | | |  __/ | | \ V /
 # /___|___/_| |_|\___|_| |_|\_/
 
-
-export BROWSER="surf"
+export ZDOTDIR="$HOME"/.config/zsh
+export BROWSER="brave"
 export TERMINAL="st"
 export EDITOR="nvim"
 export STATUSBAR="dwmblocks"
-
-
-export PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 
 [ -f "$ZDOTDIR/.location" ] &&  source "$ZDOTDIR/.location"
 
@@ -78,8 +75,8 @@ export WGETRC="$XDG_CONFIG_HOME"/wget/wgetrc
 export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
 
 #XSERVER
-export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
-export XSERVERRC="$XDG_CONFIG_HOME"/X11/xserverrc
+export XINITRC="$XDG_CONFIG_HOME"/x11/xinitrc
+export XSERVERRC="$XDG_CONFIG_HOME"/x11/xserverrc
 
 #GPG
 
