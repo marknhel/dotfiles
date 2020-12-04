@@ -5,7 +5,7 @@ anime(){ \
 	vidpath=$( find "$XDG_VIDEOS_DIR/anime" -type d | sort | dmenu -l 10 -c ) || exit 1
 	total=$( find "$vidpath" -type f | wc -l )
 
-	num=$( find "$vidpath -type" f | sed "s|$vidpath\/||" | sort | dmenu -l 10 -c | xargs -r basename)
+	num=$( find "$vidpath" -type f | sed "s|$vidpath\/||" | sort | dmenu -l 10 -c | xargs -r basename)
 
 	episode=$(find "$vidpath" -type f | sort | sed "/$num/ q" | wc -l )
 	start=$((1 + total - episode))
