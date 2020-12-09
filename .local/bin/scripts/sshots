@@ -1,0 +1,3 @@
+#!/bin/sh
+
+find "$XDG_PICTURES_DIR/screenshits" -type f | sort | sxiv -tioq 2>/dev/null

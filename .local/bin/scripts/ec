@@ -6,4 +6,5 @@ find "$HOME/.local/bin/statusbar" \
 	"$HOME/git" \
 	"$XDG_CONFIG_HOME" \
 	"$XDG_DATA_HOME" \
+	"$XDG_DOCUMENTS_DIR" \
 	-type f 2>/dev/null | fzf |xargs -r "$EDITOR"

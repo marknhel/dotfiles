@@ -94,3 +94,5 @@ commit/
 .config/balena-etcher-electron/
 .config/TIPP10/
 .config/mpd/mpd.conf.bak
+.local/bin/scripts/appimg
+.config/appimg/

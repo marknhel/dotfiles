@@ -27,13 +27,13 @@ tagopus(){ \
 
 for x in *;
 do
-	ext="${x##.*}"
+	ext="${x##*.}"
 	title="${x%.*}"
 
 	case "$ext" in
 		mp3) tagmp3;;
 		opus) tagopus;;
-		*) echo "Filetype Not Supported!"
+		*) echo "Filetype Not Supported!";;
 	esac
 
 printf "\n===========================================================================\n"

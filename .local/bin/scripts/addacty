@@ -6,8 +6,8 @@ echo "$( ls $subdir)"
 read -r activity
 mkdir -pv "$subdir/$activity" || exit 1
 file=$( echo "$subdir" | sed "s|.*subjects\/||")
-task=$( printf "%s-%s-task.md" "$file" "$activity")
-answer=$( printf "%s-%s-answer.md" "$file" "$activity")
+task=$( printf "%s-%s-task.ms" "$file" "$activity")
+answer=$( printf "%s-%s-answer.ms" "$file" "$activity")
 
 template=$(cat "$XDG_DOCUMENTS_DIR/subjects/.templates/activity.md")
 echo "FULLDIR : $subdir/$activity"

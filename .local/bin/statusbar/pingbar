@@ -3,7 +3,7 @@
 #case $BLOCK_BUTTON in
 #	1)
 
-ms=$(ping google.com -c 1 | grep time= ) 2>/dev/null
+ms=$(ping archlinux.org -c 1 | grep time= ) 2>/dev/null
 
 #[ -z "$ms" ] && ms="" || ms="說${ms#*time=}"
 [ -z "$ms" ] && ms="" || ms="說"
