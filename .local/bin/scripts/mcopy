@@ -1,0 +1,29 @@
+#!/bin/sh
+
+srcloc="$2"
+
+cpy(){
+
+[ ! -d "$destloc" ] && mkdir -p "$destloc"
+
+[ -f "$srcloc" ] && ( ( notify-send --urgency=normal "Copying" "Copying $srcloc 🤭 " && rsync -a "$srcloc" "$destloc" && notify-send --urgency=low "Successful" "$srcloc copied successfully 😁  " && exit 0 ) || ( notify-send --urgency=critical "Failed" "Failed to copy $srcloc 😥 " && exit 1 ))
+[ -d "$srcloc" ] && ( ( notify-send --urgency=normal "Copying" "Copying $srcloc 🤭 " && rsync -a "$srcloc" "$destloc" && notify-send --urgency=low "Successful" "$srcloc copied successfully 😁  " && exit 0 ) || ( notify-send --urgency=critical "Failed" "Failed to copy $srcloc 😥 " && exit 1 ))
+}
+
+case "$1" in
+	"-f") destloc="$(lsblk | awk '{ print $7 }' | sed "/^$/ d" | sort -R | fzf )"
+		[ -z "$destloc" ] && exit 1
+		destloc="$destloc/copied"
+		cpy;;
+	"-m") destloc="$XDG_MUSIC_DIR/copied"
+		cpy;;
+	"-d") destloc="$XDG_DOCUMENTS_DIR/copied"
+		cpy;;
+	"-o") destloc="$XDG_OTHERS_DIR/copied"
+		cpy;;
+	"-v") destloc="$XDG_VIDEOS_DIR/copied"
+		cpy;;
+	"-p") destloc="$XDG_PICTURES_DIR/copied"
+		cpy;;
+	*) exit 1;;
+esac

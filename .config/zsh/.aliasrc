@@ -15,7 +15,6 @@ alias \
 	G='ping archlinux.org' \
 	xprofile='nvim ~/.xprofile' \
 	pac='sudo pacman' \
-	pacc='sudo nvim /etc/pacman.conf' \
 	grep='grep --color=auto' \
 	diff='diff --color=auto' \
 	ls='ls --color=auto --group-directories-first' \
@@ -30,7 +29,7 @@ alias \
 	mv='mv -v' \
 	rm='rm -v' \
 	vol='pamixer --set-volume' \
-	SS='sudo sv ' \
+	SS='sudo systemctl ' \
 	btctl='bluetoothctl' \
 	S='sudo' \
 	SE='sudo $EDITOR' \
@@ -54,4 +53,5 @@ alias \
 	tree='tree -C ' \
 	subs='cd  $XDG_DOCUMENTS_DIR/subjects' \
 	newsboat='newsboat -u $XDG_CONFIG_HOME/newsboat/urls -C $XDG_CONFIG_HOME/newsboat/config; pkill -RTMIN+12 dwmblocks' \
-	neomutt='neomutt; pkill -RTMIN+6 dwmblocks'
+	neomutt='neomutt; pkill -RTMIN+6 dwmblocks' \
+	g='git'

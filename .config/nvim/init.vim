@@ -45,7 +45,7 @@ call plug#end()
 autocmd FileType php source $XDG_CONFIG_HOME/nvim/html.vim
 autocmd FileType html source $XDG_CONFIG_HOME/nvim/html.vim
 autocmd FileType css source $XDG_CONFIG_HOME/nvim/css.vim
-autocmd FileType *.ms source $XDG_CONFIG_HOME/nvim/ms.vim
+autocmd FileType groff source $XDG_CONFIG_HOME/nvim/ms.vim
 autocmd FileType html,css,js,php inoremap <Space><Space> <Esc>/<++><Enter>"_4cl
 
 set bg=light
@@ -73,6 +73,7 @@ set clipboard+=unnamedplus
 
 " Goyo plugin makes text more readable when writing prose:
 	map <leader>f :Goyo \| set bg=light \| set linebreak<CR>
+	map <leader>w :set spell!
 
 " Spell-check set to <leader>o, 'o' for 'orthography':
 	map <leader>o :setlocal spell! spelllang=en_us<CR>

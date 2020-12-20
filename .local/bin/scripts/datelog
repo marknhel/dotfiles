@@ -1,4 +1,5 @@
 #!/bin/sh
 filename="$(date "+%F_%A")"
 date >> "/home/malware/.local/share/datelogs/$filename.log"
+notify-send "okay"
 pkill -RTMIN+2 dwmblocks

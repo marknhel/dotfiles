@@ -94,12 +94,12 @@ map <c-e> down
 map <c-y> up
 map V push :!nvim<space>
 
-map <c-w> $flashdcpy $f &
-map <c-a> $musiccpy $f &
-map <c-o> $othcpy $f &
-map <c-p> $piccpy $f &
-map <c-v> $vidcpy $f &
-map <c-d> $doccpy $f &
+map <c-w> $mcopy -f $f &
+map <c-a> $mcopy -m $f &
+map <c-o> $mcopy -o $f &
+map <c-p> $mcopy -p $f &
+map <c-v> $mcopy -v $f &
+map <c-d> $mcopy -d $f &
 map e $nvim $f
 map <c-x> $ext $f
 map <c-g> $mvrom "$f"

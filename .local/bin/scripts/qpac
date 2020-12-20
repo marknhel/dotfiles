@@ -6,7 +6,7 @@ case "$1" in
 	"") printf "Usage: qpacdl [option]\n\t-l \n\t\tlists all queued for installation.\n\t-a [package_name]\n\t\tadds the package_name to queue. ";;
 
 	"-a") [ -f "$XDG_DATA_HOME/dlq/pacdl" ] || touch "$XDG_DATA_HOME/dlq/pacdl"
-		pacman -Sii "$2" > /dev/null || exit 1
+		pacman -Ss "$2" > /dev/null || exit 1
 		grep "^$2$" "$XDG_DATA_HOME/dlq/pacdl" -q && echo "$2 is queued already." && exit 1
 		echo "$2" >> "$XDG_DATA_HOME/dlq/pacdl" && echo "$2 added to the queue." ;;
 	"-i") cat "$XDG_DATA_HOME/dlq/pacdl" | sudo pacman -S --noconfirm -

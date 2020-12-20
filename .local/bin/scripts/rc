@@ -1,0 +1,14 @@
+#!/bin/sh
+
+[ -d "$HOME/trash/rc-trashed" ] || mkdir -p "$HOME/trash/rc-trashed"
+
+ftm=$( find "$HOME/.local/bin/statusbar" \
+	"$HOME/.local/bin/cron" \
+	"$HOME/.local/bin/scripts" \
+	"$HOME/git" \
+	"$XDG_CONFIG_HOME" \
+	"$XDG_DATA_HOME" \
+	"$XDG_DOCUMENTS_DIR" \
+	-type f 2>/dev/null | fzf )
+
+mv -v "$ftm" "$HOME/trash/rc-trashed/"
