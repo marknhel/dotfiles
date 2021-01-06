@@ -1,6 +1,5 @@
 #!/bin/sh
 
-pidof cp >> /dev/null || exit 1
+pidof rsync >> /dev/null || exit 1
 
-progs=$(progress -wc cp | grep % | awk '{ print $1 }')
-printf "%s %s" "" "$progs"
+progress -wc rsync | grep % | awk '{ print $1 }' | tr '\n' ' '

@@ -1,6 +1,5 @@
 ncmpcpp_directory = "~/.config/ncmpcpp"
 lyrics_directory = "~/.local/share/lyrics"
-lyrics_fetchers = "azlyrics, genius, sing365, lyricsmania, metrolyrics, justsomelyrics, jahlyrics, plyrics, tekstowo, internet"
 
 follow_now_playing_lyrics = yes
 fetch_lyrics_for_current_song_in_background = yes

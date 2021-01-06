@@ -96,3 +96,4 @@ commit/
 .config/mpd/mpd.conf.bak
 .local/bin/scripts/appimg
 .config/appimg/
+.config/youtube-viewer/instances.json

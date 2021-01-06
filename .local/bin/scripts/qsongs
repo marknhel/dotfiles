@@ -1,0 +1,4 @@
+#!/bin/sh
+
+queued=$(tsp | grep queued | awk '{ print $6 " " $7 " " $8 " " $9 " " $10 " " $11 " " $12 " " $13 " " $14 " " $15 " " $16}' | sed "s|/home/malware/karaoke/||; s|(.*||")
+notify-send "🤎🤎🤎" "$queued"
