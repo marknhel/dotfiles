@@ -1,4 +1,4 @@
 #!/bin/sh
 
 word=$( echo "" | dmenu -p "Enter a word :" -b ) || exit 1
-sdcv -n "$word" | dmenu -l 40 -b
+sdcv -n "$word" | dmenu -l 40 -c

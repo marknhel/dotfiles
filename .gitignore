@@ -97,3 +97,4 @@ commit/
 .local/bin/scripts/appimg
 .config/appimg/
 .config/youtube-viewer/instances.json
+.local/bin/scripts/begin

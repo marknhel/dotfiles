@@ -1,0 +1,9 @@
+#!/bin/sh
+
+time="$(printf "1hr\n2hrs\nCancel" | dmenu -l 3 -b)"
+
+case "$time" in
+	1hr) sudo shutdown -P +60;;
+	2hrs) sudo shutdown -P +120;;
+	*) sudo shutdown -c;;
+esac

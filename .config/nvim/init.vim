@@ -125,6 +125,9 @@ set clipboard+=unnamedplus
 " Open corresponding .pdf/.html or preview
 	map <leader>p :!opout <c-r>%<CR><CR>
 
+" Sent
+	map <leader>e :w \| !sent %<CR>
+
 " Runs a script that cleans out tex build files whenever I close out of a .tex file.
 	autocmd VimLeave *.tex !texclear %
 

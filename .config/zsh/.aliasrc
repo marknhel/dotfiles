@@ -12,7 +12,7 @@ flocate(){
 }
 
 alias \
-	G='ping archlinux.org' \
+	G='ping google.com' \
 	xprofile='nvim ~/.xprofile' \
 	pac='sudo pacman' \
 	grep='grep --color=auto' \
