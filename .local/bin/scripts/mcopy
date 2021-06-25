@@ -1,29 +1,31 @@
 #!/bin/sh
 
-srcloc="$2"
-
+srcloc="$( readlink -f "$2")"
+echo "$srcloc\n\n"
+option="$1"
+echo "$1"
 cpy(){
 
-[ ! -d "$destloc" ] && mkdir -p "$destloc"
+[ -z "$destloc" ] && mkdir -p "$destloc"
 
-[ -f "$srcloc" ] && ( ( notify-send --urgency=normal "Copying" "Copying $srcloc 🤭 " && rsync -a "$srcloc" "$destloc" && notify-send --urgency=low "Successful" "$srcloc copied successfully 😁  " && exit 0 ) || ( notify-send --urgency=critical "Failed" "Failed to copy $srcloc 😥 " && exit 1 ))
-[ -d "$srcloc" ] && ( ( notify-send --urgency=normal "Copying" "Copying $srcloc 🤭 " && rsync -a "$srcloc" "$destloc" && notify-send --urgency=low "Successful" "$srcloc copied successfully 😁  " && exit 0 ) || ( notify-send --urgency=critical "Failed" "Failed to copy $srcloc 😥 " && exit 1 ))
+ ( notify-send --urgency=normal "Copying" "Copying $srcloc 🤭 " && rsync -av "$srcloc" "$destloc" && notify-send --urgency=low "Successful" "$srcloc copied successfully 😁  " && exit 0 ) || ( notify-send --urgency=critical "Failed" "Failed to copy $srcloc 😥 " && exit 1 )
+
 }
 
-case "$1" in
+case "$option" in
 	"-f") destloc="$(lsblk | awk '{ print $7 }' | sed "/^$/ d" | sort -R | fzf )"
 		[ -z "$destloc" ] && exit 1
 		destloc="$destloc/copied"
 		cpy;;
-	"-m") destloc="$XDG_MUSIC_DIR/copied"
+	"-m") destloc="/home/malware/music/copied"
 		cpy;;
-	"-d") destloc="$XDG_DOCUMENTS_DIR/copied"
+	"-d") destloc="/home/malware/docs/copied"
 		cpy;;
-	"-o") destloc="$XDG_OTHERS_DIR/copied"
+	"-o") destloc="/home/malware/others/copied"
 		cpy;;
-	"-v") destloc="$XDG_VIDEOS_DIR/copied"
+	"-v") destloc="/home/malware/vids/copied"
 		cpy;;
-	"-p") destloc="$XDG_PICTURES_DIR/copied"
+	"-p") destloc="/home/malware/pics/copied"
 		cpy;;
 	*) exit 1;;
 esac

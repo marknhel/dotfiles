@@ -40,7 +40,7 @@ case "$ext" in
 			pandoc "$file" --pdf-engine=xelatex -o "$base".pdf
 		fi ; ;;
 	mom) preconv "$file" | refer -PS -e | groff -mom -kept -T pdf > "$base".pdf ;;
-	ms) preconv "$file" | refer -PS -e | groff -me -ms -kept -T pdf > "$base".pdf ;;
+	ms) preconv "$file" | refer -PS -e | groff -U -me -ms -kept -T pdf > "$base".pdf ;;
 	py) python "$file" ;;
 	[rR]md) Rscript -e "rmarkdown::render('$file', quiet=TRUE)" ;;
 	rs) cargo build ;;

@@ -1,2 +1,2 @@
 #!/bin/sh
-mpc insert "$(cat .config/mpd/playlists/update.m3u | dmenu  -i -l 13 -b)"
+mpc insert "$(cat ~/.config/mpd/playlists/update.m3u | dmenu  -i -l 13 -b)"

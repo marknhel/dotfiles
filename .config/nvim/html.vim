@@ -39,3 +39,8 @@ inoremap ;ul <ul id="<-->" class="<++>" ><Enter><++><Enter></ul><Enter><++><Esc>
 inoremap ;ol <ol id="<-->" class="<++>" ><Enter><++><Enter></ol><Enter><++><Esc>/<--><Enter>"_4cl
 inoremap ;li <li id="<-->" class="<++>" ><++></li><Enter><++><Esc>/<--><Enter>"_4cl
 inoremap ;? <?php <--> ;?><Esc>/<--><Enter>"_4cl
+inoremap ;fo <form id="<-->" class="<++>" action="<++>" method="<++>" ><Enter><++><Enter><Enter></form><Enter><++><Esc>/<--><Enter>"_4cl
+inoremap ;fe <feildset id="<-->" class="<++>" ><Enter><++><Enter><Enter></fieldset><Enter><++><Esc>/<--><Enter>"_4cl
+inoremap ;leg <legend id="<-->" class="<++>" ><++></legend><Enter><++><Esc>/<--><Enter>"_4cl
+inoremap ;inp <input type="<-->" name="<++>" id="<++>" class="<++>"><++><Space><++><Esc>/<--><Enter>"_4cl
+inoremap ;lab <label for="<-->" id="<++>" class="<++>" ><++></label><Enter><++><Esc>/<--><Enter>"_4cl

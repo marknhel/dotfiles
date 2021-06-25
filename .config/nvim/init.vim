@@ -42,11 +42,11 @@ call plug#end()
 	inoremap <S
 
 
-autocmd FileType php source $XDG_CONFIG_HOME/nvim/html.vim
 autocmd FileType html source $XDG_CONFIG_HOME/nvim/html.vim
+autocmd FileType python source $XDG_CONFIG_HOME/nvim/py.vim
 autocmd FileType css source $XDG_CONFIG_HOME/nvim/css.vim
 autocmd FileType groff source $XDG_CONFIG_HOME/nvim/ms.vim
-autocmd FileType html,css,js,php inoremap <Space><Space> <Esc>/<++><Enter>"_4cl
+autocmd FileType html,css,js,php,ms inoremap <Space><Space> <Esc>/<++><Enter>"_4cl
 
 set bg=light
 set go=a

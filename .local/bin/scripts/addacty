@@ -2,7 +2,7 @@
 
 subdir=$( find "$XDG_DOCUMENTS_DIR/subjects" -maxdepth 1 -type d 2>/dev/null | fzf)
 [ -z "$subdir" ] && exit 1
-echo "$( ls $subdir)"
+ls "$subdir"
 read -r activity
 mkdir -pv "$subdir/$activity" || exit 1
 file=$( echo "$subdir" | sed "s|.*subjects\/||")
@@ -15,7 +15,7 @@ touch "$subdir/$activity/$task"
 echo "$template" >> "$subdir/$activity/$task"
 touch "$subdir/$activity/$answer"
 echo "$template" >> "$subdir/$activity/$answer"
-echo $(ls "$subdir/$activity")
+ls "$subdir/$activity"
 echo "DIR : $subdir"
 echo "FILE : $file"
 echo "ACTIVITY : $activity"

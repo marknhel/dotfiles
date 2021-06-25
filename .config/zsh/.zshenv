@@ -10,6 +10,7 @@ export BROWSER="brave"
 export TERMINAL="st"
 export EDITOR="nvim"
 export STATUSBAR="dwmblocks"
+export hostname='maki'
 
 [ -f "$ZDOTDIR/.location" ] &&  source "$ZDOTDIR/.location"
 
