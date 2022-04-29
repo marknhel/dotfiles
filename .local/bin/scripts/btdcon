@@ -7,3 +7,5 @@ dev=$(cat "$XDG_CACHE_HOME/btdev")
 	rm "$XDG_CACHE_HOME/btdev" && \
 	pkill -RTMIN+10 dwmblocks || \
 	notify-send "Bluetooth" "You are already disconnected"
+bluetoothctl remove "$dev"
+btdremdev

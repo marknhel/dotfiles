@@ -10,8 +10,8 @@ esac
 
 cmds="\
 🔒 lock		slock
-🚪 leave dwm	kill -TERM $(pgrep -u $USER "\bdwm$")
-♻  renew dwm	kill -HUP $(pgrep -u $USER "\bdwm$")
+🚪 leave dwm	kill -TERM $(pgrep -u "$USER" "\bdwm$")
+♻  renew dwm	kill -HUP $(pgrep -u "$USER" "\bdwm$")
 🔃 reboot	reboot
 🖥 shutdown	shutdown now
 🕒 timer shut	schedshut"

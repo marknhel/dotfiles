@@ -4,5 +4,5 @@ new_dir=$(find . -type d | fzf)
 [ -z "$new_dir" ] && exit 0
 echo "Filename : "
 read -r inp
-touch $new_dir/$inp
+touch "$new_dir"/"$inp"
 echo "File created : $new_dir/$inp"

@@ -8,6 +8,8 @@ choice=$( < "$devlist" dmenu -l 10 -c )
 [ -z "$choice" ] && exit 1
 name=$(echo "$choice" | awk '{ print $3 }' )
 device=$(echo "$choice" | awk '{print $1 }' )
+bluetoothctl trust "$device"
+bluetoothctl pair "$device"
 # shellcheck disable=SC2015
 bluetoothctl connect "$device" && \
 	notify-send --urgency=low "Bluetooth" "Connected Successfully to $name" && \

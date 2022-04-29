@@ -76,17 +76,17 @@
     separator_height = 2
 
     # Padding between text and separator.
-    padding = 20
+    padding = 30
 
     # Horizontal padding.
-    horizontal_padding = 20
+    horizontal_padding = 30
 
     # Padding between text and icon.
-    text_icon_padding = 10
+    text_icon_padding = 20
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
-    frame_width = 1
+    frame_width = 3
 
     # Defines color of the frame around the notification window.
     frame_color = "#aaaaaa"
@@ -100,7 +100,7 @@
     separator_color = frame
 
     # Sort messages by urgency.
-    sort = yes
+    sort = no
 
     # Don't remove messages, if the user is idle (no mouse or keyboard input)
     # for longer than idle_threshold seconds.
@@ -159,7 +159,7 @@
 
     # Vertical alignment of message text and icon.
     # Possible values are "top", "center" and "bottom".
-    vertical_alignment = center
+    vertical_alignment = top
 
     # Show age of message if message is older than show_age_threshold
     # seconds.
@@ -185,7 +185,7 @@
     ### Icons ###
 
     # Align icons left/right/top/off
-    icon_position = left
+    icon_position = right
 
     # Scale small icons up to this size, set to 0 to disable. Helpful
     # for e.g. small files or high-dpi screens. In case of conflict,
@@ -205,7 +205,7 @@
     sticky_history = yes
 
     # Maximum amount of notifications kept in history
-    history_length = 20
+    history_length = 100
 
     ### Misc/Advanced ###
 
@@ -229,7 +229,7 @@
     # corners.
     # The radius will be automatically lowered if it exceeds half of the
     # notification height to avoid clipping text and/or icons.
-    corner_radius = 12
+    corner_radius = 15
 
     # Ignore the dbus closeNotification message.
     # Useful to enforce the timeout set by dunst configuration. Without this

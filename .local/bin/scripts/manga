@@ -1,4 +1,4 @@
 #!/bin/sh
 
 comic=$( find ~/docs/manga -type f| grep .cbz| sort | fzf)
-[ ! -z "$comic" ] && echo $comic | tee -a ~/docs/manga/recent && zathura "$comic"
+[ -z "$comic" ] && echo "$comic" | tee -a ~/docs/manga/recent && zathura "$comic"

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 srcloc="$( readlink -f "$2")"
-echo "$srcloc\n\n"
+printf "%s\n\n" "$srcloc"
 option="$1"
 echo "$1"
 cpy(){
@@ -17,15 +17,15 @@ case "$option" in
 		[ -z "$destloc" ] && exit 1
 		destloc="$destloc/copied"
 		cpy;;
-	"-m") destloc="/home/malware/music/copied"
+	"-m") destloc="$HOME"/music/copied
 		cpy;;
-	"-d") destloc="/home/malware/docs/copied"
+	"-d") destloc="$HOME"/docs/copied
 		cpy;;
-	"-o") destloc="/home/malware/others/copied"
+	"-o") destloc="$HOME"/others/copied
 		cpy;;
-	"-v") destloc="/home/malware/vids/copied"
+	"-v") destloc="$HOME"/vids/copied
 		cpy;;
-	"-p") destloc="/home/malware/pics/copied"
+	"-p") destloc="$HOME"/pics/copied
 		cpy;;
 	*) exit 1;;
 esac
