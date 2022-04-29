@@ -1,0 +1,7 @@
+#!/bin/sh
+
+devs=$( awk '{ print $1 }' "$XDG_DATA_HOME"/.btscanneddevs )
+
+for x in $devs; do
+	bluetoothctl remove "$x"
+done
