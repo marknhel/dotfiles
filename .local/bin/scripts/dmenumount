@@ -10,17 +10,17 @@ getmount() { \
         # shellcheck disable=SC2086
 	usblabel="$( lsblk -nrpo "name,label" | grep "$chosen" | awk '{ print $2 }'  )"
 	[ -z "$usblabel" ] && usblabel="nolabel"
-	mp="$( echo "$XDG_MOUNTPOINT_DIR/$usblabel" || find "$XDG_MOUNTPOINT_DIR" 2>/dev/null | dmenu -i -l 10 -b )" || exit 1
+	mp="$( echo "$XDG_MOUNTPOINT_DIR/$usblabel" || find "$XDG_MOUNTPOINT_DIR" 2>/dev/null | dmenu -l 10 -c )" || exit 1
 	[ "$mp" = "" ] && exit 1
 	if [ ! -d "$mp" ]; then
-		mkdiryn=$(printf "No\\nYes" | dmenu -i -p "$mp does not exist. Create it?" -b ) || exit 1
+		mkdiryn=$(printf "No\\nYes" | dmenu -p "$mp does not exist. Create it?" -c ) || exit 1
 		[ "$mkdiryn" = "Yes" ] && (mkdir -p "$mp" || sudo -A mkdir -p "$mp")
 	fi
 	$TERMINAL -e lf "$mp" &
 	}
 
 mountusb() { \
-	chosen="$(echo "$usbdrives" | dmenu -i -l 10 -b )" || exit 1
+	chosen="$(echo "$usbdrives" | dmenu -l 10 -c )" || exit 1
 	chosen="$(echo "$chosen" | awk '{print $1}')"
 	sudo -A mount "$chosen" 2>/dev/null && notify-send "💻 USB mounting" "$chosen mounted." && exit 0
 	alreadymounted=$(lsblk -nrpo "name,type,mountpoint" | awk '$3!~/\/boot|\/home$|SWAP/&&length($3)>1{printf "-not ( -path *%s -prune ) ",$3}')
@@ -35,17 +35,17 @@ mountusb() { \
 	}
 
 mountandroid() { \
-	chosen="$(echo "$anddrives" | dmenu -i -p "Which Android device?" -b )" || exit 1
+	chosen="$(echo "$anddrives" | dmenu -p "Which Android device?" -c )" || exit 1
 	chosen="$(echo "$chosen" | cut -d : -f 1)"
 	getmount "$HOME -maxdepth 3 -type d"
         simple-mtpfs --device "$chosen" "$mp"
-	echo "OK" | dmenu -i -p "Tap Allow on your phone if it asks for permission and then press enter" -b || exit 1
+	echo "OK" | dmenu -p "Tap Allow on your phone if it asks for permission and then press enter" -c || exit 1
 	simple-mtpfs --device "$chosen" "$mp"
 	notify-send "🤖 Android Mounting" "Android device mounted to $mp."
 	}
 
 asktype() { \
-	choice="$(printf "USB\\nAndroid" | dmenu -i -p "Mount a USB drive or Android device?" -b)" || exit 1
+	choice="$(printf "USB\\nAndroid" | dmenu -p  "Mount a USB drive or Android device?" -c)" || exit 1
 	case $choice in
 		USB) mountusb ;;
 		Android) mountandroid ;;

@@ -52,4 +52,5 @@ alias \
 	tree='tree -C ' \
 	subs='cd  $XDG_DOCUMENTS_DIR/subjects' \
 	neomutt='neomutt; pkill -RTMIN+6 dwmblocks' \
-	g='git'
+	g='git'	\
+	django='python manage.py'

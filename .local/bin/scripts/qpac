@@ -7,8 +7,8 @@ case "$1" in
 
 	"-a") [ -f "$XDG_DATA_HOME/dlq/pacdl" ] || touch "$XDG_DATA_HOME/dlq/pacdl"
 		pacman -Ss "$2" > /dev/null || exit 1
-		grep "^$2$" "$XDG_DATA_HOME/dlq/pacdl" -q && echo "$2 is queued already." && exit 1
-		echo "$2" >> "$XDG_DATA_HOME/dlq/pacdl" && echo "$2 added to the queue." ;;
-	"-i") cat "$XDG_DATA_HOME/dlq/pacdl" | sudo pacman -S --noconfirm -
+		grep "^$2$" "$XDG_DATA_HOME"/dlq/pacdl -q && echo "$2 is queued already." && exit 1
+		echo "$2" >> "$XDG_DATA_HOME"/dlq/pacdl && echo "$2 added to the queue." ;;
+	"-i") cat "$XDG_DATA_HOME"/dlq/pacdl | sudo pacman -S --noconfirm -
 		echo "" > "$XDG_DATA_HOME/dlq/pacdl"
 esac

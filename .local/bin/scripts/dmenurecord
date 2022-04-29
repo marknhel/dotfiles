@@ -80,7 +80,7 @@ audio() { \
 	}
 
 askrecording() { \
-	choice=$(printf "screencast\\nvideo\\naudio\\nwebcam\\nwebcam (hi-def)" | dmenu -i -p "Select recording style:" -c )
+	choice=$(printf "screencast\\nvideo\\naudio\\nwebcam\\nwebcam (hi-def)" | dmenu -l 5 -p "Select recording style:" -c )
 	case "$choice" in
 		screencast) screencast;;
 		audio) audio;;
@@ -91,17 +91,15 @@ askrecording() { \
 	}
 
 asktoend() { \
-	response=$(printf "No\\nYes" | dmenu -i -p "Recording still active. End recording?" -c ) &&
+	response=$(printf "No\\nYes" | dmenu -i -p "Recording still active. End recording?" -b ) &&
 	[ "$response" = "Yes" ] &&  killrecording
 	}
 
 
 case "$1" in
-	screencast) screencast;;
+		screencast) screencast;;
 	audio) audio;;
 	video) video;;
 	kill) killrecording;;
 	*) ([ -f /tmp/recordingpid ] && asktoend && exit) || askrecording;;
 esac
-
-dwmblocksup &

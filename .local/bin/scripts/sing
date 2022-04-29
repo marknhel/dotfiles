@@ -1,3 +1,3 @@
 #!/bin/sh
 
-tsp mplayer -fs "$(find "$HOME/vids/minus-one" -type f | sort | sed "s|$HOME/vids/minus-one/||" | dmenu -r -i -l 13 -b | sed "s|^|$HOME/vids/minus-one/|")" && qsongs
+tsp mplayer -fs "$(find "$HOME/vids/minus-one" -type f | sort | sed "s|$HOME/vids/minus-one/||" | dmenu -r -i -l 13 -c | sed "s|^|$HOME/vids/minus-one/|")" && qsongs

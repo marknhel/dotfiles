@@ -1,6 +1,6 @@
 #!/bin/sh
 
-#filename=$( echo "Ok" | dmenu -i -p "Write the filename:" ) || exit 1
+#filename=$( echo "Ok" | dmenu -i -p -c "Write the filename:" ) || exit 1
 #echo "Please enter the filename :"; read -r filename
 [ -z "$1" ] && exit 1
 new_script="$HOME/.local/bin/scripts/$1"

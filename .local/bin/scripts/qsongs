@@ -1,4 +1,6 @@
 #!/bin/sh
 
-queued=$(tsp | grep queued | awk '{ print $6 " " $7 " " $8 " " $9 " " $10 " " $11 " " $12 " " $13 " " $14 " " $15 " " $16}' | sed "s|/home/malware/vids/minus-one/||; s|(.*||")
-notify-send "🤎🤎🤎" "$queued"
+#queued=$(tsp | grep queued | awk '{ print $6 " " $7 " " $8 " " $9 " " $10 " " $11 " " $12 " " $13 " " $14 " " $15 " " $16}' | sed "s|/home/malware/vids/minus-one/||; s|(.*||")
+
+queued=$(mpc queued)
+notify-send "Next Song" "$queued"

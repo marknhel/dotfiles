@@ -24,8 +24,8 @@ Plug 'ap/vim-css-color'
 Plug 'dense-analysis/ale'
 Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 "For html
-Plug 'mattn/emmet-vim'
-Plug 'ctrlpvim/ctrlp.vim'
+"Plug 'mattn/emmet-vim'
+"Plug 'ctrlpvim/ctrlp.vim'
 
 
 call plug#end()
@@ -38,15 +38,17 @@ call plug#end()
 	autocmd BufRead,BufNewFile *.ms,*.me,*.mom,*.man set filetype=groff
 	autocmd BufRead,BufNewFile *.tex set filetype=tex
 
-	inoremap ;ref %X <--><Enter>%A <++><Enter>%T <++><Enter>%D <++><Enter>%I <++><Enter>%B <++><Enter>%E <++><Enter><Esc>/<--><Enter>"_4cl
+	"inoremap ;ref %X <--><Enter>%A <++><Enter>%T <++><Enter>%D <++><Enter>%I <++><Enter>%B <++><Enter>%E <++><Enter><Esc>/<--><Enter>"_4cl
 	inoremap <S
 
-
+inoremap <Space><Space> <Esc>/<++><Enter>"_4cl
 autocmd FileType html source $XDG_CONFIG_HOME/nvim/html.vim
 autocmd FileType python source $XDG_CONFIG_HOME/nvim/py.vim
 autocmd FileType css source $XDG_CONFIG_HOME/nvim/css.vim
 autocmd FileType groff source $XDG_CONFIG_HOME/nvim/ms.vim
-autocmd FileType html,css,js,php,ms inoremap <Space><Space> <Esc>/<++><Enter>"_4cl
+autocmd FileType html,css,js,php,ms,py inoremap <Space><Space> <Esc>/<++><Enter>"_4cl
+autocmd FileType htmldjango source $XDG_CONFIG_HOME/nvim/django.vim
+
 
 set bg=light
 set go=a
