@@ -79,14 +79,14 @@
     padding = 30
 
     # Horizontal padding.
-    horizontal_padding = 30
+    horizontal_padding = 50
 
     # Padding between text and icon.
-    text_icon_padding = 20
+    text_icon_padding = 50
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
-    frame_width = 3
+    frame_width = 1
 
     # Defines color of the frame around the notification window.
     frame_color = "#aaaaaa"
@@ -97,7 +97,7 @@
     #  * foreground: use the same color as the foreground;
     #  * frame: use the same color as the frame;
     #  * anything else will be interpreted as a X color.
-    separator_color = frame
+    separator_color = foreground
 
     # Sort messages by urgency.
     sort = no
@@ -115,7 +115,7 @@
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
-    line_height = 0
+    line_height = 5
 
     # Possible values are:
     # full: Allow a small subset of html markup in notifications:
@@ -159,7 +159,7 @@
 
     # Vertical alignment of message text and icon.
     # Possible values are "top", "center" and "bottom".
-    vertical_alignment = top
+    vertical_alignment = center
 
     # Show age of message if message is older than show_age_threshold
     # seconds.
@@ -168,7 +168,7 @@
 
     # Specify where to make an ellipsis in long lines.
     # Possible values are "start", "middle" and "end".
-    ellipsize = middle
+    ellipsize = end
 
     # Ignore newlines '\n' in notifications.
     ignore_newline = no
@@ -180,7 +180,7 @@
     hide_duplicate_count = false
 
     # Display indicators for URLs (U) and actions (A).
-    show_indicators = yes
+    show_indicators = no
 
     ### Icons ###
 
@@ -205,7 +205,7 @@
     sticky_history = yes
 
     # Maximum amount of notifications kept in history
-    history_length = 100
+    history_length = 1000
 
     ### Misc/Advanced ###
 
@@ -292,7 +292,7 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "##1c153c"
+    background = "#000000"
     foreground = "#00ff00"
     timeout = 10
     # Icon for notifications with low urgency, uncomment to enable
@@ -300,7 +300,7 @@
     default_icon = /home/malware/.config/dunst/icons/success.svg
 
 [urgency_normal]
-    background = "##1c153c"
+    background = "#000000"
     foreground = "#3399ff"
     timeout = 10
     # Icon for notifications with normal urgency, uncomment to enable
@@ -308,7 +308,7 @@
     default_icon = /home/malware/.config/dunst/icons/info.svg
 
 [urgency_critical]
-    background = "##1c153c"
+    background = "#000000"
     foreground = "#ff0066"
     frame_color = "#ff0000"
     timeout = 0

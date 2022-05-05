@@ -1,0 +1,16 @@
+#!/bin/sh
+
+pkill -RTMIN+1 dwmblocks
+pkill -RTMIN+2 dwmblocks
+pkill -RTMIN+3 dwmblocks
+pkill -RTMIN+4 dwmblocks
+pkill -RTMIN+5 dwmblocks
+pkill -RTMIN+6 dwmblocks
+pkill -RTMIN+7 dwmblocks
+pkill -RTMIN+8 dwmblocks
+pkill -RTMIN+9 dwmblocks
+pkill -RTMIN+10 dwmblocks
+pkill -RTMIN+11 dwmblocks
+pkill -RTMIN+12 dwmblocks
+pkill -RTMIN+13 dwmblocks
+pkill -RTMIN+14 dwmblocks

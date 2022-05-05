@@ -1,5 +1,5 @@
 #!/bin/sh
 
-pidof rsync >> /dev/null || exit 1
+pidof rsync >> /dev/null || exit 0
 
 progress -wc rsync | grep % | awk '{ print $1 }' | tr '\n' ' '
