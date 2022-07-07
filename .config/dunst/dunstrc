@@ -111,6 +111,13 @@
 
     ### Text ###
 
+#    font = Internet Friends
+#    font = Bray Notes
+#    font = KGMiss
+#    font = Paper Flowers
+#    font = Subscriber
+#    font = Terserah
+#    font = Gunny Rewritten
     font = Source Code Pro
 
     # The spacing between lines.  If the height is smaller than the

@@ -44,3 +44,10 @@ dotfiles
 .config/mpd/database
 .config/mpd/playlists/
 .config/ncmpcpp/error.log
+.config/Caprine/
+.config/Code - OSS/
+.config/filezilla/
+.config/fmit/
+.config/kdeglobals
+.config/mangadesk/
+.config/soramimi.jp/

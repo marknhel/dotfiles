@@ -1,5 +1,5 @@
 #!/bin/sh
 
 update="$XDG_CONFIG_HOME/mpd/playlists/update.m3u"
-find "$XDG_MUSIC_DIR" -type f | sed "s|$XDG_MUSIC_DIR/||" | sort | tee "$update" \
+find "$XDG_MUSIC_DIR" -type f | grep -i "\.\(mp3\|m4a\)*$" | sed "s|$XDG_MUSIC_DIR/||" | sort | tee "$update" \
 	&& figlet "Done!"

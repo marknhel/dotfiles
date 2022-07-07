@@ -26,9 +26,9 @@ setopt autocd
 #
 #
 #
-HISTSIZE=9000000
 SAVEHIST=9000000
-HISTFILE=~/.cache/zshhistory
+HISTSIZE=9000000
+HISTFILE="$HOME"/.cache/zshhistory
 
 # Basic auto/tab complete:
 autoload -U compinit

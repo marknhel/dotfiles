@@ -2,4 +2,4 @@
 
 #echo "$1" | tee -a ~/docs/manga/dlhist
 #cd ~/docs/manga && comic-dl --convert cbz -i "$1"
-mangodl -D "$1" -o pdf
+mangodl -D "$1" -o pdf -f

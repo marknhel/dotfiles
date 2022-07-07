@@ -106,3 +106,6 @@ map <c-g> $mvrom "$f"
 map <c-N> $touch<space>
 map R $rcomp $f
 map Z $zathura $f
+map <c-s> $subdl --download=most-downloaded $f &
+map <c-S> $subdl --interactive $f
+map P $sxiv $f

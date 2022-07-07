@@ -80,7 +80,7 @@ set clipboard+=unnamedplus
 " Spell-check set to <leader>o, 'o' for 'orthography':
 	map <leader>o :setlocal spell! spelllang=en_us<CR>
 
-	map <leader>w :w <CR>:!compiler %<CR><CR>
+	map <leader>w :w <CR>:!compiler %<CR>
 
 " Splits open at the bottom and right, which is non-retarded, unlike vim defaults.
 	set splitbelow splitright

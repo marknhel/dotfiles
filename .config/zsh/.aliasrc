@@ -53,4 +53,5 @@ alias \
 	subs='cd  $XDG_DOCUMENTS_DIR/subjects' \
 	neomutt='neomutt; pkill -RTMIN+6 dwmblocks' \
 	g='git'	\
-	django='python manage.py'
+	django='python manage.py' \
+	gource='gource --high-dpi --transparent --loop'

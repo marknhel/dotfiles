@@ -1,3 +1,0 @@
-#!/bin/sh
-
-cd "~/.local/share/wineprefixes/default/drive_c/Program\ Files\ \(x86\)/R.G.\ Mechanics/Blur/" && wine Blur.exe
