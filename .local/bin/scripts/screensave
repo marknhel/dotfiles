@@ -1,0 +1,5 @@
+#!/bin/sh
+flameshot full -p /tmp/lock.png && convert -blur 2x2 "/tmp/lock.png" -modulate 15 "/tmp/lock_new.png"
+gource -f --high-dpi --background-image "/tmp/lock_new.png" --realtime --loop --disable-input --hide "date,filenames,mouse,progress" "$HOME"/git/repos/capstone
+slock &
+rm /tmp/lock*

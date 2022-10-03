@@ -1,0 +1,18 @@
+#!/bin/sh
+file="$HOME"/docs/add-users.bat
+folders="$HOME"/docs/add-folders.bat
+grep -v '^ *#' < "$1" | while IFS= read -r line
+do
+	next="${line%,*}"
+
+
+
+
+	ln="${next##*,}"
+	fn="${next%,*}"
+	lnlower=$( echo "$ln"| sed 's/\s//g' | tr '[:upper:]' '[:lower:]' )
+	fnlower=$( echo "$fn" | sed 's/\s//g' | tr '[:upper:]' '[:lower:]' )
+	drvpath="\\\\DC-0001\Users\Administrator\Desktop\Home Folder\\$ln $fn's Drive"
+	printf "mkdir \"%s\"\n" "$drvpath" | tee -a "$folders"
+	printf "dsadd user \"cn=%s %s,ou=Networking Users,dc=lab,dc=network\" -fn \"%s\" -ln \"%s\" -upn \"%s%s@lab.network\" -pwd kamiikun@22 -display \"%s %s\" -hmdir \"%s\" -hmdrv \"Z:\"\n" "$fn" "$ln" "$fn" "$ln" "$fnlower" "$lnlower" "$fn" "$ln" "$drvpath"| tee -a "$file"
+done

@@ -1,0 +1,8 @@
+#!/bin/sh
+#*/15 * * * * eval "export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus"; /home/malware/.local/bin/cron/newsupdate
+0,15,30,45 * * * * /usr/bin/mpc update
+* * * * * /home/malware/.local/bin/scripts/datelog
+*/20 * * * * /usr/bin/mailsync
+* 1 * * * /home/malware/.local/bin/cron/getweather
+#* * * * *  eval "export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus"; /home/malware/.local/bin/scripts/changewall
+* * * * *  eval "export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus"; /home/malware/.local/bin/cron/lowbattery

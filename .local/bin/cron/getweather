@@ -4,3 +4,4 @@ ping google.com -c 1 > /dev/null || exit 1
 
 weatherreport="${XDG_DATA_HOME:-$HOME/.local/share}/weatherreport"
 curl -sf "wttr.in" > "$weatherreport" || exit 1
+pkill -RTMIN+5 dwmblocks

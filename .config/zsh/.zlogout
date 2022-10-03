@@ -6,4 +6,4 @@
 # /___|_|\___/ \__, |\___/ \__,_|\__|
 #              |___/
 #btdcon
-uniq -u "$HOME"/.cache/zshhistory | tee "$HOME"/.cache/zshhistory
+#uniq -c "$HOME"/.cache/zshhistory| sed 's/^.*\s//' | tee "$HOME"/.cache/zshhistory

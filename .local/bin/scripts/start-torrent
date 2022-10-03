@@ -1,0 +1,2 @@
+#!/bin/sh
+transmission-daemon -c "$HOME"/downloads/ --incomplete-dir "$HOME"/downloads/torrents/inc/ -w "$HOME"/downloads/torrents/completed/

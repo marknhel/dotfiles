@@ -1,0 +1,25 @@
+#!/bin/sh
+
+i="$1"
+j="$2"
+j=$((j+1))
+#name="$1"
+
+while [ "$i" -lt "$j" ]
+do
+
+
+
+
+#	mkdir "$name_ch_$i"
+	folder=$(printf "ch_%i\n" "$i")
+#	pages=$(printf "%i_*" "$i")
+#	echo "$pages to $folder"
+#	mkdir -v "$folder"
+	#shellcheck disable=SC2086
+#	mv -v $pages "$folder"
+#	tar -cf "$folder.cbz" "$folder"
+	zip "$folder".cbz "$folder"/*
+	rm -r "$folder"
+	i=$((i+1))
+done

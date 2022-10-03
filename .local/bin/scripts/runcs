@@ -1,0 +1,8 @@
+#!/bin/sh
+csc "$1"
+file=$(readlink -f "$1")
+base="${file%.*}"
+
+wine "$base".exe
+
+read -r

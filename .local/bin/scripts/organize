@@ -1,0 +1,77 @@
+#!/bin/sh
+dir="$HOME"/downloads
+picsdir="$dir"/pics
+docsdir="$dir"/docs
+vidsdir="$dir"/vids
+zipsdir="$dir"/zips
+subsdir="$dir"/subs
+torrentsdir="$dir"/torrents
+apksdir="$dir"/apks
+webfilesdir="$dir"/webfiles
+dupsdir="$dir"/dups
+fontsdir="$dir"/fonts
+
+
+[ ! -d "$picsdir" ] && mkdir -v "$picsdir"
+[ ! -d "$docsdir" ] && mkdir -v "$docsdir"
+[ ! -d "$vidsdir" ] && mkdir -v "$vidsdir"
+[ ! -d "$zipsdir" ] && mkdir -v "$zipsdir"
+[ ! -d "$subsdir" ] && mkdir -v "$subsdir"
+[ ! -d "$torrentsdir" ] && mkdir -v "$torrentsdir"
+[ ! -d "$apksdir" ] && mkdir -v "$apksdir"
+[ ! -d "$webfilesdir" ] && mkdir -v "$webfilesdir"
+[ ! -d "$dupsdir" ] && mkdir -v "$dupsdir"
+[ ! -d "$fontsdir" ] && mkdir -v "$fontsdir"
+
+#PICS
+mv  "$dir"/*.png "$picsdir"
+mv  "$dir"/*.jpg "$picsdir"
+mv  "$dir"/*.jpeg "$picsdir"
+mv  "$dir"/*.ico "$picsdir"
+mv  "$dir"/*.svg "$picsdir"
+mv  "$dir"/*.webp "$picsdir"
+mv  "$dir"/*.gif "$picsdir"
+
+#DOCS
+mv  "$dir"/*.pdf "$docsdir"
+mv  "$dir"/*.docx "$docsdir"
+mv  "$dir"/*.py "$docsdir"
+mv  "$dir"/*.cpp "$docsdir"
+mv  "$dir"/*.pptx "$docsdir"
+mv  "$dir"/*.txt "$docsdir"
+mv  "$dir"/*.csv "$docsdir"
+
+#VIDS
+mv  "$dir"/*.mp4 "$vidsdir"
+mv  "$dir"/*.mkv "$vidsdir"
+mv  "$dir"/*.ts "$vidsdir"
+
+#ZIP
+mv  "$dir"/*.rar "$zipsdir"
+mv  "$dir"/*.zip "$zipsdir"
+mv  "$dir"/*.tar "$zipsdir"
+mv  "$dir"/*.tar.gz "$zipsdir"
+mv  "$dir"/*.iso "$zipsdir"
+mv  "$dir"/*.jar "$zipsdir"
+mv  "$dir"/*.tgz "$zipsdir"
+
+#SUBS
+
+mv  "$dir"/*.srt "$subsdir"
+
+#TORRENTS
+mv  "$dir"/*.added "$torrentsdir"
+
+#APKS
+mv  "$dir"/*.apk "$apksdir"
+
+#WEB
+mv "$dir"/*.css "$webfilesdir"
+mv "$dir"/*.js "$webfilesdir"
+mv "$dir"/*.html "$webfilesdir"
+
+#DUP
+mv "$dir"/*.~1~ "$dupsdir"
+
+#FONTS
+mv "$dir"/*.ttf "$fontsdir"

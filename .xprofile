@@ -19,4 +19,4 @@ setbg &
 xset r rate 300 50 &	# Speed xrate up
 xrandr --dpi 125
 #redshift -l 55.7:12.6 -t 5700:3600 -g 0.6 -m randr -v &
-#xautolock -time 10 -locker slock &
+xautolock -time 10 -locker slock &

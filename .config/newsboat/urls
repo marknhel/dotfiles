@@ -1,14 +1,3 @@
-http://lukesmith.xyz/rss.xml "luke"
-https://www.linux.org/articles/index.rss "linux"
-https://notrelated.libsyn.com/rss
 https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA "~Luke Smith (YouTube)"
 https://www.youtube.com/feeds/videos.xml?channel_id=UCfsOfLvadg89Bx8Sv_6WERg "dota2"
-https://www.archlinux.org/feeds/news/ "tech"
-https://suckless.org/atom.xml "suckless"
-https://www.archlinux.org/feeds/packages/ "pacman"
-https://aur.archlinux.org/rss/ "aur"
-https://data.gmanetwork.com/gno/rss/videos/show/kapusomojessicasoho/feed.xml "kmjs"
-https://www.inquirer.net/fullfeed "inquirer"
-https://www.pna.gov.ph/latest.rss "pna"
-https://pia.gov.ph/news/feed.rss "pia"
-https://videos.lukesmith.xyz/feeds/videos.xml?sort=-publishedAt&filter=local
+https://www.youtube.com/feeds/videos.xml?channel_id=UC2JUd7z9SfJlDbYLbBVKbqQ "Mj Casiano"

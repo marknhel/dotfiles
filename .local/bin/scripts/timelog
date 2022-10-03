@@ -1,0 +1,14 @@
+#!/bin/sh
+
+total_time=$( wc -l "$XDG_DATA_HOME"/datelogs/* | tail -n 1 | awk '{ print $1 }')
+file_today=$( find "$XDG_DATA_HOME"/datelogs/| sort | tail -n 1 )
+time_today=$( wc -l "$file_today" | awk '{ print $1 }' )
+total_hours="$((total_time/60))"
+total_days="$((total_hours/24))"
+total_hours="$((total_hours%24))"
+total_minutes="$((total_time%60))"
+hours_today="$((time_today/60))"
+minutes_today="$((time_today%60))"
+
+printf "Total : %s : %s : %s\n" "$total_days" "$total_hours" "$total_minutes"
+printf "Today : %s : %s \n" "$hours_today" "$minutes_today"

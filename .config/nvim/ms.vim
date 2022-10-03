@@ -6,4 +6,7 @@ inoremap <Space><Space> <Esc>/<++><Enter>"_4cl
 inoremap ;nh .NH <--><Enter><++><Esc>/<--><Enter>"_4cl
 inoremap ;pp .PP<Enter>
 inoremap ;qp .QP<Enter>
+inoremap ;b .B "<-->"<Enter><++><Esc>/<--><Enter>"_4cl
+inoremap ;i .I "<-->"<Enter><++><Esc>/<--><Enter>"_4cl
+
 map <leader>z :!opdf %<CR><CR>

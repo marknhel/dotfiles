@@ -1,0 +1,2 @@
+#!/bin/sh
+subdl --download=most-downloaded --existing=overwrite "$1" > /dev/null

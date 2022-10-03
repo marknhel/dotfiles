@@ -1,0 +1,51 @@
+#!/bin/sh
+
+EPISODES="$1"
+URL="$2"
+URL_I=$(echo "$URL" | cut -d'|' -f1)
+URL_II=$(echo "$URL" | cut -d'|' -f2)
+CORE_DIR=$( find "$XDG_VIDEOS_DIR"/ -maxdepth 1 -type d | fzf )
+echo "Name of the directory : "; read -r DIR_NAME
+[ -d "$CORE_DIR"/"$DIR_NAME" ] || mkdir -pv "$CORE_DIR"/"$DIR_NAME"
+DL_FILE="$CORE_DIR"/"$DIR_NAME"/.download
+
+printf "#!/bin/sh" | tee "$DL_FILE"
+i=1
+while [ "$i" -le $((EPISODES)) ]
+do
+	#2 digits
+	if [ "$EPISODES" -lt 100 ];then
+
+		if [ "$i" -lt 10 ];then
+			NUMBER=0"$i"
+		else
+			NUMBER="$i"
+		fi
+
+	#3 digits
+	elif [ "$EPISODES" -lt 1000 ];then
+		if [ "$i" -lt 10 ];then
+			NUMBER=00"$i"
+		elif [ "$i" -lt 100 ];then
+			NUMBER=0"$i"
+		else
+			NUMBER="$i"
+		fi
+	#4 digits
+	else
+		if [ "$i" -lt 10 ];then
+			NUMBER=000"$i"
+		elif [ "$i" -lt 100 ];then
+			NUMBER=00"$i"
+		elif [ "$i" -lt 1000 ];then
+			NUMBER="0$i"
+		else
+			NUMBER="$i"
+		fi
+
+
+	fi
+
+	printf "\nwget \"%s%s%s\"" "$URL_I" "$NUMBER" "$URL_II" | tee -a "$DL_FILE"
+	i=$((i+1))
+done

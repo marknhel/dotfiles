@@ -1,0 +1,4 @@
+#!/bin/sh
+crt_name="$1"
+openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:2048 -out "$crt_name".key
+openssl req -key "$crt_name".key -x509 -new -days 90 -out "$crt_name".crt

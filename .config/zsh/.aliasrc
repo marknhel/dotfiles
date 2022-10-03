@@ -6,6 +6,7 @@
 # | (_| | | | (_| \__ \ | | (__
 #  \__,_|_|_|\__,_|___/_|  \___|
 #
+## 	mbsync='mbsync -c $XDG_CONFIG_HOME/isync/mbsyncrc' \
 
 flocate(){
 	locate "$@" | fzf | xargs -r "$EDITOR"
@@ -46,7 +47,6 @@ alias \
 	repo='cd $XDG_GIT_DIR/repos' \
 	fonts='fc-match -s monospace:charset=1FA9' \
 	emojis='cat $XDG_DATA_HOME/emojicodes' \
- 	mbsync='mbsync -c $XDG_CONFIG_HOME/isync/mbsyncrc' \
 	rename='rename -v ' \
 	SE='sudo nvim ' \
 	tree='tree -C ' \
