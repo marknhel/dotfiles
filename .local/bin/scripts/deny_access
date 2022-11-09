@@ -1,0 +1,13 @@
+#!/bin/sh
+
+sleep 2
+
+f_name=$(date | awk '{ print $7 "-" $2 "-" $3 "-" $4}')
+ss_path="$XDG_PICTURES_DIR"/intruders/"$f_name".jpg
+
+ffmpeg -f video4linux2 -s 640x480 -i /dev/video0 -ss 0:0:2 -frames 1 "$ss_path" &
+
+sxiv -bf "$XDG_PICTURES_DIR"/deny_access.jpg &
+#mpv "$HOME"/music/deny_access.mp3 &
+sleep 1 && slock
+killall -q sxiv

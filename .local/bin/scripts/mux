@@ -1,2 +1,2 @@
 #!/bin/sh
-find "$XDG_MUSIC_DIR" -type f | fzf | sed "s|\s|\\\ |g"| xargs -r mpv --audio-display=no
+find "$XDG_MUSIC_DIR" -type f | fzf -i | sed "s|\s|\\\ |g"| xargs -r mpv --audio-display=no

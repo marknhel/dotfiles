@@ -1,0 +1,3 @@
+#!/bin/sh
+
+xdotool type "$( dmenu -l 20 -c < "$XDG_CACHE_HOME"/zshhistory )"

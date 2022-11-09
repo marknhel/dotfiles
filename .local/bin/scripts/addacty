@@ -1,6 +1,6 @@
 #!/bin/sh
 
-subdir=$( find "$XDG_DOCUMENTS_DIR/subjects" -maxdepth 1 -type d 2>/dev/null | fzf)
+subdir=$( find "$XDG_DOCUMENTS_DIR/subjects" -maxdepth 1 -type d 2>/dev/null | fzf -i)
 [ -z "$subdir" ] && exit 1
 ls "$subdir"
 read -r activity

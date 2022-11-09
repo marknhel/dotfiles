@@ -1,0 +1,8 @@
+#!/bin/sh
+
+
+file=$(readlink -f "$1")
+base="${file%.*}"
+
+base="$base".pdf
+setsid -f zathura "$base"

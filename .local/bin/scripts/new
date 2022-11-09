@@ -1,6 +1,6 @@
 #!/bin/sh
 
-new_dir=$(find . -type d | fzf)
+new_dir=$(find . -type d | fzf -i)
 [ -z "$new_dir" ] && exit 0
 echo "Filename : "
 read -r inp

@@ -16,13 +16,13 @@ Plug 'junegunn/goyo.vim'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'jreybert/vimagit'
 Plug 'lukesmithxyz/vimling'
-Plug 'vimwiki/vimwiki'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-commentary'
 Plug 'kovetskiy/sxhkd-vim'
 Plug 'ap/vim-css-color'
 Plug 'dense-analysis/ale'
 Plug 'https://github.com/junegunn/vim-github-dashboard.git'
+Plug 'kyoz/purify', { 'rtp': 'vim' }
 "For html
 "Plug 'mattn/emmet-vim'
 "Plug 'ctrlpvim/ctrlp.vim'
@@ -75,7 +75,7 @@ set clipboard+=unnamedplus
 
 " Goyo plugin makes text more readable when writing prose:
 	map <leader>f :Goyo \| set bg=light \| set linebreak<CR>
-	map <leader>w :set spell!
+	"map <leader>w :set spell!
 
 " Spell-check set to <leader>o, 'o' for 'orthography':
 	map <leader>o :setlocal spell! spelllang=en_us<CR>
@@ -83,7 +83,7 @@ set clipboard+=unnamedplus
 	map <leader>w :w <CR>:!compiler %<CR>%<CR>
 
 "Open with Zathura
-	map <leader>l :!zathura % && disown <CR><CR>
+	map <leader>l :!zopen % && disown <CR><CR>
 
 " Splits open at the bottom and right, which is non-retarded, unlike vim defaults.
 	set splitbelow splitright
@@ -187,5 +187,6 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 "endif
 
 " Theme
-"syntax enable
+syntax enable
 "colorscheme OceanicNext
+colorscheme purify

@@ -82,7 +82,7 @@
     horizontal_padding = 50
 
     # Padding between text and icon.
-    text_icon_padding = 50
+    text_icon_padding = 20
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
@@ -118,7 +118,8 @@
 #    font = Subscriber
 #    font = Terserah
 #    font = Gunny Rewritten
-    font = Source Code Pro
+#    font = Source Code Pro
+    font = Gintronic Medium
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.

@@ -1,2 +1,4 @@
 #!/bin/sh
+#$1 grant, disable
+#$2 package name
 adb shell pm "$1" "$2" android.permission.SYSTEM_ALERT_WINDOW

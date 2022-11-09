@@ -1,3 +1,3 @@
 #!/bin/sh
 
- find "$XDG_DATA_HOME/datelogs" -type f | sort -r | fzf | xargs -r "$EDITOR"
+ find "$XDG_DATA_HOME/datelogs" -type f | sort -r | fzf -i | xargs -r "$EDITOR"

@@ -13,7 +13,7 @@ cpy(){
 }
 
 case "$option" in
-	"-f") destloc="$(lsblk | awk '{ print $7 }' | sed "/^$/ d" | sort -R | fzf )"
+	"-f") destloc="$(lsblk | awk '{ print $7 }' | sed "/^$/ d" | sort -R | fzf -i )"
 		[ -z "$destloc" ] && exit 1
 		destloc="$destloc/copied"
 		cpy;;

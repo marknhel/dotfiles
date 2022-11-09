@@ -13,7 +13,7 @@ flocate(){
 }
 
 alias \
-	G='ping google.com' \
+	G='ping 8.8.8.8' \
 	xprofile='nvim ~/.xprofile' \
 	pac='sudo pacman' \
 	grep='grep --color=auto' \
@@ -42,7 +42,6 @@ alias \
 	gv='cd $XDG_VIDEOS_DIR' \
 	gm='cd $XDG_MUSIC_DIR' \
 	gM='cd $XDG_MOUNTPOINT_DIR' \
-	go='cd $XDG_OTHERS_DIR' \
 	gh='cd $HOME' \
 	repo='cd $XDG_GIT_DIR/repos' \
 	fonts='fc-match -s monospace:charset=1FA9' \
@@ -54,4 +53,7 @@ alias \
 	neomutt='neomutt; pkill -RTMIN+6 dwmblocks' \
 	g='git'	\
 	django='python manage.py' \
-	gource='gource --high-dpi --transparent --loop'
+	gource='gource --high-dpi --transparent --loop' \
+	lxcl='lxc list -c n,s,4,image.description:image' \
+	fcmd='sudo firewall-cmd' \
+	lxdcmd='systemd-run --unit=my-unit --user --scope -p "Delegate=yes" --'

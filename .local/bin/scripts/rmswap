@@ -1,0 +1,6 @@
+#!/bin/sh
+swap_path="$HOME"/.local/state/nvim/swap/
+
+file=$(find "$swap_path" -type f | fzf)
+
+rm -v "$file"

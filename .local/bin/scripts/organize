@@ -10,6 +10,9 @@ apksdir="$dir"/apks
 webfilesdir="$dir"/webfiles
 dupsdir="$dir"/dups
 fontsdir="$dir"/fonts
+isodir="$dir"/iso
+packdir="$dir"/packages
+musicdir="$dir"/music
 
 
 [ ! -d "$picsdir" ] && mkdir -v "$picsdir"
@@ -22,6 +25,7 @@ fontsdir="$dir"/fonts
 [ ! -d "$webfilesdir" ] && mkdir -v "$webfilesdir"
 [ ! -d "$dupsdir" ] && mkdir -v "$dupsdir"
 [ ! -d "$fontsdir" ] && mkdir -v "$fontsdir"
+[ ! -d "$isodir" ] && mkdir -v "$isodir"
 
 #PICS
 mv  "$dir"/*.png "$picsdir"
@@ -40,6 +44,7 @@ mv  "$dir"/*.cpp "$docsdir"
 mv  "$dir"/*.pptx "$docsdir"
 mv  "$dir"/*.txt "$docsdir"
 mv  "$dir"/*.csv "$docsdir"
+mv  "$dir"/*.epub "$docsdir"
 
 #VIDS
 mv  "$dir"/*.mp4 "$vidsdir"
@@ -75,3 +80,19 @@ mv "$dir"/*.~1~ "$dupsdir"
 
 #FONTS
 mv "$dir"/*.ttf "$fontsdir"
+
+#ISO'S
+mv "$dir"/*.iso "$fontsdir"
+mv "$dir"/*.img "$fontsdir"
+
+#PACKAGES
+mv "$dir"/*.deb "$packdir"
+mv "$dir"/*.tar.zst "$packdir"
+mv "$dir"/*.AppImage "$packdir"
+
+#MUSIC
+mv "$dir"/*.mp3 "$musicdir"
+mv "$dir"/*.ogg "$musicdir"
+mv "$dir"/*.m4a "$musicdir"
+mv "$dir"/*.acc "$musicdir"
+mv "$dir"/*.wav "$musicdir"

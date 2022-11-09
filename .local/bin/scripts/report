@@ -1,0 +1,9 @@
+#!/bin/sh
+
+basename=$( date | awk '{ print $2 "-" $3 "-" $7 "-" $1 }')
+rdir="$XDG_GIT_DIR"/repos/ojt-reports
+template="$XDG_DOCUMENTS_DIR"/subjects/.templates/activity.ms
+
+
+[ ! -f "$rdir"/"$basename".ms ] && cp "$template" "$rdir"/"$basename".ms
+"$EDITOR" "$rdir"/"$basename".ms

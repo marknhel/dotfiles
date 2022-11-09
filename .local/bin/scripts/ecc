@@ -1,3 +1,3 @@
 #!/bin/sh
 
-< "$XDG_CACHE_HOME"/edit_hist fzf | xargs -r "$EDITOR"
+< "$XDG_CACHE_HOME"/edit_hist fzf -i | xargs -r "$EDITOR"

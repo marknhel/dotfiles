@@ -1,11 +1,20 @@
 #!/bin/sh
 
+dir="$HOME"/git/repos/dotfiles
 
 # Configurations
-rsync -av --delete ~/.config ~/git/repos/dotfiles/
+rsync -av --delete "$HOME"/.config "$dir"/
 
 # Binaries
-rsync -av --delete ~/.local/bin ~/git/repos/dotfiles/.local/
+rsync -av --delete "$HOME"/.local "$dir"/
 
 # Xprofile
-cp -uv ~/.zshenv ~/git/repos/dotfiles/
+cp -uv ~/.zshenv "$dir"
+rm -rf "$dir"/.config/BraveSoftware
+rm -rf "$dir"/.config/Caprine
+rm -rf "$dir"/.config/Code\ -\ OSS
+rm -rf "$dir"/.config/discord
+rm -rf "$dir"/.config/Gimp
+rm -rf "$dir"/.config/Gimp
+rm -rf "$dir"/.config/Inkscape
+rm -rf "$dir"/.config/VirtualBox

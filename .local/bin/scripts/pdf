@@ -1,3 +1,4 @@
 #!/bin/sh
-
-find "$XDG_DOCUMENTS_DIR" "$XDG_DOWNLOADS_DIR" "$HOME/syncthing" -name "*.pdf" 2>/dev/null | fzf | sed "s|\s|\\\ |g" | xargs -r zathura
+find "$XDG_DOCUMENTS_DIR" "$XDG_DOWNLOADS_DIR" "$HOME/syncthing" -name "*.pdf" 2>/dev/null | fzf -i | sed "s|\s|\\\ |g" | xargs -r zathura
+#filename="$(find "$XDG_DOCUMENTS_DIR" "$XDG_DOWNLOADS_DIR" "$XDG_GIT_DIR/repos" "$HOME/syncthing" -name "*.pdf" 2>/dev/null | dmenu -i -l 10 -c | sed "s|\s|\\\ |g" )"
+#setsid -f zathura "$filename"

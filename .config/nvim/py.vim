@@ -12,3 +12,4 @@ inoremap ;except except(<-->):<Enter><++><Enter><++><Esc>/<--><Enter>"_c4l
 inoremap ;path path('<-->', <++>, <++>),<Enter><++><Esc>/<--><Enter>"_c4l
 inoremap ;include include('<-->')<Esc>/<--><Enter>"_c4l
 inoremap ;for for <--> in <++>:<Enter><++><Enter><++><Esc>/<--><Enter>"_c4l
+inoremap ;= <--> = <++><Enter><++><Esc>/<--><Enter>"_c4l

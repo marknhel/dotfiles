@@ -1,0 +1,2 @@
+#!/bin/sh
+ping payroll.innovuze -c 1 >>/dev/null && echo ✅|| echo ‼️

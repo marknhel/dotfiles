@@ -4,6 +4,7 @@ map <leader>t :w <CR>!comptbl %<CR><CR>
 inoremap ;bu .IP \(bu <--><Enter><++><Esc>/<--><Enter>"_4cl
 inoremap <Space><Space> <Esc>/<++><Enter>"_4cl
 inoremap ;nh .NH <--><Enter><++><Esc>/<--><Enter>"_4cl
+inoremap ;sh .SH <--><Enter><++><Esc>/<--><Enter>"_4cl
 inoremap ;pp .PP<Enter>
 inoremap ;qp .QP<Enter>
 inoremap ;b .B "<-->"<Enter><++><Esc>/<--><Enter>"_4cl
