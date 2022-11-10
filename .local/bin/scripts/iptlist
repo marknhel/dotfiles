@@ -1,0 +1,5 @@
+#!/bin/sh
+
+FILE=/tmp/iptables.csv
+sudo iptables -nvL | sed 's/\s*\s/,/g' > "$FILE"
+sc-im "$FILE"

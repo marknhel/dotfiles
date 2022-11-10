@@ -1,0 +1,3 @@
+#!/bin/sh
+
+find "$XDG_GIT_DIR"/repos/ojt-reports -name "*.pdf" | fzf | sed "s|\s|\\\ |g" | xargs -r zathura

@@ -187,6 +187,6 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 "endif
 
 " Theme
-syntax enable
+"syntax enable
 "colorscheme OceanicNext
-colorscheme purify
+"colorscheme purify

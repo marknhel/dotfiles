@@ -120,3 +120,6 @@ export PAGER="less"
 
 #SYSTEM_EDITOR
 export SYSTEMD_EDITOR=nvim
+
+#SSH_AUTH_SOCK
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
