@@ -32,8 +32,8 @@ call plug#end()
 
 " Ensure files are read as what I want:
 	let g:vimwiki_ext2syntax = {'.Rmd': 'markdown', '.rmd': 'markdown','.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
-	map <leader>v :VimwikiIndex
-	let g:vimwiki_list = [{'path': '~/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
+"	map <leader>v :VimwikiIndex
+"	let g:vimwiki_list = [{'path': '~/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
 	autocmd BufRead,BufNewFile /tmp/calcurse*,~/.calcurse/notes/* set filetype=markdown
 	autocmd BufRead,BufNewFile *.ms,*.me,*.mom,*.man set filetype=groff
 	autocmd BufRead,BufNewFile *.tex set filetype=tex
@@ -43,6 +43,8 @@ call plug#end()
 
 inoremap <Space><Space> <Esc>/<++><Enter>"_4cl
 autocmd FileType html source $XDG_CONFIG_HOME/nvim/html.vim
+autocmd FileType rmd source $XDG_CONFIG_HOME/nvim/rmd.vim
+autocmd FileType markdown source $XDG_CONFIG_HOME/nvim/md.vim
 autocmd FileType python source $XDG_CONFIG_HOME/nvim/py.vim
 autocmd FileType css source $XDG_CONFIG_HOME/nvim/css.vim
 autocmd FileType groff source $XDG_CONFIG_HOME/nvim/ms.vim
@@ -80,7 +82,7 @@ set clipboard+=unnamedplus
 " Spell-check set to <leader>o, 'o' for 'orthography':
 	map <leader>o :setlocal spell! spelllang=en_us<CR>
 
-	map <leader>w :w <CR>:!compiler %<CR>%<CR>
+	map <leader>w :w <CR>:!compiler %<CR><CR>
 
 "Open with Zathura
 	map <leader>l :!zopen % && disown <CR><CR>
@@ -125,7 +127,7 @@ set clipboard+=unnamedplus
 	nnoremap S :%s//g<Left><Left>
 
 " Compile document, be it groff/LaTeX/markdown/etc.
-	map <leader>c :w! \| !compiler <c-r>%<CR>
+	map <leader>c :w! <CR>:!rcomp %<CR><CR>
 
 " Open corresponding .pdf/.html or preview
 	map <leader>p :!opout <c-r>%<CR><CR>

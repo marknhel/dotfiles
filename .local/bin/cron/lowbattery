@@ -1,34 +1,25 @@
 #!/bin/sh
 
+# This script monitors the battery and sends notification if it is lowbattery.
+
 STATUS=$( cat /sys/class/power_supply/BAT0/status )
 BAT_WARNING_FILE="$HOME"/.config/BAT.ACTION
 BAT_WARNING=$(cat "$BAT_WARNING_FILE")
 PERCENT=$( cat /sys/class/power_supply/BAT0/capacity )
 
+
 if [ "$STATUS" = "Charging" ]; then
-#	if [ "$PERCENT" -ge 40 ]; then
-#		echo "NONE" > "$BAT_WARNING_FILE"
-	if [ "$PERCENT" -ge 11 ]; then
-		echo "NONE" > "$BAT_WARNING_FILE"
-#	elif [ "$PERCENT" -le 10 ]; then
-#		echo "LOWBAT" > "$BAT_WARNING_FILE"
-	else
-		echo "LOWBAT" > "$BAT_WARNING_FILE"
+	echo "NONE" > "$BAT_WARNING_FILE"
+else
+
+	if [ "$PERCENT" -le 10 ] && [ "$BAT_WARNING" = "LOWBAT" ]; then
+		echo "CRITBAT" > "$BAT_WARNING_FILE"
+		notify-send -uw critical "Critical Battery" "Battery is at $PERCENT\%. Please charge it immediately."
+		exit 0
+	elif [ "$PERCENT" -le 40 ] && [ "$BAT_WARNING" = "NONE" ]; then
+			echo "LOWBAT" > "$BAT_WARNING_FILE"
+			notify-send -uw critical "Low Battery" "Battery is at $PERCENT\%. Please charge it on time."
+			exit 0
 	fi
-	exit 0
 
-
-fi
-
-
-if [ "$PERCENT" -le 10 ] && [ "$BAT_WARNING" = "LOWBAT" ]; then
-#	if [ "$BAT_WARNING" = "LOWBAT" ]; then
-	notify-send -uw critical "Critical Battery" "Battery is at $PERCENT\%. Please charge it immediately."
-	echo "CRITBAT" > "$BAT_WARNING_FILE" && exit 0
-#	fi
-elif [ "$PERCENT" -le 40 ] && [ "$BAT_WARNING" = "NONE" ]; then
-#	if [ "$BAT_WARNING" = "NONE" ]; then
-		notify-send -uw critical "Low Battery" "Battery is at $PERCENT\%. Please charge it on time."
-		echo "LOWBAT" > "$BAT_WARNING_FILE" && exit 0
-#	fi
 fi
