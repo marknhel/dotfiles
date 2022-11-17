@@ -3,7 +3,7 @@
 
 
 !! Set a default font and font size as below:
-/*.font: FiraMono-Regular:size=16 */
+/*.font: FiraMono-Regular:size=16*/
 *.font: Gintronic-Medium:size=16
 /*.font: Terserah:size=16*/
 
