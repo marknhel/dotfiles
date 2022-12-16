@@ -1,0 +1,5 @@
+#!/bin/sh
+
+password=$(dmenu -c -l 10 < "$XDG_CONFIG_HOME"/passes)
+
+[ -n "$password" ] && xdotool type "$(pass "$password")"

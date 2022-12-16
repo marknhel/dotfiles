@@ -1,32 +1,21 @@
 !! Transparency (0-1):
-*.alpha: 0.6
+*.alpha: 0.9
 
 
 !! Set a default font and font size as below:
 /*.font: FiraMono-Regular:size=16*/
 *.font: Gintronic-Medium:size=16
 /*.font: Terserah:size=16*/
-
-!! brogrammer: */
-*.foreground:  #d6dbe5
-*.background:  #131313
-*.color0:      #1f1f1f
-*.color8:      #d6dbe5
-*.color1:      #f81118
-*.color9:      #de352e
-*.color2:      #2dc55e
-*.color10:     #1dd361
-*.color3:      #ecba0f
-*.color11:     #f3bd09
-*.color4:      #2a84d2
-*.color12:     #1081d6
-*.color5:      #4e5ab7
-*.color13:     #5350b9
-*.color6:      #1081d6
-*.color14:     #0f7ddb
-*.color7:      #d6dbe5
-*.color15:     #ffffff
-*.colorBD:     #d6dbe5
+!! gruvbox: */
+/*.color4:      #2a84d2*/
+/*.color12:     #1081d6*/
+/*.color5:      #4e5ab7*/
+/*.color13:     #5350b9*/
+/*.color6:      #1081d6*/
+/*.color14:     #0f7ddb*/
+/*.color7:      #d6dbe5*/
+/*.color15:     #ffffff*/
+/*.colorBD:     #d6dbe5*/
 /* name		dark	light */
 /* black	0	8 */
 /* red		1	9 */
@@ -69,7 +58,7 @@
 /* *.color8: #928374 */
 /* *.color9: #9d0006 */
 /* *.color10: #79740e */
-/* *.color11: #b57614 */
+/* *.color11: #b57614 *
 /* *.color12: #076678 */
 /* *.color13: #8f3f71 */
 /* *.color14: #427b58 */
@@ -78,44 +67,44 @@
 /* *.foreground: #282828 */
 /* st.alpha: 0.9 */
 
-/* !! brogrammer: */
-/* *.foreground:  #d6dbe5 */
-/* *.background:  #131313 */
-/* *.color0:      #1f1f1f */
-/* *.color8:      #d6dbe5 */
-/* *.color1:      #f81118 */
-/* *.color9:      #de352e */
-/* *.color2:      #2dc55e */
-/* *.color10:     #1dd361 */
-/* *.color3:      #ecba0f */
-/* *.color11:     #f3bd09 */
-/* *.color4:      #2a84d2 */
-/* *.color12:     #1081d6 */
-/* *.color5:      #4e5ab7 */
-/* *.color13:     #5350b9 */
-/* *.color6:      #1081d6 */
-/* *.color14:     #0f7ddb */
-/* *.color7:      #d6dbe5 */
-/* *.color15:     #ffffff */
-/* *.colorBD:     #d6dbe5 */
+!! brogrammer: */
+*.foreground:  #d6dbe5
+*.background:  #131313
+*.color0:      #1f1f1f
+*.color8:      #d6dbe5
+*.color1:      #f81118
+*.color9:      #de352e
+*.color2:      #2dc55e
+*.color10:     #1dd361
+*.color3:      #ecba0f
+*.color11:     #f3bd09
+*.color4:      #2a84d2
+*.color12:     #1081d6
+*.color5:      #4e5ab7
+*.color13:     #5350b9
+*.color6:      #1081d6
+*.color14:     #0f7ddb
+*.color7:      #d6dbe5
+*.color15:     #ffffff
+*.colorBD:     #d6dbe5
 
-/* ! base16 */
-/* *.color0:       #181818 */
-/* *.color1:       #ab4642 */
-/* *.color2:       #a1b56c */
-/* *.color3:       #f7ca88 */
-/* *.color4:       #7cafc2 */
-/* *.color5:       #ba8baf */
-/* *.color6:       #86c1b9 */
-/* *.color7:       #d8d8d8 */
-/* *.color8:       #585858 */
-/* *.color9:       #ab4642 */
-/* *.color10:      #a1b56c */
-/* *.color11:      #f7ca88 */
-/* *.color12:      #7cafc2 */
-/* *.color13:      #ba8baf */
-/* *.color14:      #86c1b9 */
-/* *.color15:      #f8f8f8 */
+! base16
+/*.color0:       #181818*/
+/*.color1:       #ab4642*/
+/*.color2:       #a1b56c*/
+/*.color3:       #f7ca88*/
+/*.color4:       #7cafc2*/
+/*.color5:       #ba8baf*/
+/*.color6:       #86c1b9*/
+/*.color7:       #d8d8d8*/
+/*.color8:       #585858*/
+/*.color9:       #ab4642*/
+/*.color10:      #a1b56c*/
+/*.color11:      #f7ca88*/
+/*.color12:      #7cafc2*/
+/*.color13:      #ba8baf*/
+/*.color14:      #86c1b9*/
+/*.color15:      #f8f8f8*/
 
 /* !! solarized */
 /* *.color0:	#073642 */
@@ -174,6 +163,6 @@
 /* *.color7:     #BFBFBF */
 /* *.color15:    #E6E6E6 */
 
-/* *.background: .color0 */
-/* *.color256: 0#1d2021 */
-/* *.color257: 15#ebdbb2 */
+/* *.background:   .color0 */
+/* *.color256:    0#1d2021 */
+/* *.color257:   15#ebdbb2 */

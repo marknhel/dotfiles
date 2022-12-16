@@ -1,0 +1,3 @@
+#!/bin/sh
+
+/usr/lib/gnupg/gpg-preset-passphrase --preset EA4565A0C30BB1AD2A5C5D5140401AE2F450214B

@@ -24,3 +24,6 @@ xautolock -time 10 -locker screensave &
 sleep 20 && refreshblocks &
 #xrdb ~/.config/Xresources
 #changewall &
+pamixer --set-volume 0
+gpg-agent --options /home/malware/.local/share/gnupg/gpg-agent.conf --daemon
+slock &

@@ -20,6 +20,7 @@ Plug 'bling/vim-airline'
 Plug 'tpope/vim-commentary'
 Plug 'kovetskiy/sxhkd-vim'
 Plug 'ap/vim-css-color'
+Plug 'sjl/badwolf'
 Plug 'dense-analysis/ale'
 Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 Plug 'kyoz/purify', { 'rtp': 'vim' }
@@ -37,6 +38,8 @@ call plug#end()
 	autocmd BufRead,BufNewFile /tmp/calcurse*,~/.calcurse/notes/* set filetype=markdown
 	autocmd BufRead,BufNewFile *.ms,*.me,*.mom,*.man set filetype=groff
 	autocmd BufRead,BufNewFile *.tex set filetype=tex
+	autocmd BufRead,BufNewFile *.conf set filetype=dosini
+	autocmd BufRead,BufNewFile Jenkinsfile set filetype=groovy
 
 	"inoremap ;ref %X <--><Enter>%A <++><Enter>%T <++><Enter>%D <++><Enter>%I <++><Enter>%B <++><Enter>%E <++><Enter><Esc>/<--><Enter>"_4cl
 	inoremap <S
@@ -191,4 +194,5 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 " Theme
 "syntax enable
 "colorscheme OceanicNext
-"colorscheme purify
+colorscheme purify
+"colorscheme badwolf

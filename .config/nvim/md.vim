@@ -2,6 +2,7 @@ inoremap ;start ---<Enter>title: <--><Enter>author: <++><Enter>fontfamily: bera<
 inoremap ;# # <--><Enter><++>/<--><Enter>"_4cl
 inoremap ;## ## <--><Enter><++>/<--><Enter>"_4cl
 inoremap ;` ```<--><Enter><++><Enter>```<Enter><++><Enter><Esc>/<--><Enter>"_4cl
+inoremap ;[ [<-->](http<++>://<++>)<Enter><++><Esc>/<--><Enter>"_4cl
 
 
 
