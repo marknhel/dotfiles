@@ -13,3 +13,8 @@ inoremap ;path path('<-->', <++>, <++>),<Enter><++><Esc>/<--><Enter>"_c4l
 inoremap ;include include('<-->')<Esc>/<--><Enter>"_c4l
 inoremap ;for for <--> in <++>:<Enter><++><Enter><++><Esc>/<--><Enter>"_c4l
 inoremap ;= <--> = <++><Enter><++><Esc>/<--><Enter>"_c4l
+inoremap ;" "<-->"<++><Esc>/<--><Enter>"_c4l
+inoremap ;( <-->(<++>)<Esc>/<--><Enter>"_c4l
+inoremap ;) <-->(<++>)<Esc>/<--><Enter>"_c4l
+inoremap ;' '<-->'<++><Esc>/<--><Enter>"_c4l
+inoremap ;form class <-->(ModelForm):<Enter>class Meta:<Enter>model = <++><Enter>field = '<++>'<Enter><++><Esc>/<--><Enter>"_c4l

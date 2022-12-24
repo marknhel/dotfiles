@@ -11,7 +11,7 @@ dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XA
 
 xinput set-prop "DELL09EC:00 04F3:318F Touchpad" "libinput Tapping Enabled" 1 &
 dunst &
-xcompmgr &
+#xcompmgr &
 flameshot&
 remaps &
 mpd ~/.config/mpd/mpd.conf &
@@ -22,8 +22,9 @@ sudo powertop --autotune
 #redshift -l 55.7:12.6 -t 5700:3600 -g 0.6 -m randr -v &
 xautolock -time 10 -locker screensave &
 sleep 20 && refreshblocks &
-#xrdb ~/.config/Xresources
 #changewall &
 pamixer --set-volume 0
-gpg-agent --options /home/malware/.local/share/gnupg/gpg-agent.conf --daemon
+gpg-agent --options /home/malware/.local/share/gnupg/gpg-agent.conf --daemon &
 slock &
+gpgconf --kill gpg-agent &
+xrdb ~/.config/Xresources &

@@ -1,0 +1,6 @@
+#!/bin/sh
+
+
+link=$(xclip -o clipboard) 2>/dev/null
+[ -z "$link" ] && exit 0
+youtube-viewer "$link" && kill $(pidof -x watchyt)

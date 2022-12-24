@@ -24,6 +24,7 @@ source "$HOME"/.config/zsh/powerlevel10k/powerlevel10k.zsh-theme
 #source /home/malware/.config/zsh/minimal/minimal.zsh-theme
 #source /home/malware/.config/zsh/materialshell/materialshell.zsh-theme
 #source /home/malware/.config/zsh/punctual.zsh-theme
+#source /home/malware/.config/zsh/lambda-mod.zsh-theme
 #antibody bundle carloscuesta/materialshell
 
 autoload -U colors && colors	# Load colors

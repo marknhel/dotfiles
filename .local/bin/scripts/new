@@ -6,3 +6,4 @@ echo "Filename : "
 read -r inp
 touch "$new_dir"/"$inp"
 echo "File created : $new_dir/$inp"
+"$EDITOR" "$new_dir"/"$inp"

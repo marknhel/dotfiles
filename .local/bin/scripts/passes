@@ -1,5 +1,8 @@
 #!/bin/sh
+PASS_DIR="$XDG_DATA_HOME"/pass
+#find "$PASS_DIR" -type f | grep -v .git | dmenu -c -l 10
+password=$(find "$PASS_DIR" -type f | grep -v .git  | sed 's|/home/malware/.local/share/pass/||'| sed 's|\.gpg$||' | dmenu -c -l 10)
+#password=$(dmenu -c -l 10 < "$XDG_CONFIG_HOME"/passes)
 
-password=$(dmenu -c -l 10 < "$XDG_CONFIG_HOME"/passes)
 
 [ -n "$password" ] && xdotool type "$(pass "$password")"

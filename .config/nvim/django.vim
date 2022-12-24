@@ -53,3 +53,9 @@ inoremap ;for {% for <--> in <++> %}<Enter><++><Enter>{% endfor %}<Enter><++><Es
 inoremap ;{% {% <--> %}<++><Esc>/<--><Enter>"_4cl
 inoremap ;ext {% extends "<-->" %}<Enter><++><Esc>/<--><Enter>"_4cl
 inoremap ;load {% load <--> %}<Enter><++><Esc>/<--><Enter>"_4cl
+inoremap ;if {% if <-->  %}<Enter><Tab><++><Enter><BackSpace>{% endif %}<Enter><++><Esc>/<--><Enter>"_4cl
+inoremap ;tab <table><Enter><--><Enter><Backspace></table><Enter><++><Esc>/<--><Enter>"_4cl
+inoremap ;tab <table><Enter><--><Enter><Backspace></table><Enter><++><Esc>/<--><Enter>"_4cl
+inoremap ;tr <tr><Enter><--><Enter><Backspace></tr><Enter><++><Esc>/<--><Enter>"_4cl
+inoremap ;th <th><Enter><--><Enter><Backspace></th><Enter><++><Esc>/<--><Enter>"_4cl
+inoremap ;td <td><Enter><--><Enter><Backspace></td><Enter><++><Esc>/<--><Enter>"_4cl

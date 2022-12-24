@@ -1,0 +1,13 @@
+#!/bin/sh
+
+printf "Internet	: %s\n" "$(monitor-internet)"
+printf "Firewall	: %s\n" "$(monitor-firewall)"
+printf "Jenkins		: %s\n" "$(monitor-jenkins)"
+printf "Assets		: %s\n" "$(monitor-assets)"
+printf "Buddies		: %s\n" "$(monitor-buddies)"
+
+pkill -RTMIN+27 dwmblocks
+pkill -RTMIN+28 dwmblocks
+pkill -RTMIN+29 dwmblocks
+pkill -RTMIN+30 dwmblocks
+pkill -RTMIN+17 dwmblocks

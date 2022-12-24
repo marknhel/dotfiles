@@ -39,6 +39,7 @@ call plug#end()
 	autocmd BufRead,BufNewFile *.ms,*.me,*.mom,*.man set filetype=groff
 	autocmd BufRead,BufNewFile *.tex set filetype=tex
 	autocmd BufRead,BufNewFile *.conf set filetype=dosini
+	autocmd BufRead,BufNewFile *.html set filetype=htmldjango
 	autocmd BufRead,BufNewFile Jenkinsfile set filetype=groovy
 
 	"inoremap ;ref %X <--><Enter>%A <++><Enter>%T <++><Enter>%D <++><Enter>%I <++><Enter>%B <++><Enter>%E <++><Enter><Esc>/<--><Enter>"_4cl
