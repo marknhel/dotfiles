@@ -1,6 +1,22 @@
 #!/bin/sh
 
 #queued=$(tsp | grep queued | awk '{ print $6 " " $7 " " $8 " " $9 " " $10 " " $11 " " $12 " " $13 " " $14 " " $15 " " $16}' | sed "s|/home/malware/vids/minus-one/||; s|(.*||")
+#queued=$(tsp | grep queued | awk '{ print $7 }')
+qfile="$XDG_CACHE_HOME"/queued
 
-queued=$(mpc queued)
+echo "" > "$qfile"
+
+lines=$(tsp | grep queued | awk '{ print $1 " " $7 }' | sed '/^\s*$/d')
+[ -z "$lines" ] && notify-send "Youtube Viewer" "No queued video" && exit 0
+
+echo "$lines" | while IFS= read -r line
+do
+	tspid=$(echo "$line" | cut -d' ' -f 1)
+	link=$(echo "$line" | cut -d' ' -f 2)
+	ytinfo="$(youtube-viewer -i="$link" | grep "=>>.*<<=" | sed 's|.*=>>\s||' | sed 's|\s<<=.*$||')"
+	printf "%s %s\n" "$tspid" "$ytinfo" >> "$qfile"
+done
+
+#queued=$(mpc queued)
+queued=$(cat "$qfile")
 notify-send "Next Song" "$queued"

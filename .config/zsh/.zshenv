@@ -10,15 +10,15 @@ export BROWSER="brave"
 export TERMINAL="st"
 export EDITOR="nvim"
 export STATUSBAR="dwmblocks"
-export hostname='maki'
 
 [ -f "$ZDOTDIR/.location" ] &&  source "$ZDOTDIR/.location"
 
 
 export PATH=${PATH}:"$HOME"/.local/bin
+#statusbar
 export PATH=${PATH}:"$HOME"/.local/bin/statusbar
+#cron
 export PATH=${PATH}:"$HOME"/.local/bin/cron
-
 #scripts
 export PATH=${PATH}:"$HOME"/.local/bin/scripts
 
@@ -29,7 +29,7 @@ export XDG_DATA_HOME="$HOME"/.local/share
 
 # home folders
 export XDG_VIDEOS_DIR="$HOME"/vids
-export XDG_MUSIC_DIR="$HOME"/m2/music
+export XDG_MUSIC_DIR="$HOME"/music
 export XDG_PICTURES_DIR="$HOME"/pics
 export XDG_DOCUMENTS_DIR="$HOME"/docs
 export XDG_GIT_DIR="$HOME"/git
@@ -114,12 +114,3 @@ export MPLAYER_HOME="$XDG_CONFIG_HOME"/mplayer
 
 #Stardict Data
 export STARDICT_DATA_DIR="$XDG_DATA_HOME"/stardict
-
-#PAGER
-export PAGER="less"
-
-#SYSTEM_EDITOR
-export SYSTEMD_EDITOR=nvim
-
-#SSH_AUTH_SOCK
-export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)

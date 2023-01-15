@@ -6,4 +6,6 @@
 #  /___|_|\___/ \__, |_|_| |_|
 #               |___/
 #startx
-startx $XINITRC
+if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+	startx $XINITRC
+fi

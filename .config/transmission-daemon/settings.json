@@ -12,13 +12,13 @@
     "blocklist-url": "http://www.example.com/blocklist",
     "cache-size-mb": 4,
     "dht-enabled": true,
-    "download-dir": "/home/malware/downloads/torrents/completed/",
+    "download-dir": "/home/markb/downloads/torrents/completed/",
     "download-queue-enabled": true,
     "download-queue-size": 5,
     "encryption": 1,
     "idle-seeding-limit": 30,
     "idle-seeding-limit-enabled": false,
-    "incomplete-dir": "/home/malware/downloads/torrents/inc/",
+    "incomplete-dir": "/home/markb/downloads/torrents/inc/",
     "incomplete-dir-enabled": true,
     "lpd-enabled": false,
     "message-level": 2,
@@ -65,6 +65,6 @@
     "umask": 18,
     "upload-slots-per-torrent": 14,
     "utp-enabled": true,
-    "watch-dir": "/home/malware/downloads/",
+    "watch-dir": "/home/markb/downloads/",
     "watch-dir-enabled": true
 }

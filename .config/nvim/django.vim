@@ -49,7 +49,7 @@ inoremap ;lab <label for="<-->" id="<++>" class="<++>" ><++></label><Enter><++><
 inoremap ;blk {% block <--> %}<Enter><++><Enter>{% endblock %}<Enter><++><Esc>/<--><Enter>"_4cl
 inoremap ;{{ {{ <--> }}<++><Esc>/<--><Enter>"_4cl
 inoremap ;}} {{ <--> }}<++><Esc>/<--><Enter>"_4cl
-inoremap ;for {% for <--> in <++> %}<Enter><++><Enter>{% endfor %}<Enter><++><Esc>/<--><Enter>"_4cl
+inoremap ;for {% for <--> in <++> %}<Enter><Tab><++><Enter><Backspace>{% endfor %}<Enter><++><Esc>/<--><Enter>"_4cl
 inoremap ;{% {% <--> %}<++><Esc>/<--><Enter>"_4cl
 inoremap ;ext {% extends "<-->" %}<Enter><++><Esc>/<--><Enter>"_4cl
 inoremap ;load {% load <--> %}<Enter><++><Esc>/<--><Enter>"_4cl

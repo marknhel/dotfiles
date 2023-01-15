@@ -2,5 +2,7 @@
 
 
 link=$(xclip -o clipboard) 2>/dev/null
-[ -z "$link" ] && exit 0
-youtube-viewer "$link" && kill $(pidof -x watchyt)
+[ -z "$link" ] && exit 0 && notify-send "Youtube Viewer" "Link is invalid."
+ytinfo="$(youtube-viewer -i="$link" | grep "=>>.*<<=" | sed 's|.*=>>\s||' | sed 's|\s<<=.*$||')"
+
+tsp youtube-viewer -f --config="$XDG_CONFIG_HOME"/youtube-viewer/youtube-viewer.conf "$link" && notify-send "Youtube Viewer" "Successfully queued $ytinfo."

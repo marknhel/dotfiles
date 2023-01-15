@@ -4,12 +4,13 @@ EPISODES="$1"
 URL="$2"
 URL_I=$(echo "$URL" | cut -d'|' -f1)
 URL_II=$(echo "$URL" | cut -d'|' -f2)
-CORE_DIR=$( find "$XDG_VIDEOS_DIR"/ -maxdepth 1 -type d | fzf -i )
+CORE_DIR=$( find "$XDG_VIDEOS_DIR"/ -type d | fzf -i )
 echo "Name of the directory : "; read -r DIR_NAME
 [ -d "$CORE_DIR"/"$DIR_NAME" ] || mkdir -pv "$CORE_DIR"/"$DIR_NAME"
 DL_FILE="$CORE_DIR"/"$DIR_NAME"/.download
 
-printf "#!/bin/sh" | tee "$DL_FILE"
+#printf "#!/bin/sh" | tee "$DL_FILE"
+printf "" | tee "$DL_FILE"
 i=1
 while [ "$i" -le $((EPISODES)) ]
 do
@@ -46,6 +47,7 @@ do
 
 	fi
 
-	printf "\nwget \"%s%s%s\"" "$URL_I" "$NUMBER" "$URL_II" | tee -a "$DL_FILE"
+#	printf "\nwget \"%s%s%s\"" "$URL_I" "$NUMBER" "$URL_II" | tee -a "$DL_FILE"
+	printf "%s%s%s\n" "$URL_I" "$NUMBER" "$URL_II" | tee -a "$DL_FILE"
 	i=$((i+1))
 done
