@@ -56,6 +56,5 @@ alias \
 	gource='gource --high-dpi --transparent --loop' \
 	lxcl='lxc list -c n,s,4,image.description:image' \
 	fcmd='sudo firewall-cmd' \
-	neofetch='neofetch | lolcat' \
 	mkctl='minikube kubectl --' \
 	lxdcmd='systemd-run --unit=my-unit --user --scope -p "Delegate=yes" --'
