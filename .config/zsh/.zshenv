@@ -73,7 +73,7 @@ export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
 export WGETRC="$XDG_CONFIG_HOME"/wget/wgetrc
 
 #XAUTHORITY
-export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
+#export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
 
 #XSERVER
 export XINITRC="$XDG_CONFIG_HOME"/x11/xinitrc

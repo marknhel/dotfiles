@@ -115,3 +115,4 @@ dotfiles
 .local/share/zathura/
 .local/src/
 .local/state/
+.config/nvim/plugged/fzf.vim/
