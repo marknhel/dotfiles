@@ -117,3 +117,6 @@ export STARDICT_DATA_DIR="$XDG_DATA_HOME"/stardict
 
 ## SSH_AUTH_SOCK
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR"/ssh-agent.socket
+
+# dotfiles
+export DOTFILES_DIR="$XDG_GIT_DIR"/repos/gitlab/makibyet101/dotfiles
