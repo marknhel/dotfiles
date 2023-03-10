@@ -6,18 +6,18 @@ ls "$subdir"
 read -r activity
 mkdir -pv "$subdir/$activity" || exit 1
 file=$( echo "$subdir" | sed "s|.*subjects\/||")
-#task=$( printf "%s-%s-task.md" "$file" "$activity")
-answer=$( printf "%s-%s.md" "$file" "$activity")
+task=$( printf "%s-%s-task.ms" "$file" "$activity")
+answer=$( printf "%s-%s-answer.ms" "$file" "$activity")
 
-#template=$(cat "$XDG_DOCUMENTS_DIR/subjects/.templates/activity.ms")
+template=$(cat "$XDG_DOCUMENTS_DIR/subjects/.templates/activity.ms")
 echo "FULLDIR : $subdir/$activity"
-#touch "$subdir/$activity/$task"
-#echo "$template" >> "$subdir/$activity/$task"
+touch "$subdir/$activity/$task"
+echo "$template" >> "$subdir/$activity/$task"
 touch "$subdir/$activity/$answer"
-#echo "$template" >> "$subdir/$activity/$answer"
+echo "$template" >> "$subdir/$activity/$answer"
 ls "$subdir/$activity"
 echo "DIR : $subdir"
 echo "FILE : $file"
 echo "ACTIVITY : $activity"
-#echo "TASK-FILE : $task"
+echo "TASK-FILE : $task"
 echo "ANSWER-FILE : $answer"

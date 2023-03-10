@@ -1,0 +1,8 @@
+#!/bin/sh
+
+sleep 2
+xdotool type "kamiikun22" && sleep 2 && xdotool key Return
+xdotool type "kamiikun22" && sleep 2 && xdotool key Return
+xdotool type "kamiikun22" && sleep 2 && xdotool key Return
+xdotool type "kamiikun22" && sleep 2 && xdotool key Return
+xdotool type "kamiikun22" && sleep 2 && xdotool key Return
