@@ -1,4 +1,3 @@
-dotfiles
 .config/autostart/
 .config/BraveSoftware/
 .config/Caprine/
@@ -116,3 +115,4 @@ dotfiles
 .local/src/
 .local/state/
 .config/nvim/plugged/fzf.vim/
+.config/virtualenvs/

@@ -12,7 +12,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 source "$HOME"/.config/zsh/powerlevel10k/powerlevel10k.zsh-theme
-
+[[ -f /usr/bin/virtualenvwrapper.sh ]] && source /usr/bin/virtualenvwrapper.sh
 #source /usr/share/zsh/share/antigen.zsh
 
 #To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
