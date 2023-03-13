@@ -9,7 +9,10 @@ rsync -av --delete "$HOME"/.config "$dir"/
 rsync -av --delete "$HOME"/.local "$dir"/
 
 # Xprofile
+<<<<<<< HEAD
 cp -uv ~/.zshenv "$dir"
+=======
+>>>>>>> 88f4ba0 (restored some changes)
 rm -rf "$dir"/.config/BraveSoftware
 rm -rf "$dir"/.config/Caprine
 rm -rf "$dir"/.config/Code\ -\ OSS

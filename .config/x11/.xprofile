@@ -10,10 +10,18 @@
 #export "$HOME"/.Xauthority
 dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY
 
+<<<<<<< HEAD
 xinput set-prop "DELL09EC:00 04F3:318F Touchpad" "libinput Tapping Enabled" 1 &
 dunst &
 setsid dwmblocks &
 #xcompmgr &
+=======
+xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Tapping Enabled" 1 &
+#ETPS/2 Elantech Touchpad
+dunst &
+setsid dwmblocks &
+xcompmgr &
+>>>>>>> 88f4ba0 (restored some changes)
 flameshot&
 remaps &
 mpd ~/.config/mpd/mpd.conf &
@@ -29,5 +37,9 @@ pamixer --set-volume 0
 gpg-agent --options /home/malware/.local/share/gnupg/gpg-agent.conf --daemon &
 #slock &
 gpgconf --kill gpg-agent &
+<<<<<<< HEAD
 #discord &
+=======
+discord &
+>>>>>>> 88f4ba0 (restored some changes)
 xrdb ~/.config/Xresources &
