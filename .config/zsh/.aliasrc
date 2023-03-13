@@ -56,12 +56,9 @@ alias \
 	gource='gource --high-dpi --transparent --loop' \
 	lxcl='lxc list -c n,s,4,image.description:image' \
 	fcmd='sudo firewall-cmd' \
-<<<<<<< HEAD
 	neofetch='neofetch | lolcat' \
 	mkctl='minikube kubectl --' \
 	lxdcmd='systemd-run --unit=my-unit --user --scope -p "Delegate=yes" --'
-=======
 	mkctl='minikube kubectl --' \
 	lxdcmd='systemd-run --unit=my-unit --user --scope -p "Delegate=yes" --' \
 	mkvenv='mkvirtualenv '
->>>>>>> 88f4ba0 (restored some changes)
