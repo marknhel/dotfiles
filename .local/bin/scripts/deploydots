@@ -1,6 +1,0 @@
-#!/bin/sh
-
-DIR="$DOTFILES_DIR"
-
-cp -Ruv "$DIR"/.config "$HOME"/
-cp -Ruv "$DIR"/.local "$HOME"/

@@ -24,6 +24,8 @@ Plug 'sjl/badwolf'
 Plug 'dense-analysis/ale'
 Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 Plug 'kyoz/purify', { 'rtp': 'vim' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() }}
+Plug 'junegunn/fzf.vim'
 "For html
 "Plug 'mattn/emmet-vim'
 "Plug 'ctrlpvim/ctrlp.vim'
@@ -47,6 +49,7 @@ call plug#end()
 
 inoremap <Space><Space> <Esc>/<++><Enter>"_4cl
 autocmd FileType html source $XDG_CONFIG_HOME/nvim/html.vim
+autocmd FileType json source $XDG_CONFIG_HOME/nvim/json.vim
 autocmd FileType rmd source $XDG_CONFIG_HOME/nvim/rmd.vim
 autocmd FileType markdown source $XDG_CONFIG_HOME/nvim/md.vim
 autocmd FileType python source $XDG_CONFIG_HOME/nvim/py.vim
@@ -115,6 +118,7 @@ set clipboard+=unnamedplus
 	map <C-j> <C-w>j
 	map <C-k> <C-w>k
 	map <C-l> <C-w>l
+	nnoremap <C-f> :Files<CR>
 
 " Replace ex mode with gq
 	map Q gq

@@ -116,3 +116,4 @@
 .local/state/
 .config/nvim/plugged/fzf.vim/
 .config/virtualenvs/
+.config/nvim/plugged/

@@ -12,7 +12,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 source "$HOME"/.config/zsh/powerlevel10k/powerlevel10k.zsh-theme
-[[ -f /usr/bin/virtualenvwrapper.sh ]] && source /usr/bin/virtualenvwrapper.sh
+
 #source /usr/share/zsh/share/antigen.zsh
 
 #To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -229,11 +229,11 @@ source /usr/share/doc/pkgfile/command-not-found.zsh
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
-#if ! pgrep -u "$USER" ssh-agent > /dev/null; then
-#    ssh-agent -t 1h > "$XDG_RUNTIME_DIR/ssh-agent.env"
-#fi
-#if [[ ! -f "$SSH_AUTH_SOCK" ]]; then
-#    source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
-#fi
 
-#eval $(keychain --eval --quiet id_ed25519 ~/.ssh/makibyet101@gmail.com)
+# Start SSH AGENT
+if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+    ssh-agent -t 1h > "$XDG_RUNTIME_DIR/ssh-agent.env"
+fi
+if [[ ! -f "$SSH_AUTH_SOCK" ]]; then
+    source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
+fi
