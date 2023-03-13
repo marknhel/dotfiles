@@ -73,11 +73,8 @@ export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
 export WGETRC="$XDG_CONFIG_HOME"/wget/wgetrc
 
 #XAUTHORITY
-<<<<<<< HEAD
 #export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
-=======
 export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
->>>>>>> 88f4ba0 (restored some changes)
 
 #XSERVER
 export XINITRC="$XDG_CONFIG_HOME"/x11/xinitrc
@@ -118,8 +115,6 @@ export MPLAYER_HOME="$XDG_CONFIG_HOME"/mplayer
 
 #Stardict Data
 export STARDICT_DATA_DIR="$XDG_DATA_HOME"/stardict
-<<<<<<< HEAD
-=======
 
 ## SSH_AUTH_SOCK
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR"/ssh-agent.socket
@@ -129,4 +124,3 @@ export DOTFILES_DIR="$XDG_GIT_DIR"/repos/gitlab/makibyet101/dotfiles
 
 # WORK-ON HOME
 export WORKON_HOME="$XDG_CONFIG_HOME"/virtualenvs
->>>>>>> 88f4ba0 (restored some changes)
