@@ -1,0 +1,12 @@
+[Unit]
+Description=Django Tutorials App
+
+[Service]
+WorkingDirectory=/home/maki/git/repos/gitlab/makibyet101/django-documentation/tutorials
+ExecStart=/home/maki/.config/virtualenvs/django-documentation/bin/python manage.py runserver 127.0.0.1:8001
+#StandardOutput=append:/var/log/tutorials/access.log
+#StandardError=append:/var/log/tutorials/error.log
+Restart=always
+
+[Install]
+WantedBy=default.target
