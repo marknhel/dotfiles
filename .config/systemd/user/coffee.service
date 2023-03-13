@@ -1,0 +1,12 @@
+[Unit]
+Description=Coffee Django App
+
+[Service]
+WorkingDirectory=/home/maki/git/repos/gitlab/makibyet101/coffee
+ExecStart=/home/maki/.config/virtualenvs/coffee/bin/python manage.py runserver 127.0.0.1:8002
+#StandardOutput=append:/var/log/coffee/access.log
+#StandardError=append:/var/log/coffee/error.log
+Restart=always
+
+[Install]
+WantedBy=default.target
