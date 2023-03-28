@@ -9,6 +9,7 @@ export ZDOTDIR="$HOME"/.config/zsh
 export BROWSER="brave"
 export TERMINAL="st"
 export EDITOR="nvim"
+export SYSTEMD_EDITOR="/usr/bin/vi"
 export STATUSBAR="dwmblocks"
 
 [ -f "$ZDOTDIR/.location" ] &&  source "$ZDOTDIR/.location"
@@ -108,7 +109,7 @@ export NMBGIT="XDG_DATA_HOME"/notmuch/nmbug
 export WINEPREFIX="$XDG_DATA_HOME"/wineprefixes/default
 
 #Nintendo Roms Dir
-export N64_ROMS_DIR="$HOME"/others/n64-roms
+export N64_ROMS_DIR="$XDG_DOCUMENTS_DIR"/n64-roms
 
 #Mplayer
 export MPLAYER_HOME="$XDG_CONFIG_HOME"/mplayer
@@ -124,3 +125,18 @@ export DOTFILES_DIR="$XDG_GIT_DIR"/repos/gitlab/makibyet101/dotfiles
 
 # WORK-ON HOME
 export WORKON_HOME="$XDG_CONFIG_HOME"/virtualenvs
+
+#MPD HOST
+export MPD_HOST=localhost
+
+#MPD PORT
+export MPD_PORT=6600
+
+#GTK_THEME
+export GTK_THEME=Adwaita:dark
+
+#BASH COMPLETION
+export BASH_COMPLETION_USER_FILE="$XDG_CONFIG_HOME"/bash-completion/bash_completion
+
+#Bash
+export XDG_STATE_HOME="$HOME"/.config/bash

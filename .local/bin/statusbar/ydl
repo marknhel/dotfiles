@@ -1,21 +1,13 @@
 #!/bin/sh
 
-
 video(){\
 	link="$( echo "www.youtube.com" | dmenu -i -p " Enter the link : ")"
 	echo $link
-
-
 }
-
-
-
-
 
 choice="$(echo "Video\\nPlaylist" | dmenu -i -p "Please enter the link :")" || exit 1
 
 case $choice in
 	Video) video ;;
 	Playlist) playlist ;;
-
 esac

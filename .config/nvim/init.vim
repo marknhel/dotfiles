@@ -55,7 +55,8 @@ autocmd FileType markdown source $XDG_CONFIG_HOME/nvim/md.vim
 autocmd FileType python source $XDG_CONFIG_HOME/nvim/py.vim
 autocmd FileType css source $XDG_CONFIG_HOME/nvim/css.vim
 autocmd FileType groff source $XDG_CONFIG_HOME/nvim/ms.vim
-autocmd FileType html,css,js,php,ms,py inoremap <Space><Space> <Esc>/<++><Enter>"_4cl
+autocmd FileType tex source $XDG_CONFIG_HOME/nvim/tex.vim
+autocmd FileType html,css,js,php,ms,py,tex inoremap <Space><Space> <Esc>/<++><Enter>"_4cl
 autocmd FileType htmldjango source $XDG_CONFIG_HOME/nvim/django.vim
 
 
@@ -192,11 +193,11 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 " Or if you have Neovim >= 0.1.5
 "if (has("termguicolors"))
-" set termguicolors
+set termguicolors
 "endif
 
 " Theme
-"syntax enable
+syntax enable
 "colorscheme OceanicNext
 colorscheme purify
 "colorscheme badwolf

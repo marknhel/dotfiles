@@ -1,4 +1,4 @@
-#files: 814	version: 5.9
+#files: 834	version: 5.9
 
 _comps=(
 '-' '_precommand'
@@ -152,6 +152,7 @@ _comps=(
 'chattr' '_chattr'
 'chcon' '_chcon'
 'chdir' '_cd'
+'checkupdates' '_checkupdates'
 'chfn' '_users'
 'chgrp' '_chown'
 'chimera' '_webbrowser'
@@ -362,6 +363,8 @@ _comps=(
 'fold' '_fold'
 'folder' '_mh'
 'folders' '_mh'
+'foot' '_foot'
+'footclient' '_footclient'
 'fortune' '_fortune'
 'forw' '_mh'
 'fprev' '_mh'
@@ -624,7 +627,6 @@ _comps=(
 'isag' '_sysstat'
 'ispell' '_ispell'
 'iwconfig' '_iwconfig'
-'j' '_j'
 'jadetex' '_tex'
 'jar' '_java'
 'jarsigner' '_java'
@@ -750,6 +752,7 @@ _comps=(
 'mencal' '_mencal'
 'mere' '_mere'
 'merge' '_rcs'
+'meson' '_meson'
 'metaflac' '_flac'
 'mformat' '_mtools'
 'mgv' '_pspdf'
@@ -831,6 +834,8 @@ _comps=(
 'nedit' '_nedit'
 'nedit-nc' '_nedit'
 'netcat' '_netcat'
+'netctl' '_netctl'
+'netctl-auto' '_netctl'
 'netrik' '_webbrowser'
 'netscape' '_netscape'
 'netstat' '_netstat'
@@ -842,12 +847,14 @@ _comps=(
 'nginx' '_nginx'
 'ngrep' '_ngrep'
 'nice' '_nice'
+'ninja' '_ninja'
 'nkf' '_nkf'
 'nl' '_nl'
 'nm' '_nm'
 'nmap' '_nmap'
 'nmblookup' '_samba'
 'nmcli' '_networkmanager'
+'nnn' '_nnn'
 'nocorrect' '_precommand'
 'noglob' '_precommand'
 'nohup' '_precommand'
@@ -879,14 +886,22 @@ _comps=(
 'p4' '_perforce'
 'p4d' '_perforce'
 'pacat' '_pulseaudio'
+'paccache' '_paccache'
+'pacdiff' '_pacdiff'
 'pack' '_pack'
 'packf' '_mh'
+'paclist' '_paclist'
+'paclog-pkglist' '_paclog-pkglist'
 'pacman' '_pacman'
 'pacman-conf' '_pacman'
 'pacman-key' '_pacman'
 'pacman.static' '_pacman'
 'pacmd' '_pulseaudio'
+'pacscripts' '_pacscripts'
+'pacsearch' '_pacsearch'
+'pacsort' '_pacsort'
 'pactl' '_pulseaudio'
+'pactree' '_pactree'
 'padsp' '_pulseaudio'
 'pandoc' '_pandoc'
 'paplay' '_pulseaudio'
@@ -1021,6 +1036,7 @@ _comps=(
 'quilt' '_quilt'
 'r' '_fc'
 'rake' '_rake'
+'rankmirrors' '_rankmirrors'
 'ranlib' '_ranlib'
 'rar' '_rar'
 'rc' '_sh'
@@ -1204,6 +1220,8 @@ _comps=(
 'svnliteadmin' '_subversion'
 'swaks' '_swaks'
 'swanctl' '_swanctl'
+'sway' '_sway'
+'swaymsg' '_swaymsg'
 'swift' '_swift'
 'swiftc' '_swift'
 'sync' '_nothing'
@@ -1325,6 +1343,7 @@ _comps=(
 'unwrapdiff' '_patchutils'
 'unxz' '_xz'
 'unzip' '_zip'
+'updpkgsums' '_updpkgsums'
 'uptime' '_uptime'
 'urxvt' '_urxvt'
 'urxvt256c' '_urxvt'
@@ -1428,6 +1447,7 @@ _comps=(
 'whoami' '_nothing'
 'whois' '_whois'
 'whom' '_mh'
+'wifi-menu' '_netctl'
 'wiggle' '_wiggle'
 'wipefs' '_wipefs'
 'wodim' '_cdrecord'
@@ -1502,7 +1522,9 @@ _comps=(
 'ypwhich' '_yp'
 'ypxfr' '_yp'
 'ytalk' '_other_accounts'
+'yt-dlp' '_yt-dlp'
 'zargs' '_zargs'
+'zathura' '_zathura'
 'zcalc' '_zcalc'
 '-zcalc-line-' '_zcalc_line'
 'zcat' '_zcat'
@@ -1665,15 +1687,19 @@ bindkey '^[/' _history-complete-older
 bindkey '^[~' _bash_complete-word
 
 autoload -Uz _bat _bluetoothctl _bootctl _busctl _bwrap \
-            _code _code-oss _coredumpctl _curl _docker \
-            _email-notmuch _highlight _hostnamectl _j _journalctl \
-            _kernel-install _libinput _localectl _loginctl _machinectl \
-            _mkinitcpio _mpv _networkctl _notmuch _oomctl \
-            _pacman _pass _pipenv _pkgfile _pulseaudio \
+            _checkupdates _code _code-oss _coredumpctl _curl \
+            _docker _email-notmuch _foot _footclient _highlight \
+            _hostnamectl _journalctl _kernel-install _libinput _localectl \
+            _loginctl _machinectl _meson _mkinitcpio _mpv \
+            _netctl _networkctl _ninja _nnn _notmuch \
+            _oomctl _paccache _pacdiff _paclist _paclog-pkglist \
+            _pacman _pacscripts _pacsearch _pacsort _pactree \
+            _pass _pipenv _pkgfile _pulseaudio _rankmirrors \
             _resolvectl _rg _sd_hosts_or_user_at_host _sd_machines _sd_outputmodes \
-            _sd_unit_files _systemctl _systemd _systemd-analyze _systemd-delta \
-            _systemd-inhibit _systemd-nspawn _systemd-path _systemd-run _systemd-tmpfiles \
-            _task _timedatectl _udevadm _xwallpaper _yay \
+            _sd_unit_files _sway _swaymsg _systemctl _systemd \
+            _systemd-analyze _systemd-delta _systemd-inhibit _systemd-nspawn _systemd-path \
+            _systemd-run _systemd-tmpfiles _task _timedatectl _udevadm \
+            _updpkgsums _xwallpaper _yay _yt-dlp _zathura \
             _cdr _all_labels _all_matches _alternative _approximate \
             _arg_compile _arguments _bash_completions _cache_invalid _call_function \
             _combination _complete _complete_debug _complete_help _complete_help_generic \

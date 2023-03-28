@@ -15,6 +15,6 @@ cmds="\
 🔃 reboot	reboot
 🖥 shutdown	shutdown now
 🕒 timer shut	schedshut"
-choice="$(echo "$cmds" | cut -d'	' -f 1 | dmenu -l 10 -c)" || exit 1
+choice="$(echo "$cmds" | cut -d'	' -f 1 | dmenu -l 10)" || exit 1
 
 `echo "$cmds" | grep "^$choice	" | cut -d '	' -f2-`

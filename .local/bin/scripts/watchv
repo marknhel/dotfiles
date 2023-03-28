@@ -2,10 +2,10 @@
 
 
 anime(){ \
-	vidpath=$( find "$XDG_VIDEOS_DIR/anime" -type d | sort | dmenu -i -l 10 -c ) || main
+	vidpath=$( find "$XDG_VIDEOS_DIR/anime" -type d | sort | dmenu -i -l 10 ) || main
 	total=$( find "$vidpath" -type f | wc -l )
 
-	num=$( find "$vidpath" -type f | sed "s|$vidpath\/||" | sort | dmenu -i -l 10 -c | xargs -r basename)
+	num=$( find "$vidpath" -type f | sed "s|$vidpath\/||" | sort | dmenu -i -l 10 | xargs -r basename)
 	[ -z "$num" ] && anime
 	episode=$(find "$vidpath" -type f | sort | sed "/$num/ q" | wc -l )
 	start=$((1 + total - episode))
@@ -18,10 +18,10 @@ anime(){ \
 
 
 series(){
-	vidpath=$( find "$XDG_VIDEOS_DIR/series" -type d | sort | dmenu -i -r -l 10 -c ) || main
+	vidpath=$( find "$XDG_VIDEOS_DIR/series" -type d | sort | dmenu -i -l 10 ) || main
 	total=$( find "$vidpath" -type f| grep -c -i "\.\(mkv\|mp4\|ts\)*$" )
 
-	num=$( find "$vidpath" -type f | grep -i "\.\(mkv\|mp4\|ts\)*$" |sed "s|$vidpath\/||" | sort | dmenu -i -l 10 -c | xargs -r basename)
+	num=$( find "$vidpath" -type f | grep -i "\.\(mkv\|mp4\|ts\)*$" |sed "s|$vidpath\/||" | sort | dmenu -i -l 10 | xargs -r basename)
 	[ -z "$num" ] && series
 	episode=$(find "$vidpath" -type f | grep -i "\.\(mkv\|mp4\|ts\)*$" | sort | sed "/$num/ q" | wc -l )
 	start=$((1 + total - episode))
@@ -33,24 +33,24 @@ series(){
 
 
 movie(){
-	file=$(find "$XDG_VIDEOS_DIR/movies" -type f | grep -v -e ".*.srt" -e ".*.jpeg" -e ".*.jpg"  -e ".*.txt" -e ".*.jpg"  | dmenu -i -l 10 -c ) || main
+	file=$(find "$XDG_VIDEOS_DIR/movies" -type f | grep -v -e ".*.srt" -e ".*.jpeg" -e ".*.jpg"  -e ".*.txt" -e ".*.jpg"  | dmenu -i -l 10 ) || main
 	[ -z "$file" ] && movie
 	mplayer -ao pulse,alsa,oss -fs "$file" 2>/dev/null
 }
 
 copied(){
-	item=$( find "$XDG_VIDEOS_DIR/copied" | grep -v -i "\.\(mkv\|mp4\|ts\)*$" | dmenu -i -l 10 -c ) || main
+	item=$( find "$XDG_VIDEOS_DIR/copied" | grep -v -i "\.\(mkv\|mp4\|ts\)*$" | dmenu -i -l 10 ) || main
 	[ -z "$item" ] && copied
 	mplayer -ao pulse,alsa,oss -fs "$item" 2>/dev/null
 
 }
 ytdl(){
-	item=$( find "$XDG_VIDEOS_DIR/youtube-dl" -type f | dmenu -i -l 10 -c) || main
+	item=$( find "$XDG_VIDEOS_DIR/youtube-dl" -type f | dmenu -i -l 10 ) || main
 	mplayer -ao pulse,alsa,oss -fs "$item" 2>/dev/null
 
 }
 main(){
-	choice=$(printf "Anime\\nSeries\\nMovie\\nCopied\\nDownloads" | dmenu -i -l 10 -c )
+	choice=$(printf "Anime\\nSeries\\nMovie\\nCopied\\nDownloads" | dmenu -i -l 10 )
 
 	case "$choice" in
 		Anime) anime;;

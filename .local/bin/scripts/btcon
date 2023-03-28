@@ -4,7 +4,7 @@ dev="$XDG_CACHE_HOME/btdev"
 
 btdevscan
 devlist="$HOME/.local/share/.btscanneddevs"
-choice=$( < "$devlist" dmenu -l 10 -c )
+choice=$( < "$devlist" dmenu -l 10 )
 [ -z "$choice" ] && exit 1
 name=$(echo "$choice" | awk '{ print $3 }' )
 device=$(echo "$choice" | awk '{print $1 }' )

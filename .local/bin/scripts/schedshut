@@ -1,6 +1,6 @@
 #!/bin/sh
 
-time="$(printf "1hr\n2hrs\nCancel" | dmenu -l 3 -c)"
+time="$(printf "1hr\n2hrs\nCancel" | dmenu -l 3)"
 
 case "$time" in
 	1hr) sudo shutdown -P +60;;

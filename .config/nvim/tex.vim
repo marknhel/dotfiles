@@ -1,0 +1,11 @@
+inoremap ;use \usepackage{<-->}<Enter><++><Esc>/<--><Enter>"_4cl
+inoremap ;sec \section{<-->}<Enter><++><Esc>/<--><Enter>"_4cl
+inoremap ;ssec \subsection{<-->}<Enter><++><Esc>/<--><Enter>"_4cl
+inoremap ;sssec \subsubsection{<-->}<Enter><++><Esc>/<--><Enter>"_4cl
+inoremap ;title \title{<-->}<Enter><++><Esc>/<--><Enter>"_4cl
+inoremap ;auth \author{<-->}<Enter><++><Esc>/<--><Enter>"_4cl
+inoremap ;beg \begin{<-->}<Enter><++><Enter>\end{<++>}<Esc>/<--><Enter>"_4cl
+inoremap ;item \item<--><Enter><++><Esc>/<--><Enter>"_4cl
+inoremap ;para \paragraph{<-->}<Enter><++><Esc>/<--><Enter>"_4cl
+inoremap ;chap \chapter{<-->}<Enter><++><Esc>/<--><Enter>"_4cl
+inoremap ;mktitle \maketitle<Enter><Esc>

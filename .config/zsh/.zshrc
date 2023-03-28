@@ -10,31 +10,31 @@
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
 	source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-
+#
 source "$HOME"/.config/zsh/powerlevel10k/powerlevel10k.zsh-theme
 
 [[ -f /usr/bin/virtualenvwrapper.sh ]] && source /usr/bin/virtualenvwrapper.sh
 #source /usr/share/zsh/share/antigen.zsh
 
 #To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-#[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+#source "$XDG_CONFIG_HOME"/zsh/dracula.zsh-theme
 #source /home/malware/.config/zsh/hapin.zsh-theme
-#source /home/malware/.config/zsh/hapin.zsh-theme
-#source /home/malware/.config/zsh/honukai.zsh-theme
-#source /home/malware/.config/zsh/typewritten/typewritten.zsh-theme
-#source /home/malware/.config/zsh/minimal/minimal.zsh-theme
-#source /home/malware/.config/zsh/materialshell/materialshell.zsh-theme
-#source /home/malware/.config/zsh/punctual.zsh-theme
-#source /home/malware/.config/zsh/lambda-mod.zsh-theme
+#source /home/maki/.config/zsh/honukai.zsh-theme
+#source /home/maki/.config/zsh/typewritten/typewritten.zsh-theme
+#source /home/maki/.config/zsh/minimal/minimal.zsh-theme
+#source /home/maki/.config/zsh/materialshell/materialshell.zsh-theme
+#source /home/maki/.config/zsh/punctual.zsh-theme
+#source /home/maki/.config/zsh/lambda-mod.zsh-theme
 #antibody bundle carloscuesta/materialshell
 
 autoload -U colors && colors	# Load colors
 #autoload -U promptinit; promptinit
-#prompt zefram
+#prompt redhat
 
 #export PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 
-setopt autocd
+#setopt autocd
 #History in cache directory:
 #
 #
@@ -55,7 +55,7 @@ bindkey '^@' autosuggest-accept
 
 
 
-[[ -f ~/.config/zsh/.aliasrc ]] && source ~/.config/zsh/.aliasrc
+[[ -f "$ZDOTDIR"/.aliasrc ]] && source "$ZDOTDIR"/.aliasrc
 
 export LF_ICONS="\
 tw=:\
@@ -224,11 +224,11 @@ ex=:\
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh 2> /dev/null
 
-source /usr/share/autojump/autojump.zsh 2>/dev/null
-source /usr/share/doc/pkgfile/command-not-found.zsh
+#source /usr/share/autojump/autojump.zsh 2>/dev/null
+#source /usr/share/doc/pkgfile/command-not-found.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
-[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+#[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
 
 # Start SSH AGENT
@@ -240,3 +240,4 @@ source /usr/share/doc/pkgfile/command-not-found.zsh
 #fi
 
 #eval $(keychain --eval --quiet id_ed25519 ~/.ssh/makibyet101@gmail.com)
+set viminfofile=$XDG_STATE_HOME/vim/viminfo
