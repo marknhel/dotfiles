@@ -29,7 +29,7 @@ alias \
 	cp='cp -v' \
 	mv='mv -v' \
 	rm='rm -v' \
-	vol='pamixer --set-volume' \
+	vol='pamixer --allow-boost --set-volume' \
 	SS='sudo systemctl ' \
 	btctl='bluetoothctl' \
 	S='sudo' \
@@ -43,10 +43,9 @@ alias \
 	gm='cd $XDG_MUSIC_DIR' \
 	gM='cd $XDG_MOUNTPOINT_DIR' \
 	gh='cd $HOME' \
-	repo='cd $XDG_GIT_DIR/repos' \
+	repo='cd $XDG_GIT_DIR/repos/gitlab/makibyet101' \
 	fonts='fc-match -s monospace:charset=1FA9' \
 	emojis='cat $XDG_DATA_HOME/emojicodes' \
-	rename='rename -v ' \
 	SE='sudo nvim ' \
 	tree='tree -C ' \
 	subs='cd  $XDG_DOCUMENTS_DIR/subjects' \
@@ -63,4 +62,5 @@ alias \
 	mkvenv='mkvirtualenv ' \
 	code='code --extensions-dir "$VSCODE_PORTABLE"' \
 	keychain='keychain --absolute --dir "$XDG_RUNTIME_DIR"/keychain' \
-	mbsync='mbsync -c "$XDG_CONFIG_HOME"/isync/mbsyncrc'
+	mbsync='mbsync -c "$XDG_CONFIG_HOME"/isync/mbsyncrc' \
+	bdl='bulk_dl '

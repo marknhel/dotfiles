@@ -6,7 +6,6 @@ ls "$subdir"
 read -r activity
 mkdir -pv "$subdir/$activity" || exit 1
 file=$( echo "$subdir" | sed "s|.*subjects\/||")
-<<<<<<< HEAD
 #task=$( printf "%s-%s-task.md" "$file" "$activity")
 answer=$( printf "%s-%s.md" "$file" "$activity")
 
@@ -16,7 +15,6 @@ echo "FULLDIR : $subdir/$activity"
 #echo "$template" >> "$subdir/$activity/$task"
 touch "$subdir/$activity/$answer"
 #echo "$template" >> "$subdir/$activity/$answer"
-=======
 task=$( printf "%s-%s-task.ms" "$file" "$activity")
 answer=$( printf "%s-%s-answer.ms" "$file" "$activity")
 
@@ -26,14 +24,10 @@ touch "$subdir/$activity/$task"
 echo "$template" >> "$subdir/$activity/$task"
 touch "$subdir/$activity/$answer"
 echo "$template" >> "$subdir/$activity/$answer"
->>>>>>> 88f4ba0 (restored some changes)
 ls "$subdir/$activity"
 echo "DIR : $subdir"
 echo "FILE : $file"
 echo "ACTIVITY : $activity"
-<<<<<<< HEAD
 #echo "TASK-FILE : $task"
-=======
 echo "TASK-FILE : $task"
->>>>>>> 88f4ba0 (restored some changes)
 echo "ANSWER-FILE : $answer"

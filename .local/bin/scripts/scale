@@ -1,5 +1,9 @@
 #!/bin/sh
 
-screen=$( xrandr | grep "\sconnected\s" | awk '{ print $1 }' |  dmenu -c -l 10 )
-num=$( dmenu -p "Scale to : " -l 10 -c <  "$HOME"/.config/scale )
+screen=$( xrandr | grep "\sconnected\s" | awk '{ print $1 }' |  dmenu -l 10 )
+[ -z "$screen" ] && exit 1
+
+num=$( dmenu -p "Scale to : " -l 10 <  "$HOME"/.config/scale )
+[ -z "$num" ] && exit 1
+
 xrandr --output "$screen" --scale "$num"x"$num"

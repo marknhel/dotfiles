@@ -1,8 +1,11 @@
 #!/bin/sh
 PASS_DIR="$XDG_DATA_HOME"/pass
-#find "$PASS_DIR" -type f | grep -v .git | dmenu -c -l 10
-password=$(find "$PASS_DIR" -type f | grep -v "\.git"  | sed 's|/home/maki/.local/share/pass/||'| sed 's|\.gpg$||' | dmenu -l 10)
-#password=$(dmenu -c -l 10 < "$XDG_CONFIG_HOME"/passes)
+#find "$PASS_DIR" -type f | grep -v .git | bemenu -c -l 10
+#password=$(find "$PASS_DIR" -type f | grep -v "\.git"  | sed 's|/home/maki/.local/share/pass/||'| sed 's|\.gpg$||' | bemenu -l 10)
+password=$(find "$PASS_DIR" -type f | grep -v "\.git"  | sed 's|/home/maki/.local/share/pass/||'| sed 's|\.gpg$||' | mymenu -i -l 10 -b)
+
+#password=$(bemenu -c -l 10 < "$XDG_CONFIG_HOME"/passes)
 
 
-[ -n "$password" ] && xdotool type "$(pass "$password")"
+#[ -n "$password" ] && xdotool type "$(pass "$password")"
+[ -n "$password" ] && wtype "$(pass "$password")"

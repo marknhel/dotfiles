@@ -1,6 +1,7 @@
 #!/bin/sh
-swap_path="$HOME"/.local/state/nvim/swap/
+swap_path="$HOME"/.config/bash/nvim/swap/
 
 file=$(find "$swap_path" -type f | fzf)
+[ -z "$file" ] && exit 1
 
 rm -v "$file"

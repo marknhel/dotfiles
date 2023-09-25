@@ -1,59 +1,64 @@
 #!/bin/sh
 
-
-anime(){ \
-	vidpath=$( find "$XDG_VIDEOS_DIR/anime" -type d | sort | dmenu -i -l 10 ) || main
-	total=$( find "$vidpath" -type f | wc -l )
-
-	num=$( find "$vidpath" -type f | sed "s|$vidpath\/||" | sort | dmenu -i -l 10 | xargs -r basename)
-	[ -z "$num" ] && anime
-	episode=$(find "$vidpath" -type f | sort | sed "/$num/ q" | wc -l )
-	start=$((1 + total - episode))
-
-	# shellcheck disable=SC2046
-	mplayer -ao pulse,alsa,oss -fs $(find "$vidpath" -type f | sort | tail -n "$start")
-
-
-}
+#anime(){ \
+#	vidpath=$( find "$XDG_VIDEOS_DIR/anime" -type d | sort | mymenu -i -l 10 ) || main
+#	total=$( find "$vidpath" -type f | wc -l )
+#
+#	num=$( find "$vidpath" -type f | sed "s|$vidpath\/||" | sort | mymenu -i -l 10 | xargs -r basename)
+#	[ -z "$num" ] && anime
+#	episode=$(find "$vidpath" -type f | sort | sed "/$num/ q" | wc -l )
+#	start=$((1 + total - episode))
+#
+#	# shellcheck disable=SC2046
+#	mplayer -ao pulse,alsa,oss -fs $(find "$vidpath" -type f | sort | tail -n "$start")
+#	mpv --save-position-on-quit --playlist=/home/maki/pl
+#
+#
+#}
 
 
 series(){
-	vidpath=$( find "$XDG_VIDEOS_DIR/series" -type d | sort | dmenu -i -l 10 ) || main
-	total=$( find "$vidpath" -type f| grep -c -i "\.\(mkv\|mp4\|ts\)*$" )
-
-	num=$( find "$vidpath" -type f | grep -i "\.\(mkv\|mp4\|ts\)*$" |sed "s|$vidpath\/||" | sort | dmenu -i -l 10 | xargs -r basename)
-	[ -z "$num" ] && series
-	episode=$(find "$vidpath" -type f | grep -i "\.\(mkv\|mp4\|ts\)*$" | sort | sed "/$num/ q" | wc -l )
-	start=$((1 + total - episode))
-	# shellcheck disable=SC2046
-	mplayer -ao pulse,alsa,oss -fs $(find "$vidpath" -type f| grep -i "\.\(mkv\|mp4\|ts\)*$" | sort | tail -n "$start")
+#	vidpath=$( find "$XDG_VIDEOS_DIR/series" -type d | sort | mymenu -i -l 10 ) || main
+#	total=$( find "$vidpath" -type f| grep -c -i "\.\(mkv\|mp4\|ts\)*$" )
+#
+#	num=$( find "$vidpath" -type f | grep -i "\.\(mkv\|mp4\|ts\)*$" |sed "s|$vidpath\/||" | sort | mymenu -i -l 10 | xargs -r basename)
+#	[ -z "$num" ] && series
+#	episode=$(find "$vidpath" -type f | grep -i "\.\(mkv\|mp4\|ts\)*$" | sort | sed "/$num/ q" | wc -l )
+#	start=$((1 + total - episode))
+#	# shellcheck disable=SC2046
+##	mplayer -ao pulse,alsa,oss -fs $(find "$vidpath" -type f| grep -i "\.\(mkv\|mp4\|ts\)*$" | sort | tail -n "$start")
+	choice=$( find "$XDG_DATA_HOME"/mpv/playlists -type f | sort | mymenu -i -l 10 -b ) || main
+	mpv --save-position-on-quit --log-file="$XDG_CACHE_HOME"/mpv/mpv.log --playlist="$choice"
 
 
 }
 
 
 movie(){
-	file=$(find "$XDG_VIDEOS_DIR/movies" -type f | grep -v -e ".*.srt" -e ".*.jpeg" -e ".*.jpg"  -e ".*.txt" -e ".*.jpg"  | dmenu -i -l 10 ) || main
+	file=$(find "$XDG_VIDEOS_DIR/movies" -type f | grep -v -e ".*.srt" -e ".*.jpeg" -e ".*.jpg"  -e ".*.txt" -e ".*.jpg"  | mymenu -i -l 10 -b ) || main
 	[ -z "$file" ] && movie
-	mplayer -ao pulse,alsa,oss -fs "$file" 2>/dev/null
+#	mplayer -ao pulse,alsa,oss -fs "$file" 2>/dev/null
+	mpv "$file" 2>/dev/null
 }
 
 copied(){
-	item=$( find "$XDG_VIDEOS_DIR/copied" | grep -v -i "\.\(mkv\|mp4\|ts\)*$" | dmenu -i -l 10 ) || main
+	item=$( find "$XDG_VIDEOS_DIR/copied" -type f | grep -v -i "\.\(mkv\|mp4\|ts\)*$" | mymenu -i -l 10 -b ) || main
 	[ -z "$item" ] && copied
-	mplayer -ao pulse,alsa,oss -fs "$item" 2>/dev/null
+#	mplayer -ao pulse,alsa,oss -fs "$item" 2>/dev/null
+	mpv "$item" 2>/dev/null
 
 }
 ytdl(){
-	item=$( find "$XDG_VIDEOS_DIR/youtube-dl" -type f | dmenu -i -l 10 ) || main
-	mplayer -ao pulse,alsa,oss -fs "$item" 2>/dev/null
+	item=$( find "$XDG_VIDEOS_DIR/youtube-dl" -type f | mymenu -i -l 10 -b ) || main
+#	mplayer -ao pulse,alsa,oss -fs "$item" 2>/dev/null
+	mpv "$item" 2>/dev/null
 
 }
 main(){
-	choice=$(printf "Anime\\nSeries\\nMovie\\nCopied\\nDownloads" | dmenu -i -l 10 )
+	choice=$(printf "Series\\nMovie\\nCopied\\nDownloads" | mymenu -i -l 10 -b )
 
 	case "$choice" in
-		Anime) anime;;
+#		Anime) anime;;
 		Series) series;;
 		Movie) movie;;
 		Copied) copied;;

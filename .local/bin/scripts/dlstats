@@ -1,0 +1,8 @@
+#!/bin/sh
+
+queued=$(tsp | grep "\[Download\]" | grep queued | wc -l )
+running=$(tsp | grep running )
+
+ [ -z "$running" ] && status="❌" || status="✅"
+
+ printf "%s %s" "$queued" "$status"

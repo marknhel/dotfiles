@@ -1,0 +1,25 @@
+#!/bin/sh
+
+musicc="#cb7201"
+trafficc="#1581dc"
+cpuc="#05b170"
+memc="#fb3434"
+volc="#12a3f3"
+wific="#029cc5"
+clockc="#cbd0d3"
+
+while true;
+do
+	clock="$(sb-clock)"
+	traffic="$(nettraf)"
+	vol="$(volume)"
+	music="$(sb-music)"
+	wifi="$(sb-wifi)"
+	[ -z "$wifi" ] && wifi="[✘]"
+	[ -z "$music" ] && music="[✘]"
+#	sbstatus=$(printf "Music: %s  |  Net: %s  |  Volume:  %s  |  WiFi: %s  |  %s" "$music" "$traffic" "$vol" "$wifi" "$clock")
+sbstatus=$(printf " 🎸 ^fg(cb7201)%s   🚮 ^fg(1581dc)%s   🗣  ^fg(12a3f3)%s   🌐  ^fg(029cc5)%s  🕒 ^fg(cbd0d3)%s "  "$music" "$traffic" "$vol" "$wifi" "$clock")
+
+	dwlb -urgent-bg-color "#38377a" -inactive-bg-color "#38377a" -active-bg-color "#38377a" -status all "$sbstatus"
+	sleep 1
+done

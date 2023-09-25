@@ -15,84 +15,84 @@ packdir="$dir"/packages
 musicdir="$dir"/music
 
 
-[ ! -d "$picsdir" ] && mkdir -v "$picsdir"
-[ ! -d "$docsdir" ] && mkdir -v "$docsdir"
-[ ! -d "$vidsdir" ] && mkdir -v "$vidsdir"
-[ ! -d "$zipsdir" ] && mkdir -v "$zipsdir"
-[ ! -d "$subsdir" ] && mkdir -v "$subsdir"
-[ ! -d "$torrentsdir" ] && mkdir -v "$torrentsdir"
-[ ! -d "$apksdir" ] && mkdir -v "$apksdir"
-[ ! -d "$webfilesdir" ] && mkdir -v "$webfilesdir"
-[ ! -d "$dupsdir" ] && mkdir -v "$dupsdir"
-[ ! -d "$fontsdir" ] && mkdir -v "$fontsdir"
-[ ! -d "$isodir" ] && mkdir -v "$isodir"
+[ ! -d "$picsdir" ] || mkdir -v "$picsdir"
+[ ! -d "$docsdir" ] || mkdir -v "$docsdir"
+[ ! -d "$vidsdir" ] || mkdir -v "$vidsdir"
+[ ! -d "$zipsdir" ] || mkdir -v "$zipsdir"
+[ ! -d "$subsdir" ] || mkdir -v "$subsdir"
+[ ! -d "$torrentsdir" ] || mkdir -v "$torrentsdir"
+[ ! -d "$apksdir" ] || mkdir -v "$apksdir"
+[ ! -d "$webfilesdir" ] || mkdir -v "$webfilesdir"
+[ ! -d "$dupsdir" ] || mkdir -v "$dupsdir"
+[ ! -d "$fontsdir" ] || mkdir -v "$fontsdir"
+[ ! -d "$isodir" ] || mkdir -v "$isodir"
 
 #PICS
-mv  "$dir"/*.png "$picsdir"
-mv  "$dir"/*.jpg "$picsdir"
-mv  "$dir"/*.jpeg "$picsdir"
-mv  "$dir"/*.ico "$picsdir"
-mv  "$dir"/*.svg "$picsdir"
-mv  "$dir"/*.webp "$picsdir"
-mv  "$dir"/*.gif "$picsdir"
+ls "$dir"/*.png && mv "$dir"/*.png "$picsdir"
+ls "$dir"/*.jpg && mv "$dir"/*.jpg "$picsdir"
+ls "$dir"/*.jpeg && mv "$dir"/*.jpeg "$picsdir"
+ls "$dir"/*.ico && mv "$dir"/*.ico "$picsdir"
+ls "$dir"/*.svg && mv "$dir"/*.svg "$picsdir"
+ls "$dir"/*.webp && mv "$dir"/*.webp "$picsdir"
+ls "$dir"/*.gif && mv "$dir"/*.gif "$picsdir"
 
 #DOCS
-mv  "$dir"/*.pdf "$docsdir"
-mv  "$dir"/*.docx "$docsdir"
-mv  "$dir"/*.py "$docsdir"
-mv  "$dir"/*.cpp "$docsdir"
-mv  "$dir"/*.pptx "$docsdir"
-mv  "$dir"/*.txt "$docsdir"
-mv  "$dir"/*.csv "$docsdir"
-mv  "$dir"/*.epub "$docsdir"
+ls "$dir"/*.pdf && mv "$dir"/*.pdf "$docsdir"
+ls "$dir"/*.docx && mv "$dir"/*.docx "$docsdir"
+ls "$dir"/*.py && mv "$dir"/*.py "$docsdir"
+ls "$dir"/*.cpp && mv "$dir"/*.cpp "$docsdir"
+ls "$dir"/*.pptx && mv "$dir"/*.pptx "$docsdir"
+ls "$dir"/*.txt && mv "$dir"/*.txt "$docsdir"
+ls "$dir"/*.csv && mv "$dir"/*.csv "$docsdir"
+ls "$dir"/*.epub && mv "$dir"/*.epub "$docsdir"
 
 #VIDS
-mv  "$dir"/*.mp4 "$vidsdir"
-mv  "$dir"/*.mkv "$vidsdir"
-mv  "$dir"/*.ts "$vidsdir"
+ls "$dir"/*.mp4 && mv "$dir"/*.mp4 "$vidsdir"
+ls "$dir"/*.mkv && mv "$dir"/*.mkv "$vidsdir"
+ls "$dir"/*.ts && mv "$dir"/*.ts "$vidsdir"
 
 #ZIP
-mv  "$dir"/*.rar "$zipsdir"
-mv  "$dir"/*.zip "$zipsdir"
-mv  "$dir"/*.tar "$zipsdir"
-mv  "$dir"/*.tar.gz "$zipsdir"
-mv  "$dir"/*.iso "$zipsdir"
-mv  "$dir"/*.jar "$zipsdir"
-mv  "$dir"/*.tgz "$zipsdir"
+ls "$dir"/*.rar && mv "$dir"/*.rar "$zipsdir"
+ls "$dir"/*.zip && mv "$dir"/*.zip "$zipsdir"
+ls "$dir"/*.tar && mv "$dir"/*.tar "$zipsdir"
+ls "$dir"/*.tar.gz && mv "$dir"/*.tar.gz "$zipsdir"
+ls "$dir"/*.jar && mv "$dir"/*.jar "$zipsdir"
+ls "$dir"/*.tgz && mv "$dir"/*.tgz "$zipsdir"
+ls "$dir"/*.bz2 && mv "$dir"/*.bz2 "$zipsdir"
 
 #SUBS
 
-mv  "$dir"/*.srt "$subsdir"
+ls "$dir"/*.srt && mv "$dir"/*.srt "$subsdir"
 
 #TORRENTS
-mv  "$dir"/*.added "$torrentsdir"
+ls "$dir"/*.added && mv "$dir"/*.added "$torrentsdir"
 
 #APKS
-mv  "$dir"/*.apk "$apksdir"
+mv "$dir"/*.apk "$apksdir"
 
 #WEB
-mv "$dir"/*.css "$webfilesdir"
-mv "$dir"/*.js "$webfilesdir"
-mv "$dir"/*.html "$webfilesdir"
+ls "$dir"/*.css && mv "$dir"/*.css "$webfilesdir"
+ls "$dir"/*.js && mv "$dir"/*.js "$webfilesdir"
+ls "$dir"/*.html && mv "$dir"/*.html "$webfilesdir"
 
 #DUP
-mv "$dir"/*.~1~ "$dupsdir"
+ls "$dir"/*.~1~ && mv "$dir"/*.~1~ "$dupsdir"
 
 #FONTS
-mv "$dir"/*.ttf "$fontsdir"
+ls "$dir"/*.ttf && mv "$dir"/*.ttf "$fontsdir"
 
 #ISO'S
-mv "$dir"/*.iso "$fontsdir"
-mv "$dir"/*.img "$fontsdir"
+ls "$dir"/*.iso && mv "$dir"/*.iso "$fontsdir"
+ls "$dir"/*.img && mv "$dir"/*.img "$fontsdir"
 
 #PACKAGES
-mv "$dir"/*.deb "$packdir"
-mv "$dir"/*.tar.zst "$packdir"
-mv "$dir"/*.AppImage "$packdir"
+ls "$dir"/*.deb && mv "$dir"/*.deb "$packdir"
+ls "$dir"/*.tar.zst && mv "$dir"/*.tar.zst "$packdir"
+ls "$dir"/*.AppImage && mv "$dir"/*.AppImage "$packdir"
 
 #MUSIC
-mv "$dir"/*.mp3 "$musicdir"
-mv "$dir"/*.ogg "$musicdir"
-mv "$dir"/*.m4a "$musicdir"
-mv "$dir"/*.acc "$musicdir"
-mv "$dir"/*.wav "$musicdir"
+ls "$dir"/*.mp3 && mv "$dir"/*.mp3 "$musicdir"
+ls "$dir"/*.ogg && mv "$dir"/*.ogg "$musicdir"
+ls "$dir"/*.m4a && mv "$dir"/*.m4a "$musicdir"
+ls "$dir"/*.acc && mv "$dir"/*.acc "$musicdir"
+ls "$dir"/*.wav && mv "$dir"/*.wav "$musicdir"

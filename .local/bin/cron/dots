@@ -1,19 +1,50 @@
 #!/bin/sh
 
-dir="$HOME"/git/repos/gitlab/makibyet101/dotfiles
+TARGET="$HOME"/git/repos/gitlab/makibyet101/dotfiles
 
-# Configurations
-rsync -av --delete "$HOME"/.config "$dir"/
+SOURCE_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}"
+SOURCE_BINARIES="$HOME"/.local/bin
+SOURCE_DATA="$HOME"/.local/share
 
-# Binaries
-rsync -av --delete "$HOME"/.local "$dir"/
+TARGET_CONFIG="$TARGET"/.config
+TARGET_BINARIES="$TARGET"/.local/bin
+TARGET_DATA="$TARGET"/.local/share
 
-# Xprofile
-rm -rf "$dir"/.config/BraveSoftware
-rm -rf "$dir"/.config/Caprine
-rm -rf "$dir"/.config/Code\ -\ OSS
-rm -rf "$dir"/.config/discord
-rm -rf "$dir"/.config/Gimp
-rm -rf "$dir"/.config/Gimp
-rm -rf "$dir"/.config/Inkscape
-rm -rf "$dir"/.config/VirtualBox
+# CONFIGURATIONS
+cp -Ru "$SOURCE_CONFIG"/alacritty "$TARGET_CONFIG"
+cp -Ru "$SOURCE_CONFIG"/calcurse "$TARGET_CONFIG"
+cp -Ru "$SOURCE_CONFIG"/codeblocks "$TARGET_CONFIG"
+cp -Ru "$SOURCE_CONFIG"/dunst "$TARGET_CONFIG"
+cp -Ru "$SOURCE_CONFIG"/flameshot "$TARGET_CONFIG"
+cp -Ru "$SOURCE_CONFIG"/gtk-2.0 "$TARGET_CONFIG"
+cp -Ru "$SOURCE_CONFIG"/gtk-3.0 "$TARGET_CONFIG"
+cp -Ru "$SOURCE_CONFIG"/hypr "$TARGET_CONFIG"
+cp -Ru "$SOURCE_CONFIG"/imv "$TARGET_CONFIG"
+cp -Ru "$SOURCE_CONFIG"/lf "$TARGET_CONFIG"
+cp -Ru "$SOURCE_CONFIG"/mpd "$TARGET_CONFIG"
+cp -Ru "$SOURCE_CONFIG"/mplayer "$TARGET_CONFIG"
+cp -Ru "$SOURCE_CONFIG"/mpv "$TARGET_CONFIG"
+cp -Ru "$SOURCE_CONFIG"/ncmpcpp "$TARGET_CONFIG"
+cp -Ru "$SOURCE_CONFIG"/newsboat "$TARGET_CONFIG"
+cp -Ru "$SOURCE_CONFIG"/nvim/*.vim "$TARGET_CONFIG"/nvim
+cp -Ru "$SOURCE_CONFIG"/pulse "$TARGET_CONFIG"
+cp -Ru "$SOURCE_CONFIG"/sxiv "$TARGET_CONFIG"
+cp -Ru "$SOURCE_CONFIG"/systemd "$TARGET_CONFIG"
+cp -Ru "$SOURCE_CONFIG"/themes "$TARGET_CONFIG"
+cp -Ru "$SOURCE_CONFIG"/waybar "$TARGET_CONFIG"
+cp -Ru "$SOURCE_CONFIG"/wget "$TARGET_CONFIG"
+cp -Ru "$SOURCE_CONFIG"/x11 "$TARGET_CONFIG"
+cp -Ru "$SOURCE_CONFIG"/youtube-viewer "$TARGET_CONFIG"
+cp -Ru "$SOURCE_CONFIG"/yt-dlp "$TARGET_CONFIG"
+cp -Ru "$SOURCE_CONFIG"/zathura "$TARGET_CONFIG"
+cp -Ru "$SOURCE_CONFIG"/zsh "$TARGET_CONFIG"
+cp -Ru "$SOURCE_CONFIG"/arch-wiki-docs-html "$TARGET_CONFIG"
+cp -Ru "$SOURCE_CONFIG"/bookmarks "$TARGET_CONFIG"
+cp -Ru "$SOURCE_CONFIG"/scale "$TARGET_CONFIG"
+cp -Ru "$SOURCE_CONFIG"/screenkey.json "$TARGET_CONFIG"
+cp -Ru "$SOURCE_CONFIG"/Xresources "$TARGET_CONFIG"
+
+# BINARIES
+cp -Ru "$SOURCE_BINARIES"/cron "$TARGET_BINARIES"
+cp -Ru "$SOURCE_BINARIES"/scripts "$TARGET_BINARIES"
+cp -Ru "$SOURCE_BINARIES"/statusbar "$TARGET_BINARIES"

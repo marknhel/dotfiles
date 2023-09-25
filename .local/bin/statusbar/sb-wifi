@@ -1,0 +1,5 @@
+#!/bin/sh
+#nmcli -p -f general.connection device show wlp2s0| grep GENERAL.CONNECTION | sed 's/GENERAL.CONNECTION:\s*//'
+network=$(nmcli | grep wlp2s0 | grep ": connected" | sed 's/^.*connected to //')
+#[ ! -z "$network" ] && echo " Network: $network "
+[ ! -z "$network" ] && echo "   $network "

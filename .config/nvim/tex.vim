@@ -9,3 +9,10 @@ inoremap ;item \item<--><Enter><++><Esc>/<--><Enter>"_4cl
 inoremap ;para \paragraph{<-->}<Enter><++><Esc>/<--><Enter>"_4cl
 inoremap ;chap \chapter{<-->}<Enter><++><Esc>/<--><Enter>"_4cl
 inoremap ;mktitle \maketitle<Enter><Esc>
+inoremap ;pic \includegraphics[<-->]{<++>}<Enter><++><Esc>/<--><Enter>"_4cl
+inoremap ;cap \caption{<-->}<Enter><++><Esc>/<--><Enter>"_4cl
+inoremap ;it \textit{<-->}<Esc>/<--><Enter>"_4cl
+inoremap ;bf \textbf{<-->}<Esc>/<--><Enter>"_4cl
+inoremap ;ref \ref{<-->}<Esc>/<--><Enter>"_4cl
+inoremap ;cent \centering<Enter>
+inoremap ;lab \label{<-->}<++><Esc>/<--><Enter>"_4cl

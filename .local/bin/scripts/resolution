@@ -1,6 +1,9 @@
 #!/bin/sh
 
-screen=$( xrandr | grep "\sconnected\s" | awk '{ print $1 }' |  dmenu -c -l 10 )
-geo=$(xrandr | grep "[0-9].*x[0-9]" | awk '{ print $1 }' | grep "[0-9].*x[0-9]" | dmenu -c -l 10)
+screen=$( xrandr | grep "\sconnected\s" | awk '{ print $1 }' |  dmenu -l 10 )
+[ -z "$screen" ] && exit 1
+
+geo=$(xrandr | grep "[0-9].*x[0-9]" | awk '{ print $1 }' | grep "[0-9].*x[0-9]" | dmenu -l 10)
+[ -z "$geo" ] && exit 1
 
 xrandr --output "$screen" --mode "$geo"

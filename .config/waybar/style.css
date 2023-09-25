@@ -1,0 +1,123 @@
+@import "theme.css";
+* {
+    border: none;
+    border-radius: 0;
+    font-family: Iosevka Nerd Font;
+    font-size: 16px;
+}
+
+window#waybar {
+    background: transparent;
+    color: @text;
+}
+
+tooltip {
+	background: @mantle;
+}
+
+#workspaces button {
+    padding: 0px 5px;
+    color: @lavender;
+}
+
+#workspaces button.active {
+    color: @green;
+}
+#workspaces button.focused {
+    background-color: @red;
+    border-radius: 15px;
+}
+
+#workspaces button.urgent {
+    color: @mantle;
+    background-color: #fab387;
+    border-radius: 15px;
+}
+
+#workspaces button:hover {
+	color: @green;
+}
+
+#workspaces,
+#clock,
+#cpu,
+#memory,
+#network,
+#battery,
+#pulseaudio,
+#backlight,
+#network,
+#workspaces,
+#tray,
+#custom-powermenu,
+#custom-arch,
+#custom-dwl,
+#mpd {
+	background-color: @base;
+	padding: 5px 10px;
+	margin: 10px 0px 0px 0px;
+}
+/*
+#workspaces {
+	border-radius: 15px 0 0 15px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+*/
+#custom-arch {
+	color: #00dbff;
+	padding-right: 10px;
+	border-radius: 15px 0 0 15px;
+	margin-left: 10px;
+}
+#custom-powermenu {
+	color: @red;
+	border-radius: 0px 15px 15px 0px;
+  margin-right: 10px;
+}
+
+#clock {
+    color: @mauve;
+
+}
+
+#battery {
+    color: @green;
+}
+
+#battery.charging {
+    color: @sky;
+}
+
+#battery.warning:not(.charging) {
+    background-color: @base;
+    color: @red;
+}
+
+#network {
+	color: @yellow;
+}
+
+#pulseaudio {
+	color: @sky;
+}
+
+#pulseaudio.muted {
+  color: @red;
+}
+
+#backlight {
+  color: @yellow;
+}
+
+#mpd{
+	color: #ff6f61;
+}
+
+#cpu{
+	color: #fa9a85;
+}
+
+#memory{
+	color: #ce5b78;
+}

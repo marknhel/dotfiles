@@ -1,4 +1,3 @@
-
 # Basic vars
 set shell bash
 set shellopts '-eu'
@@ -19,9 +18,10 @@ cmd open ${{
 	image/vnd.djvu|application/pdf|application/octet-stream) setsid -f zathura $fx >/dev/null 2>&1 ;;
         text/*) $EDITOR $fx;;
 	image/x-xcf|image/svg+xml) setsid -f gimp $f >/dev/null 2>&1 ;;
-	image/*) rotdir $f | grep -i "\.\(png\|jpg\|jpeg\|gif\|webp\|tif\)\(_large\)*$" | sxiv -aio 2>/dev/null | lf-select ;;
+#	image/*) rotdir $f | grep -i "\.\(png\|jpg\|jpeg\|gif\|webp\|tif\)\(_large\)*$" | sxiv -aio 2>/dev/null | lf-select ;;
+	image/*) sxiv $f;;
 	audio/*) mpv --audio-display=no $f ;;
-	video/*) setsid -f mplayer -ao pulse,alsa,oss $f >/dev/null 2>&1 ;;
+	video/*) setsid -f mpv $f >/dev/null 2>&1 ;;
 	application/pdf|application/vnd*|application/epub*) setsid -f zathura $fx >/dev/null 2>&1 ;;
         *) for f in $fx; do setsid -f $OPENER $f >/dev/null 2>&1; done;;
     esac
@@ -67,9 +67,15 @@ cmd bulkrename $vidir
 
 # Bindings
 map <c-f> $lf -remote "send $id select '$(fzf)'"
-map J $lf -remote "send $id cd $(cut -d'	' -f2 ${XDG_CONFIG_HOME:-$HOME/.config}/directories | fzf)"
-map gh
-map g top
+#map J $lf -remote "send $id cd $(cut -d'	' -f2 ${XDG_CONFIG_HOME:-$HOME/.config}/directories | fzf)"
+map gh $lf -remote "send $id cd $HOME"
+map gD $lf -remote "send $id cd $XDG_DOWNLOADS_DIR"
+map gv $lf -remote "send $id cd $XDG_VIDEOS_DIR"
+map gp $lf -remote "send $id cd $XDG_PICTURES_DIR"
+map gd $lf -remote "send $id cd $XDG_DOCUMENTS_DIR"
+map gt $lf -remote "send $id cd $XDG_TRASH_DIR"
+map gm $lf -remote "send $id cd $XDG_MUSIC_DIR"
+#map g top
 map D delete
 map C copyto
 map M moveto

@@ -1,0 +1,13 @@
+#!/bin/sh
+
+#URL="$1"
+#COMMENT="$2"
+BOOKMARK_FILE="$XDG_CONFIG_HOME"/bookmarks
+URL=$( xclip -o clipboard | mymenu -p "Enter the URL: " )
+[ -z "$URL" ] && exit 1
+
+grep "$URL #" "$BOOKMARK_FILE" && notify-send "Bookmark" "Url is already in the bookmark file." && exit 1
+
+COMMENT=$( echo "None" | mymenu -p "Comment or Identifier: ")
+
+printf "%s #%s\n" "$URL" "$COMMENT" >> "$BOOKMARK_FILE" && notify-send -u low "Bookmark" "Successfully added $URL in the bookmark file"

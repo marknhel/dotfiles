@@ -2,7 +2,21 @@
 
 
 file=$(readlink -f "$1")
+dir=${file%/*}
 base="${file%.*}"
+ext="${file##*.}"
 
-base="$base".pdf
-setsid -f zathura "$base"
+c(){
+	readlink -f "$base" || compiler "$file"
+	"$base" && read -r pause
+
+
+}
+
+case "$ext" in
+	ms) setsid -f zathura "$base".pdf;;
+	tex) setsid -f zathura "$base".pdf;;
+	md) setsid -f zathura "$base".pdf;;
+	c) c;;
+	*) notify-send -u critical "Zopen" "Not Supported";;
+esac

@@ -5,7 +5,7 @@
 
 # Makes new script if the file name argument does not exists and edits the current if exists
 [ -z "$1" ] && exit 1
-new_script="$HOME/.local/bin/scripts/$1"
-[ -f "$new_script" ] && "$EDITOR" "$new_script"
-touch "$new_script" && chmod +x "$new_script"
-echo "#!/bin/sh" >> "$new_script" && $EDITOR "$new_script"
+script="$HOME/.local/bin/scripts/$1"
+[ -f "$script" ] && "$EDITOR" "$script" && exit 0
+touch "$script" && chmod +x "$script"
+echo "#!/bin/sh" >> "$script" && $EDITOR "$script"

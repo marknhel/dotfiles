@@ -6,4 +6,8 @@ case $BLOCK_BUTTON in
 	1) btcon;;
 esac
 
-[ -f "$dev" ] && echo "" || echo ""
+dev=$(bluetoothctl info | grep Name | awk '{ print $2 }')
+bat=$(bluetoothctl info | grep Battery | awk '{print $4 }' | sed 's/)/%)/')
+
+#[ ! -z "$dev" ] && echo " $dev" || echo ""
+[ ! -z "$dev" ] && echo "$dev$bat" || echo "Disconnected"

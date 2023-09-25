@@ -7,3 +7,4 @@
 #              |___/
 #btdcon
 #uniq -c "$HOME"/.cache/zshhistory| sed 's/^.*\s//' | tee "$HOME"/.cache/zshhistory
+sudo rm /usr/local/bin/mymenu

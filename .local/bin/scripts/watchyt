@@ -1,8 +1,16 @@
 #!/bin/sh
 
 
-link=$(xclip -o clipboard) 2>/dev/null
+watchytlog(){
+	LOG_FILE="${XDG_CACHE_HOME:-$HOME/.cache}"/mpv/logs/watchyt.csv
+	[ ! -f "$LOG_FILE" ] && echo "Title, URL" | tee "$LOG_FILE"
+	echo "$ytinfo, $link" | tee -a "$XDG_CACHE_HOME"/mpv/logs/watchyt.csv
+}
+[ -z "$1" ] && link=$(xclip -o clipboard) 2>/dev/null || link="$1"
 [ -z "$link" ] && exit 0 && notify-send "Youtube Viewer" "Link is invalid."
 ytinfo="$(youtube-viewer -i="$link" | grep "=>>.*<<=" | sed 's|.*=>>\s||' | sed 's|\s<<=.*$||')"
-
-tsp youtube-viewer -f --config="$XDG_CONFIG_HOME"/youtube-viewer/youtube-viewer.conf "$link" && notify-send "Youtube Viewer" "Successfully queued $ytinfo."
+[ -z "$ytinfo" ] && exit 1
+label="$ytinfo"
+command="youtube-viewer -f --config=$XDG_CONFIG_HOME/youtube-viewer/youtube-viewer.conf $link"
+tsp -L "$label" $command  && notify-send "Youtube Viewer" "Successfully queued $ytinfo."
+watchytlog

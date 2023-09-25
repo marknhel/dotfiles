@@ -25,10 +25,19 @@ textype() { \
 	$command --output-directory="$dir" "$base" &&
 	$command --output-directory="$dir" "$base"
 }
+c(){
+	gcc -o "$base" "$file" -lpanel -lncurses && \
+		notify-send -u low "Building C" "Successful" ||\
+		notify-send -u critical "Building C" "Failed"
+
+
+}
 
 case "$ext" in
 	[0-9]) preconv "$file" | refer -PS -e | groff -mandoc -T pdf > "$base".pdf ;;
-	c) cc "$file" -o "$base" && "$base" ;;
+#	c) cc "$file" -o "$base" && "$base" ;;
+	c) c;;
+	cs) runcs "$file" ;;
 	go) go run "$file" ;;
 	h) sudo make install ;;
 	m) octave "$file" ;;
@@ -48,6 +57,5 @@ case "$ext" in
 	scad) openscad -o "$base".stl "$file" ;;
 	sent) setsid -f sent "$file" 2>/dev/null ;;
 	tex) textype "$file" ;;
-	cs) runcs "$file" ;;
 	*) sed 1q "$file" | grep "^#!/" | sed "s/^#!//" | xargs -r -I % "$file" ;;
 esac

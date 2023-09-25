@@ -1,0 +1,7 @@
+#!/bin/sh
+
+dev=$(bluetoothctl info | grep Name | awk '{ print $2 }')
+bat=$(bluetoothctl info | grep Battery | awk '{print $4 }' | sed 's/)/%)/')
+
+#[ ! -z "$dev" ] && echo " $dev" || echo ""
+[ ! -z "$dev" ] && echo " $bat $dev " || echo ""

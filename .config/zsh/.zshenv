@@ -6,14 +6,30 @@
 # /___|___/_| |_|\___|_| |_|\_/
 
 export ZDOTDIR="$HOME"/.config/zsh
-export BROWSER="brave"
-export TERMINAL="st"
+
+
+#if [[ ! -z "$DISPLAY" ]]; then
+#	export BROWSER="brave"
+#	export TERMINAL="st"
+#	export STATUSBAR="slstatus"
+#	export MENU="dmenu"
+#else
+#	export BROWSER="librewolf"
+#	export TERMINAL="foot"
+#	export STATUSBAR="somebar"
+#	export MENU="bemenu"
+#fi
+# [ ! -z "$DISPLAY" ] && export BROWSER="brave" || export BROWSER="librewolf"
+# [ ! -z "$DISPLAY" ] && export TERMINAL="st" || export TERMINAL="foot"
+# [ ! -z "$DISPLAY" ] && export STATUSBAR="slstatus" || export STATUSBAR="somebar"
+# [ ! -z "$DISPLAY" ] && export MENU="dmenu" || export MENU="bemenu"
+# export BROWSER="brave"
+# export STATUSBAR="slstatus"
+# export TERMINAL="st"
+
 export EDITOR="nvim"
+export TERMINAL="st"
 export SYSTEMD_EDITOR="/usr/bin/vi"
-export STATUSBAR="dwmblocks"
-
-[ -f "$ZDOTDIR/.location" ] &&  source "$ZDOTDIR/.location"
-
 
 export PATH=${PATH}:"$HOME"/.local/bin
 #statusbar
@@ -38,6 +54,8 @@ export XDG_TRASH_DIR="$HOME"/trash
 export XDG_MOUNTPOINT_DIR="$HOME"/mnt
 export XDG_OTHERS_DIR="$HOME"/others
 export XDG_DOWNLOADS_DIR="$HOME"/downloads
+
+export SCRIPTS_DIR="$HOME"/.local/bin/scripts
 
 
 #ADB
@@ -103,7 +121,7 @@ export GOPATH="$XDG_DATA_HOME"/go
 export NOTMUCH_CONFIG="$XDG_CONFIG_HOME"/notmuch/notmuchrc
 
 #Not Much Bug
-export NMBGIT="XDG_DATA_HOME"/notmuch/nmbug
+export NMBGIT="$XDG_DATA_HOME"/notmuch/nmbug
 
 #Wine
 export WINEPREFIX="$XDG_DATA_HOME"/wineprefixes/default
@@ -138,5 +156,19 @@ export GTK_THEME=Adwaita:dark
 #BASH COMPLETION
 export BASH_COMPLETION_USER_FILE="$XDG_CONFIG_HOME"/bash-completion/bash_completion
 
+# Bemenu
+export BEMENU_OPTS="--fn 'Iosevka Nerd Font 14' --tf #bbbbbb --nf #bbbbbb --hf #eeeeee --hb #005577 --scf #005577 --prefix '>' --bottom"
+
 #Bash
 export XDG_STATE_HOME="$HOME"/.config/bash
+
+#DESKTOP
+
+#export SDL_VIDEODRIVER=wayland
+#export _JAVA_AWT_WM_NONREPARENTING=1
+#export QT_QPA_PLATFORM=Sway
+#export XDG_CURRENT_DESKTOP=Hyprland
+#export XDG_SESSION_TYPE=wayland
+#export XDG_SESSION_DESKTOP=Hyprland
+#export QT_QPA_PLATFORM=xcb
+#export USE_WAYLAND_GRIM=1

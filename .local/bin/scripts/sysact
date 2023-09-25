@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# A dmenu wrapper script for system functions.
+# A mymenu wrapper script for system functions.
 
 # For non-systemd init systems.
 case "$(readlink -f /sbin/init)" in
@@ -15,6 +15,7 @@ cmds="\
 🔃 reboot	reboot
 🖥 shutdown	shutdown now
 🕒 timer shut	schedshut"
-choice="$(echo "$cmds" | cut -d'	' -f 1 | dmenu -l 10)" || exit 1
+choice="$(echo "$cmds" | cut -d'	' -f 1 | mymenu -l 10)" || exit 1
+#choice="$(echo "$cmds" | cut -d'	' -f 1 | bemenu -l 10)" || exit 1
 
 `echo "$cmds" | grep "^$choice	" | cut -d '	' -f2-`

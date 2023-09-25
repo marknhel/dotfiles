@@ -26,6 +26,7 @@ Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 Plug 'kyoz/purify', { 'rtp': 'vim' }
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() }}
 Plug 'junegunn/fzf.vim'
+Plug 'vimwiki/vimwiki'
 "For html
 "Plug 'mattn/emmet-vim'
 "Plug 'ctrlpvim/ctrlp.vim'
@@ -46,9 +47,13 @@ call plug#end()
 
 	"inoremap ;ref %X <--><Enter>%A <++><Enter>%T <++><Enter>%D <++><Enter>%I <++><Enter>%B <++><Enter>%E <++><Enter><Esc>/<--><Enter>"_4cl
 	inoremap <S
+"if ! filereadable(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/TeVim/init.lua"'))
+"	source $XDG_CONFIG/nvim/TeVim/init.lua
+"endif
 
 inoremap <Space><Space> <Esc>/<++><Enter>"_4cl
 autocmd FileType html source $XDG_CONFIG_HOME/nvim/html.vim
+autocmd FileType vue source $XDG_CONFIG_HOME/nvim/vue.vim
 autocmd FileType json source $XDG_CONFIG_HOME/nvim/json.vim
 autocmd FileType rmd source $XDG_CONFIG_HOME/nvim/rmd.vim
 autocmd FileType markdown source $XDG_CONFIG_HOME/nvim/md.vim
@@ -58,6 +63,7 @@ autocmd FileType groff source $XDG_CONFIG_HOME/nvim/ms.vim
 autocmd FileType tex source $XDG_CONFIG_HOME/nvim/tex.vim
 autocmd FileType html,css,js,php,ms,py,tex inoremap <Space><Space> <Esc>/<++><Enter>"_4cl
 autocmd FileType htmldjango source $XDG_CONFIG_HOME/nvim/django.vim
+autocmd FileType c source $XDG_CONFIG_HOME/nvim/c.vim
 
 
 set bg=light
@@ -129,13 +135,13 @@ set clipboard+=unnamedplus
 
 " Open my bibliography file in split
 	map <leader>b :vsp<space>$BIB<CR>
-	map <leader>r :vsp<space>$REFER<CR>
+"	map <leader>r :vsp<space>$REFER<CR>
 
 " Replace all is aliased to S.
 	nnoremap S :%s//g<Left><Left>
 
 " Compile document, be it groff/LaTeX/markdown/etc.
-	map <leader>c :w! <CR>:!rcomp %<CR><CR>
+	map <leader>r :w! <CR>:!zopen %<CR>
 
 " Open corresponding .pdf/.html or preview
 	map <leader>p :!opout <c-r>%<CR><CR>

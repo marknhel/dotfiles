@@ -1,0 +1,16 @@
+#!/bin/sh
+
+while true;
+do
+	sbclock="$(sb-clock)"
+	sbtraffic="$(sb-nettraf)"
+	sbvol="$(sb-volume)"
+	sbmusic="$(sb-music)"
+	sbwifi="$(sb-wifi)"
+	sbbluetooth="$(sb-bluetooth)"
+
+	sbstatus=$(printf "%s %s %s %s %s %s" "$sbmusic" "$sbbluetooth" "$sbtraffic" "$sbvol" "$sbwifi" "$sbclock")
+
+	somebar -c status "$sbstatus"
+	sleep 1
+done

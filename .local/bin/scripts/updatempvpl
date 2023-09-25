@@ -1,0 +1,19 @@
+#!/bin/sh
+
+pldir="$XDG_DATA_HOME"/mpv/playlists
+rm -f "$pldir"/*
+series="$(find "$XDG_VIDEOS_DIR"/series -type d | grep -e "s[0-9].$" | sort)"
+
+echo "$series" | while IFS= read -r line
+do
+	file="${line##*/}"
+	find "$line" -type f | grep "^.*.mp4$" | sort > "$pldir"/"$file"
+done
+
+anime="$(find "$XDG_VIDEOS_DIR"/anime -type d | grep -e "s[0-9].$" | sort)"
+
+echo "$anime" | while IFS= read -r line
+do
+	file="${line##*/}"
+	find "$line" -type f | grep "^.*.mp4$" | sort > "$pldir"/"$file"
+done

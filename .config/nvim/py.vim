@@ -1,4 +1,4 @@
-inoremap ;> <-->{<Enter><++><Enter>}<Enter><++><Esc>/<--><Enter>"_c4l
+inoremap ;classinoremap ;classinoremap ;classinoremap ;classnoremap ;> <-->{<Enter><++><Enter>}<Enter><++><Esc>/<--><Enter>"_c4l
 inoremap ;def def <-->(<++>):<Enter><++><Esc>/<--><Enter>"_c4l
 inoremap ;class class <-->:<Enter><++><Esc>/<--><Enter>"_c4l
 inoremap ;from from <--> import <++><Enter><++><Esc>/<--><Enter>"_c4l

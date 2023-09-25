@@ -1,9 +1,10 @@
 #!/bin/sh
-#flameshot full -p /tmp/lock.png && convert -blur 2x2 "/tmp/lock.png" -modulate 15 "/tmp/lock_new.png"
+#flameshot full -p /tmp/lock.jpg && convert -blur 2x2 "/tmp/lock.jpg" -modulate 15 "/tmp/lock_new.jpg"
 #flameshot full -p /tmp/lock.png
 #gource -f --high-dpi --background-image "/tmp/lock_new.png" --realtime --loop --disable-input --hide "date,filenames,mouse,progress" "$HOME"/git/repos/capstone
 #gource -f --high-dpi --background-image "/tmp/lock.png" --realtime --loop --disable-input --hide "date,filenames,mouse,progress" "$HOME"/git/repos/capstone
 #sxiv -bf "$XDG_PICTURES_DIR"/locked.jpg &
+#sxiv -bf /tmp/locked_new.jpg &
 #sleep 1 && slock
 slock
 #killall -q sxiv

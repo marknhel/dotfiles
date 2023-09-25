@@ -1,6 +1,7 @@
 #!/bin/sh
 
 srcloc="$( readlink -f "$2")"
+[ -z "$srcloc" ] && exit 1
 printf "%s\n\n" "$srcloc"
 option="$1"
 echo "$1"

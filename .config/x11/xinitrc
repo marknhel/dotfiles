@@ -1,4 +1,4 @@
 #!/bin/sh
 
 "$HOME"/.config/x11/.xprofile
-exec dwm
+ssh-agent dwm

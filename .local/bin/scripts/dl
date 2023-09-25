@@ -1,3 +1,15 @@
 #!/bin/sh
 
-cd "$XDG_DOWNLOADS_DIR" && wget "$1"
+sel=$(find "$XDG_VIDEOS_DIR" -type f | grep "\.download\." | grep -v "\.log"| mymenu -l 10)
+[ ! -f "$sel" ] && exit 1
+file=$(readlink -f "$sel")
+echo "$file"
+dir=${file%/*}
+echo "$dir"
+base="${file%.*}"
+ext="${file##*.}"
+newfile="$dir"/.complete."$ext"
+command="wget -i $base.$ext"
+label="Download"
+cd "$dir" && tsp -L "$label" $command && notify-send -u low "Bulk Download" "Started Downloading $ext" && tsp -d notify-send -u low "Bulk Download" "$ext is finished downloading." && tsp -d mv "$file" "$newfile"
+#cd "$dir" && tsp wget -i "$base"."$ext" && notify-send -u low "Bulk Download" "Started Downloading $ext" && tsp -d notify-send -u low "Bulk Download" "$ext is finished downloading." && tsp -d mv "$file" "$newfile"
